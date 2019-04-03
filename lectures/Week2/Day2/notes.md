@@ -62,6 +62,9 @@ In order for your computer's browser (aka client, where frontend code lives) to
 
 Url examoles:
 
+![tenor]("http://www.gettingsmart.com/wp-content/uploads/2017/12/Program-Code-Feature-Image.jpg")
+
+
 The communication is achieved with a communication channel called HTTP (Hyper-Text-Transfer-Protocol) 
 
 
