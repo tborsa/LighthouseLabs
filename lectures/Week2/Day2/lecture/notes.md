@@ -25,7 +25,7 @@ slideNumber: true
 ---
 
 
-### Preamble 💻 
+### Preamble 💻 go
 
 Last week you learned about _JavaScript_. You used the language to write programs that satisfy specific requirements and ran them using node. This week you will learn how to take the js you have been learning and start to Interface or communicate with the web. Specifically you will do this with  HTTP requests. 
 
@@ -50,7 +50,7 @@ In order for your computer's browser 💻 (aka client, where frontend code live
 
 Url examoles:
 
-The communication is achieved with a communication channel called HTTP (Hyper-Text-Transfer-Protocol) 
+This is achieved with a communication channel called HTTP (Hyper-Text-Transfer-Protocol) 
 
 ---
 
@@ -79,7 +79,7 @@ Each party involved must know the rules to communicate effectively.
 
 ---
 
-In the context of the networks like the internet, protocols are the rules that determine how to send format and recieved data between networked devices. These could be servers, routers, phones, personal computers and more.
+In the context of networks like the internet, protocols are the rules that determine how to send format and recieved data between networked devices. These could be servers, routers, phones, personal computers and more.
 
 ---
 
@@ -118,23 +118,15 @@ HTTP is used when one machine wants to share documents. Any number of clients ca
 
 ---
 
-## Request Response
+SWAMPI.CO
+
+---
+
+## Request and Response
 
  There are two parties. The server sits at home waiting for someone to knock on their door. The client can at any time walk up to the door, knock and ask for something. A client can ask for a cup of sugar. The server will go into their kitchen to grab a cup of sugar only to bring it back and give it to the client.
 
----### Headers
-
-The headers follow the same structure as with requests. A key and a value.
-
-- Date: Fri, 30 Mar 2018 00:24:55 GMT
-- Content-Type: text/html
-- Content-Length: 1270
-
-From this information I can tell the date and time the message was created. I can see that it is a 1270 byte html document.
-
-### Content Body
-
-When sending a response the content body is usually a representation of the resource being asked for. This is how a document made up of HTML, Image, JSON, JS, or CSS can be served.
+---
 
  #  🚪🚶‍
 
