@@ -27,7 +27,10 @@ slideNumber: true
 
 ### Preamble 💻 go
 
-Last week you learned about _JavaScript_. You used the language to write programs that satisfy specific requirements and ran them using node. This week you will learn how to take the js you have been learning and start to Interface or communicate with the web. Specifically you will do this with  HTTP requests. 
+Last week you learned about _JavaScript_. You used the language to write programs that satisfy specific requirements and ran them using node. This week you will learn how to use js to Interface or communicate with the web. Specifically you will do this with  HTTP requests. 
+
+Today we will look at:
+
 
 But first let's get an overview on how the internet works.
 
@@ -38,31 +41,38 @@ But first let's get an overview on how the internet works.
 ## Internet 101 📬
 
 
-We know that in order to load a webpage, we type a URL (aka Link) into the address bar of our browser. Once we hit enter, the browser loads for a few seconds and BAAM the page is on your screen.
+We know that in order to load a webpage, we type a URL (aka Link) into the address bar of our browser and once we hit enter the browser loads for a few seconds...
+ and BAAM the page is on the screen. you
 <center>![tenor](assets/url.jpg)</center>
-Behind the scenes a lot is happening when we load a web page, so let's try and break it down.
+
+Bunch o links
+
+Behind the scenes a lot is happening so let's try and break it down.
 
 ---
 
 
 
-In order for your computer's browser 💻 (aka client, where frontend code lives) to be able to load webpages 📃, it starts communicating with a server💽. (Another computer or networked device connected to the internet). Your computer sends a request for the resources that it needs from the server in the form of a URL.
+In order for your computer's browser 💻 (aka client, where frontend code lives) to be able to load a webpage 📃, it starts communicating with a server💽. (Another computer or networked device connected to the internet). Your computer sends a request for the resources that it needs from the server in the form of a URL, and the server in turn responds with the requested data.
 
 Url examoles:
+Webpage/image/song
 
 This is achieved with a communication channel called HTTP (Hyper-Text-Transfer-Protocol) 
 
 ---
 
 ## HTTP
-Http is the backbone of the web and the primary way of how we communicate over it. if the internet is the information highway 🛣️ http makes up some of the rules of the road.
+Http is the backbone of the web and the primary way we communicate over it. if the internet is the information highway 🛣️ http makes up some of the rules of the road.
 
-Http stands for hypertext transfer protocol.which is the technical lingo for what it actually does, helps devices communicate over a network by a series of requests↪️ and responses↩️(i.e. over internet or local network).
+Http stands for hypertext transfer protocol. Which is the technical lingo for:
+> Helping devices communicate over a network by a series of requests↪️ and responses↩️
 
 ---
 
-## Protocol?
-If http is a protocol what exactly is a protocol?
+## Protocol
+
+If http is a protocol then what exactly is a protocol?
 
 *1.*
 
