@@ -8,10 +8,10 @@ var getRepoIssues = function(name, callback){
         url: `https://api.github.com/repos/lighthouse-labs/angular_bookstore/issues/20`,
         qs: {
           sort: 'created',
-          access_token: process.env.GITHUB_TOKEN
         },
         headers: {
-          'user-agent': 'node application'
+          'user-agent': 'node application',
+          Authorizaton: process.env.GITHUB_TOKEN
         }
       }, function(error, response, body) {
         var issues = JSON.parse(body);

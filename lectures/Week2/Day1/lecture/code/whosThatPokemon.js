@@ -1,7 +1,7 @@
-var http = require('http');
+var https = require('https');
 
-function whosThatPokemon(callback, number){
-    http.get('http://pokeapi.co/api/v2/pokemon/' + number, function(response){
+function whosThatPokemon(number, callback){
+    https.get('https://pokeapi.co/api/v2/pokemon/'+number, function(response){
         if(response.statusCode !== 200){
             callback( new Error("request has failed with status code") + response.statusCode, null);
             return;
@@ -17,5 +17,7 @@ function whosThatPokemon(callback, number){
 
     });
 }
-
+whosThatPokemon(5, function(error, body){
+    console.log(error, JSON.parse(body).abilities);
+})
 

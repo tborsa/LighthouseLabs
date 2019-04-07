@@ -133,10 +133,6 @@ Here are some more.
 ### Hyper Text Transfer Protocol
 
 Http sits in the highest network layer the application layer 👑. The application layer is responsible for process to process communication over the network.
-And http is an: 
-"application-level protocol for distributed, collaborative, hypermedia information systems." 
-
-What? 
 
 HTTP is used when one machine wants to share documents. Any number of clients can make requests on these documents. Using the request response model.
 
@@ -161,11 +157,10 @@ The server sits at home waiting for someone to knock on their door.
 ---
 
 # 💃 🚪🚶‍
-
-The client knocks and asks for something.  
+ 
 The client can ask for a cup of sugar, flour ..
 
-All the client needs is a way to ask and a thing to ask for. 'May I please have a cup of sugar?' might be better than 'Give me that sugar!'.
+All the client needs is a way to , and a thing to ask for. 'May I please have a cup of sugar?' might be better than 'Give me that sugar!'.
 
 ---
 
@@ -189,20 +184,14 @@ This is what happens when you type a URL into your browser.
 
 ### HTTP:
 
-1. A Client connects to the server and transmits a request message.
-2. The Server transmits a response message back to the client and disconnects.
-
----
-
- #  🚪🚶‍
-
-The server sits at home waiting for someone to knock on their door.
+1. The Request: A Client connects to the server and transmits a request message.
+2. The Response: The Server transmits a response message back to the client and disconnects.
 
 ---
 
 # 💃 🚪🚶‍
 
-## The REquest
+## The Request
 
 Using the terminal I can type `curl -v http://example.com` and see the request as plain text.
 
@@ -215,10 +204,13 @@ Accept: */*
 ```
 
 The first line of the request message is called the request line. This is the most important part of an HTTP request. You only need to remember two parts of the request line. The first part is the `method`, the second part is the `path`. The method represents how we want to interact with the resource. The path represents where that resource is located.
+```HTTP
+GET / HTTP/1.1
+Host: example.com
+User-Agent: curl/7.54.0
+Accept: */*
 
 ---
-
-# 💃 🚪🚶‍
 
 After the request line we have the `headers`. These are key/value pairs. There are a lot of different headers. In the example you can see that the `User-Agent` making the request is `curl/7.54.0`.
 
@@ -228,10 +220,12 @@ When we are done adding headers to the message we use `\n\n` to indicate that we
 
 ### Methods
 
-Our goal today is to learn that the most common used request methods are `GET`, `POST`, `PUT`, `DELETE`. We don't need to go into detail on PUT and DELETE. A simple way to put this:
+Our goal today is to learn about the most common used request methods: `GET`, `POST` `PUT`, `DELETE`.
 
 1. I use GET if I want to retrieve data from the server.
 2. I use POST if I want to add data to the server.
+3. I use PUT if I want to edit data on the server.
+4. I use DELETE if I want to remove data from the server.
 
 ---
 
@@ -255,7 +249,7 @@ The DELETE method deletes the specified resource. Definitely unsafe.
 
 ### Path
 
-This a [unix style path](https://en.wikipedia.org/wiki/Path_(computing)#Unix_style) that identifies a resource that you want to take an action on.
+The path identifies a resource that you want to take an action on.
 
 The original intent of HTTP was to share documents. Today we use it to build web applications. When learning about HTTP consider the methods to be actions you would take on files. The file that you want to take action on can be found uniquely using a specific path.
 
@@ -283,7 +277,7 @@ Content body is used for sending data to the server. It can be used to upload fi
 
 ## The Server Response
 
-Using the rest of the output from the request to example.com we can see what a response message looks like.
+Looking at the rest of the output from our request to example.com we can see what a response message looks like.
 __Anatomy of a response__
 
 ```HTTP
@@ -325,21 +319,25 @@ Follow the same practice as with headers. Have a bookmark so you can quickly loo
 - 404 Not Found
 - 500 Internal Server Error
 
+status cats
+
 ---
 
 ### Headers
 
-The headers follow the same structure as with requests. A key and a value.
+Response headers follow the same structure as request headers. A key and a value.
 
 - Date: Fri, 30 Mar 2018 00:24:55 GMT
 - Content-Type: text/html
 - Content-Length: 1270
 
-From this information I can tell the date and time the message was created. I can see that it is a 1270 byte html document.
+From this information I can tell the date and time the message was created, and I can see that it is a 1270 byte html document.
+
+---
 
 ### Content Body
 
-When sending a response the content body is usually a representation of the resource being asked for. This is how a document made up of HTML, Image, JSON, JS, or CSS can be served.
+Within a response the content body is usually a representation of the resource that was asked for. This is how a document made up of HTML, Image, JSON, JS, or CSS can be served.
 
 
 ---
@@ -347,7 +345,7 @@ When sending a response the content body is usually a representation of the reso
 
 ## tools
 
-Typically this is the client software making the request. The most common example of this would be your Web Browser. There are other options that can be used specifically for development purposes.
+Typically it is the client software making requests. The most common example of this would be your Web Browser. There are other options that can be used specifically for development purposes.
 
 - [cURL](https://curl.haxx.se/)
 - [Postman](https://www.getpostman.com/)
