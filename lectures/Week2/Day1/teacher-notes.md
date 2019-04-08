@@ -230,7 +230,7 @@ The first line of the request message is called the request line. This is the mo
 GET / HTTP/1.1
 Host: example.com
 User-Agent: curl/7.54.0
-Accept: */*```
+Accept: */* ```
 
 After the request line we have the `headers`. These are key/value pairs. There are a lot of different headers. In the example you can see that the `User-Agent` making the request is `curl/7.54.0`.
 
