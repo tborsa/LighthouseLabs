@@ -1,21 +1,17 @@
 require('dotenv').config();
-
 var request = require('request');
 
 //before we had used http and had to parse the chunks
 var getRepoIssues = function(name, callback){
     request({
-        url: `https://api.github.com/repos/lighthouse-labs/angular_bookstore/issues/20`,
-        qs: {
-          sort: 'created',
-        },
+        url: `https://api.github.com/repos/jquery/jquery/issues`,
         headers: {
           'user-agent': 'node application',
-          Authorizaton: process.env.GITHUB_TOKEN
+          Authorization: 'Bearer ' +process.env.GITHUB_TOKEN
         }
       }, function(error, response, body) {
+        console.log(response.headers);
         var issues = JSON.parse(body);
-      
         callback(issues);
     });
 }
@@ -23,9 +19,9 @@ var getRepoIssues = function(name, callback){
 var formatRepoIssues = function(issues){
     issues.forEach(function(issue){
         if(issue.state === "open"){
-            console.log(✅+issue.titel);
+            console.log('⭕ '+issue.title);
         }else{
-            console.log(❌+ issue.title);    
+            console.log('❌ '+ issue.title);    
         }
     })
 }

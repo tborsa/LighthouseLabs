@@ -1,10 +1,14 @@
----
 
+---
 transition: "none"
 highlightTheme: "darkula"
 logoImg: ""
 center: false
 slideNumber: true
+
+---
+
+# LECTURE
 
 ---
 
@@ -25,6 +29,7 @@ slideNumber: true
   }
 </style>
 
+
 ---
 
 
@@ -36,6 +41,8 @@ Today we will look at:
 - protocol
 - network layers
 - Http requests
+
+ACTIVATE PRIOR KNOWLEDGE BRAINSTORM
 
 But first let's get an overview on how the internet works.
 
@@ -58,7 +65,7 @@ Behind the scenes a lot is happening so let's try and break it down.
 
 #### cont'd
 
-In order for your computer's browser 💻 (aka client, where frontend code lives) to be able to load a webpage 📃, it starts communicating with a server 💽. (Another computer or networked device connected to the internet). Your computer sends a request for the resources that it needs from the server in the form of a URL, and the server in turn responds with the requested data.
+In order for your computer's browser 💻 (aka client, where frontend code lives) to be able to load a webpage 📃, it starts communicating with a server💽. (Another computer or networked device connected to the internet). Your computer sends a request for the resources that it needs from the server in the form of a URL, and the server in turn responds with the requested data.
 
 Resource examples:
 Webpage/image/more...
@@ -99,7 +106,6 @@ In the context of networks like the internet:
 > __Protocols are the rules that determine how to send, format, and recieved data between networked devices. These could be servers, routers, phones, personal computers and more.__
 
 ---
-
 
 <section data-background-color="#1CF31C" *style="color:black"*>
 
@@ -243,19 +249,19 @@ Our goal today is to learn about the most common used request methods: `GET`, `P
 
 ---
 
-__GET 🎁__
+__GET__
 
 A GET request is always a __safe__ operation. A server has the same state before and after when this type of request is made.
 
-__POST 📬__
+__POST__
 
 A POST is unsafe and will mutate the server states in some way. A typical example of a POST request results in a new data entry into a database. A POST request can optionally contain body data.
 
-__PUT 🛒__
+__PUT__
 
 A PUT is unsafe. It will also mutate the server. This is used to replace an existing resource. If the resource does not exist then it will be created.
 
-__DELETE 🚮__
+__DELETE__
 
 The DELETE method deletes the specified resource. Definitely unsafe.
 
@@ -267,11 +273,11 @@ The path identifies a resource that you want to take an action on.
 
 The original intent of HTTP was to share documents. Today we use it to build web applications. When learning about HTTP consider the methods to be actions you would take on files. The file that you want to take action on can be found uniquely using a specific path.
 
-<center>![url](assets/url.jpg)</center>
+<center>![tenor](assets/url.jpg)</center>
 
 ---
 
-### Protocol Version 🚩
+### Protocol Version
 
 For the purposes of learning how to use HTTP, we don't need to worry about this. If it says HTTP/1.1 then we can leave it at that.
 
@@ -311,10 +317,10 @@ Content-Length: 1270
 <!doctype html>
 <html>
   <!-- more html content >
-</html>
+</html>ers and body data. The status line is similar to the request line. Skip the version and focus on two import
 ```
 
-A server response contains three parts. The status line, headers and body data. The status line is similar to the request line. Skip the version and focus on two important parts. The status code (200) and the reason phrase (OK).
+A server response contains three parts. The status line, headant parts. The status code (200) and the reason phrase (OK).
 
 ---
 
@@ -339,6 +345,8 @@ Follow the same practice as with headers. Have a bookmark so you can quickly loo
 - 500 Internal Server Error
 
 [http cats](https://http.cat/)
+
+EVERYONE LOOK UP YOUR OWN HTTP CAT
 
 ---
 
@@ -386,7 +394,45 @@ https://pokeapi.co/api
 
 https://pokeapi.co/api/v2/pokemon/
 
-<center>![tenor](assets/snorlax.gif)</center>
+---
+
+```javascript
+var https = require('https');
+var https = require("https");
+
+function whosThatPokemon(number, callback){
+    https.get('https://pokeapi.co/api/v2/pokemon/'+number, function(response){
+        if(response.statusCode!== 200){
+            callback(new Error("Invalid Response."+ response.statusCode))
+        }
+
+        response.setEncoding("utf-8");
+        var body = "";
+        response.on("data", function(chunk){
+            //onsole.log(chunk+"\n");
+            body += chunk;
+        });
+        response.on("end", function(){
+            callback(null, JSON.parse(body));
+        })
+    
+    })
+}
+var number = 25;
+
+if(process.argv[2]){
+    number = process.argv[2];
+}
+
+whosThatPokemon(number,function(error,data){
+    if(error){
+        console.log("It's... MISIGNO");
+    }else{
+        console.log("It's ... " + data.name +"!");
+    }
+})
+
+```
 
 ---
 
@@ -399,3 +445,203 @@ https://pokeapi.co/api/v2/pokemon/
   - HEADERS
   - PATH
   - STATUS CODE
+
+
+---
+
+  # BREAKOUT
+
+---
+
+---
+theme : "white"
+transition: "zoom"
+highlightTheme: "darkula"
+logoImg: ""
+center: false
+slideNumber: true
+
+---
+
+# Node and APIs
+<center> ![internet](assets/internet.gif)</center>
+<style type="text/css">
+  .reveal p {
+    text-align: left;
+  }
+  .reveal ul {
+    display: block;
+  }
+  .reveal ol {
+    display: block;
+  }
+</style>
+
+---
+
+
+### Preamble 📢 
+
+This morning we learned about protocols and HTTP, and looked at how http requests can be made by browsers, the terminal, postman, and by a node application. 
+
+We are going to continue to explore HTTP requests with node applications and work through:
+
+- How to use request ( A node module for HTTP requests)
+- Access tokens
+- Headers
+- Enviornment variables
+
+<center>![tenor](assets/hack.gif)</center>
+
+---
+
+## Request 📬
+
+Request is a node module that makes it easier to do HTTP requests. 
+[Request Docs](https://www.npmjs.com/package/request)
+
+Request buffers the response for you (adds all the chunks together) so you don't have to.
+
+Make an application that gets all the issues from a node repository and displays them. Lets start by exploring the githubapi. https://developer.github.com/v3/repos/#get
+
++create a request to https://api.github.com/repos/jquery/jquery
+
+---
+
+## Headers 👦
+
+We looked at headers this morning, and now we have a practical example for when we need to use headers. 
+
+For our request to be successful we have to set the user-agent header. The user-agent header lets the server know what 'agent' the request is comming from. Browsers automatically set this header for us. 
+
++Set user-agent header
+
+---
+
+## Access tokens 🎫
+
+Some api's will require access tokens. 
+These are unique identifiers that identify who you are when you use the api. 
+This allows the api/server to 
+- block or restrict anonymous traffic
+- control the number of calls that are made to the api
+- identify usage patters
+
+Practically using an access token will allow us to access more and make more requests.
+
++create access token  
++set header Authorization: Bearer *token*
+
+---
+
+## Separating Code and Config
+
+I should be able to share the source code of my application, while keeping it's configuration separate. 
+- Each developer on a team may need to provide a different configuration. 
+- It is also common to change the configuration based on the deployment of the application.
+
+An example of this is using a different database for development vs production.
+
+---
+
+### Enviornment Variables
+
+Your operating system will run processes within an environment. A user or administrator can set variables within the environment.
+
+You can list the current environment variables by using the command export. One way to set a variable is to use the command export KEY=VALUE. This variable will only be set for the terminal session that it executed within.
+
+---
+
+Another common technique is to set an environment variable when running a process.
+
+>KEY=VALUE node script.js
+
+Within your application these variables can be accessed with process.env.*variable*
+
++set github token as enviornment variable
+
+---
+
+## dotenv
+
+[dotenv docs](https://www.npmjs.com/package/dotenv)
+
+Using the dotenv library is a more convinient way of setting enviornmet variables and separating code and config. By creating a file named .env in the root directory of your project.
+
+.env
+
+You are able to list any key value pairs that need to be set as enviornment variables. 
+
+---
+
+Configuring dotenv at the top of your file will give you access to the enviornment variables set in .env
+
+require('dotenv').config();
+
++add .env file and configure dotenv 
+
+---
+
+## Secrets 🙊
+
+Some of an applications configuration should be kept private. We often need to include secret keys, tokens and passwords in our code. You do not want to publish this confidential information to a publicly accessible server. The separation of code and configuration supports this goal.
+
+To keep our .env file private we can add it to the .gitignore file so it is not tracked by our repository, and does not get published to github or shared with our project members.
+
+---
+
+Keeping code and configuration separate allows us to hide our configuration while still being able to share the source code. We use a .gitignore file to exclude certain files from our version control system.
+
++add .env to .gitignore
+
+---
+
+
+This means that everyone who wants to run the application would need their own .env file. It's a good idea to create a .env.example file that you do commit. This will allow you to inform other developers of the environment variables that have to be set.
+
+.env.example
+
+GITHUT_TOKEN=  
+DB_USERNAME=  
+DB_PASSWORD=
+
+Now a new developer could copy and fill in the values with their own credentials. The app would load their .env file and use the variables contained for it's configuration.
+
++add .env.example
+
+---
+
+``` javacript
+
+require('dotenv').config();
+var request = require('request');
+
+//before we had used http and had to parse the chunks
+var getRepoIssues = function(name, callback){
+    request({
+        url: `https://api.github.com/repos/jquery/jquery/issues`,
+        headers: {
+          'user-agent': 'node application',
+          Authorization: 'Bearer ' +process.env.GITHUB_TOKEN
+        }
+      }, function(error, response, body) {
+        console.log(response.headers);
+        var issues = JSON.parse(body);
+        callback(issues);
+    });
+}
+
+var formatRepoIssues = function(issues){
+    issues.forEach(function(issue){
+        if(issue.state === "open"){
+            console.log('⭕ '+issue.title);
+        }else{
+            console.log('❌ '+ issue.title);    
+        }
+    })
+}
+
+
+getRepoIssues("jquery", formatRepoIssues);
+
+```
