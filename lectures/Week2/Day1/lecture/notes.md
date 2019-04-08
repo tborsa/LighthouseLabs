@@ -9,7 +9,7 @@ slideNumber: true
 ---
 
 # HTTP and APIs
-<center> ![internet](assets/internet.gif)</center>
+![internet](assets/internet.gif)
 <style type="text/css">
   .reveal p {
     text-align: left;
@@ -39,7 +39,7 @@ Today we will look at:
 
 But first let's get an overview on how the internet works.
 
-<center>![tenor](assets/hack.gif)</center>
+![tenor](assets/hack.gif)
 
 ---
 
@@ -49,7 +49,7 @@ But first let's get an overview on how the internet works.
 We know that in order to load a webpage, we type a URL (aka Link) into the address bar of our browser and once we hit enter the browser loads for a few seconds...
 
  and [BAAM](https://theuselessweb.com/) the page is on the screen. you
-<center>![tenor](assets/url.jpg)</center>
+![tenor](assets/url.jpg)
 
 
 Behind the scenes a lot is happening so let's try and break it down.
@@ -107,7 +107,7 @@ In the context of networks like the internet:
 
 <strong>The internet is like an ogre, and ogres are like onions, and onions have layers.</strong>
 
-<center>![osi model](assets/osi.svg)</center>
+![osi model](assets/osi.svg)
 </section>
 
 ---
@@ -156,7 +156,7 @@ HTTP is used when one machine wants to share documents 📃 and Any number of cl
 
 ---
 
- #  🚪🚶‍
+#  🚪🚶‍
 
 The server sits at home waiting for someone to knock on their door.
 
@@ -268,7 +268,7 @@ The path identifies a resource that you want to take an action on.
 
 The original intent of HTTP was to share documents. Today we use it to build web applications. When learning about HTTP consider the methods to be actions you would take on files. The file that you want to take action on can be found uniquely using a specific path.
 
-<center>![url](assets/url.jpg)</center>
+![url](assets/url.jpg)
 
 ---
 
@@ -387,7 +387,7 @@ https://pokeapi.co/api
 
 https://pokeapi.co/api/v2/pokemon/
 
-<center>![tenor](assets/snorlax.gif)</center>
+![tenor](assets/snorlax.gif)
 
 ---
 
