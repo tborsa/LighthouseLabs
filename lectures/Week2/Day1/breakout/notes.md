@@ -49,7 +49,7 @@ Request buffers the response for you (adds all the chunks together) so you don't
 
 Make an application that gets all the issues from a node repository and displays them. Lets start by exploring the githubapi. https://developer.github.com/v3/repos/#get
 
-+create a request to https://api.github.com/repos/jquery/jquery
++create a request to https://api.github.com/repos/jquery/jquery/issues
 
 ---
 
