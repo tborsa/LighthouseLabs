@@ -1,0 +1,338 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.IE8Fix {
+    z-index: 100;
+}
+
+.small {
+    font-size: 80%;
+}
+
+a {
+    color: #006666;
+    text-decoration: none;
+    font-weight: 700;
+}
+    /*a:visited {
+COLOR: #800080;
+}*/
+    a:hover {
+        color: #0000cc;
+        text-decoration: underline;
+    }
+
+.bannertxt {
+    font-family: "Comic Sans MS", Sans-Serif;
+    font-size: 200%;
+    font-style: italic;
+    font-weight: bold;
+    background-color: #ccffff;
+}
+
+.bordertxt {
+    color: #ffffff;
+    background-color: #009999;
+}
+
+.footertxt {
+    font-size: 10pt;
+    color: #ffffff;
+    background-color: #009999;
+}
+
+.formbox {
+    border-right: #ff0066 3px dotted;
+    border-top: #ff0066 3px dotted;
+    border-left: #ff0066 3px dotted;
+    border-bottom: #ff0066 3px dotted;
+    background-color: #ffffcc;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.formgrid {
+    text-align: left;
+}
+
+.leadin {
+    font-family: "Comic Sans MS", Sans-Serif;
+    font-size: 125%;
+    margin: 8px;
+}
+
+.disclaimer {
+    font-size: 75%;
+}
+
+.kickerbox {
+    background-color: #ccffff;
+    font-family: "Comic Sans MS", Sans-Serif;
+    font-size: 125%;
+    border-right: #009999 4px solid;
+    border-top: #009999 4px solid;
+    border-left: #009999 4px solid;
+    border-bottom: #009999 4px solid;
+}
+
+.thead {
+    font-weight: bold;
+    text-align: center;
+    background-color: #ccffff;
+    border: 1px solid #009999;
+}
+
+.MenuStaItm {
+    color: #000000;
+    background-color: #FFFFCC;
+    font-size: 80%;
+    padding-left: 2px;
+    padding-top: 2px;
+    padding-right: 10px;
+    border-right: #009999 2px solid;
+    border-top: #009999 2px solid;
+    border-left: #009999 2px solid;
+    border-bottom: #009999 2px solid;
+}
+
+.MenuStaHov {
+    color: #ffffff;
+    background-color: #66CCCC;
+    padding-left: 2px;
+    padding-top: 2px;
+    padding-right: 10px;
+    border: 2px solid #009999;
+}
+
+table.MenuStaHov a:hover {
+    text-decoration: none;
+}
+
+.MenuDynItm {
+    color: #000000;
+    background-color: #FFCCFF;
+    font-size: 80%;
+    padding: 2px;
+    border: 2px solid #990099;
+}
+
+.MenuDynHov {
+    color: #FFFFFF;
+    background-color: #CC66CC;
+    padding: 2px;
+    border: 2px solid #990099;
+    text-decoration: none;
+}
+
+table.MenuDynHov a:hover {
+    text-decoration: none;
+}
+
+TABLE.links TD.external A.menu {
+}
+
+.tabs {
+    position: relative;
+    top: 1px;
+    left: 10px;
+}
+
+.tab {
+    border: solid 1px black;
+    background-color: #eeeeee;
+    padding: 2px 10px;
+}
+
+.selectedTab {
+    background-color: white;
+    border-bottom: solid 1px white;
+}
+
+.tabContents {
+    border: solid 1px black;
+    padding: 10px;
+    background-color: white;
+}
+
+.plusone, .twitter, .fb-like {
+    font-size: 1px;
+    display: inline-block;
+}
+    /*.plusone, .twitter {
+    font-size: 1px;
+    display: inline-block;
+}*/
+    .fb-like iframe {
+        width: 450px !important;
+        height: 20px !important;
+    }
+
+.fb_reset {
+    display: inline;
+}
+/* This gets Google to fall into place */
+.social {
+    font-size: 1px;
+}
+
+    /* This gets Facebook to fall into place */
+    .social iframe {
+        vertical-align: middle;
+    }
+
+    /* Set an optional width for your button wrappers */
+    .social span {
+        display: inline-block;
+        width: 110px;
+    }
+
+    /* Adjust the widths individually if you like */
+    .social .google {
+        width: 75px;
+    }
+
+/*.nav-container2 { width:940px; margin:auto; height:30px;}*/
+.nav-container2 {
+    width: 95%;
+    margin: auto;
+    height: 30px;
+}
+
+.social-media-list {
+    width: 393px;
+}
+/*xs, mobile*/
+.social-media-list-xs {
+    width: 320px;
+}
+/*4 buttons, 25% each*/
+.social-media-list li {
+    display: block;
+    float: left;
+    width: 25%;
+    text-align: center;
+    margin: 0 auto;
+}
+/*3 buttons, 33.3% each*/
+.social-media-list-xs li {
+    display: block;
+    float: left;
+    width: 33.3%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#column1-wrap {
+    float: left;
+    width: 100%;
+}
+
+#column1 {
+    background-color: cyan;
+    margin-right: 200px;
+}
+
+#column2 {
+    background-color: lime;
+    float: left;
+    width: 200px;
+    margin-left: -200px;
+}
+
+#clear {
+    clear: both;
+}
+
+.pagination-ys {
+    /*display: inline-block;*/
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+    .pagination-ys table > tbody > tr > td {
+        display: inline;
+    }
+
+        .pagination-ys table > tbody > tr > td > a,
+        .pagination-ys table > tbody > tr > td > span {
+            position: relative;
+            float: left;
+            padding: 8px 12px;
+            line-height: 1.42857143;
+            text-decoration: none;
+            color: #dd4814;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            margin-left: -1px;
+        }
+
+        .pagination-ys table > tbody > tr > td > span {
+            position: relative;
+            float: left;
+            padding: 8px 12px;
+            line-height: 1.42857143;
+            text-decoration: none;
+            margin-left: -1px;
+            z-index: 2;
+            color: #aea79f;
+            background-color: #f5f5f5;
+            border-color: #dddddd;
+            cursor: default;
+        }
+
+        .pagination-ys table > tbody > tr > td:first-child > a,
+        .pagination-ys table > tbody > tr > td:first-child > span {
+            margin-left: 0;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+        }
+
+        .pagination-ys table > tbody > tr > td:last-child > a,
+        .pagination-ys table > tbody > tr > td:last-child > span {
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .pagination-ys table > tbody > tr > td > a:hover,
+        .pagination-ys table > tbody > tr > td > span:hover,
+        .pagination-ys table > tbody > tr > td > a:focus,
+        .pagination-ys table > tbody > tr > td > span:focus {
+            color: #97310e;
+            background-color: #eeeeee;
+            border-color: #dddddd;
+        }
+
+.modalBackground {
+    background-color: Black;
+    filter: alpha(opacity=90);
+    opacity: 0.8;
+}
+
+.modalPopup {
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 80%;
+    height: 80%;
+}
+
+.truncate-link {
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.fullWidth {
+    width: 100%;
+}

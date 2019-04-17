@@ -1,0 +1,77 @@
+
+<!-- saved from url=(0047)https://bettereducation.com.au/customSearch.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body style="margin-top:0px;padding-top:0px;">
+    <!-- CSS Styles -->
+    <style>
+        .speech {
+            border: 1px solid #DDD;
+            width: 300px;
+            padding: 0;
+            margin: 0
+        }
+
+            .speech input {
+                border: 0;
+                width: 280px;
+                display: inline-block;
+                height: 30px;
+            }
+
+            .speech img {
+                float: right;
+                width: 19px
+            }
+    </style>
+
+    <!-- Search Form -->
+    <form id="cse-search-box" method="get" action="https://bettereducation.com.au/searchResults.aspx" target="_top">
+        <div class="speech">
+            <input type="hidden" name="cx" value="partner-pub-4450033148691913:huzmt5x9w4k">
+            <input type="hidden" name="cof" value="FORID:10">
+            <input type="hidden" name="ie" value="UTF-8">
+            <input type="text" name="q" size="40" id="transcript" placeholder="Custom Search" style="background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px;">
+            <img onclick="startDictation()" src="./mic.png">
+            <!--<input type="submit" name="sa" value="Go" />-->
+        </div>
+    <input name="siteurl" type="hidden" value="bettereducation.com.au/customSearch.htm"><input name="ref" type="hidden" value="bettereducation.com.au/forum/it.aspx?g=posts&amp;t=6904"><input name="ss" type="hidden" value=""></form>
+    <!--<form action="//bettereducation.com.au/searchResults.aspx" id="cse-search-box" target="_top">
+        <div>
+            <input type="hidden" name="cx" value="partner-pub-4450033148691913:huzmt5x9w4k" />
+            <input type="hidden" name="cof" value="FORID:10" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input type="text" name="q" size="20" x-webkit-speech />
+            <input type="submit" name="sa" value="Go" />
+        </div>
+    </form>-->
+    <script type="text/javascript" src="./f(1).txt"></script>
+    <!-- HTML5 Speech Recognition API -->
+    <script>
+        function startDictation() {
+
+            if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+                var recognition = new webkitSpeechRecognition();
+
+                recognition.continuous = false;
+                recognition.interimResults = false;
+
+                recognition.lang = "en-US";
+                recognition.start();
+
+                recognition.onresult = function (e) {
+                    document.getElementById('transcript').value
+                        = e.results[0][0].transcript;
+                    recognition.stop();
+                    document.getElementById('cse-search-box').submit();
+                };
+
+                recognition.onerror = function (e) {
+                    recognition.stop();
+                }
+
+            }
+        }
+    </script>
+
+
+</body></html>
