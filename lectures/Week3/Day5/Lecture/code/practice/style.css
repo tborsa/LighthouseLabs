@@ -1,0 +1,52 @@
+footer, header {
+  background-color: salmon;
+  height: 80px;
+  padding: 20px;
+}
+
+main {
+  background-color: wheat;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+  min-height: 900px;
+}
+main div {
+  background-color: lightcyan;
+  width: 200px;
+  font-size: 100px;
+  line-height: 200px;
+  margin: 20px;
+  text-align: center;
+  color: salmon;
+}
+main .big {
+  width: 300px;
+  line-height: 300px;
+}
+
+.footerlogo, .logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 100px;
+}
+
+.logo {
+  background-image: url("../logo.png");
+}
+
+.footerlogo {
+  background-image: url("../small.png");
+}
+
+@media only screen and (max-width: 600px) {
+  .logo, .footerlogo {
+    width: 200px;
+    height: 80px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

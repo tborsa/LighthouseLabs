@@ -83,7 +83,9 @@ A media query is composed of an optional media type and any number of media feat
 
 Media: screen  
 Feature Expression: max-width: 600px
-
+```
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
 Remember
  - different media types 
  - breakpoints in browser are triggered by a width feature expression. 
@@ -109,12 +111,12 @@ DEMO + MEDIA QUERIES
  ```
 
  The flex container has optional additional properties:
-  - flex-direction (Vertical or Horizontal)
-  - flex-wrap (Overflow behavior)
+  - flex-direction (Column or Row)
+  - flex-wrap (Overflow behavior wrap/nowrap)
   - flex-flow (Direction & Wrap shorthand)
-  - justify-content (Horizontal alignment)
-  - align-items (Vertical alignment)
-  - align-content (Align the flex- lines)
+  - justify-content (Horizontal alignment, center, flex-start)
+  - align-items (Vertical alignment, center, flex-start, stretch)
+  - align-content (Align the flex- lines, stretch, space-around, flex-start)
 
 The flex items/children have optional properties as well:
   - order (Position element is ordered in)
@@ -143,9 +145,10 @@ A preprocessor is a program that modifies data to conform with the input require
 SASS -> CSS
 
 ## css with awesomeness
-Syntactically awesome style sheets
 
-CSS and SASS are the same in terms of expressiveness. There is no style you can do in SASS that you can't do in pure CSS. SASS just makes it easier. 
+Syntactically __awesome__ style sheets
+
+CSS and SASS have the same expressiveness. There is no style you can do in SASS that you can't do in pure CSS. SASS just makes styling easier. 
 
 
 -SASS example
@@ -156,24 +159,36 @@ CSS and SASS are the same in terms of expressiveness. There is no style you can 
 
   - $ variables
   - nesting
-  - & matching
+  - more operators
   - importing
   - mixins
   - inheritance
  
-Developing node applications we can use a sass module.
+When developing node applications we can use the sass module, to convert our Sass files to CSS.
 
 ```
 $ npm install sass -g
-$ sass input.sass output.css
-$ sass --watch input.sass output.css
+$ sass input.scss output.css
+$ sass --watch input.scss output.css
 ```
-Using sass will convert the input.sass to css in the output.css file. The --watch flag will watch for changes and automatically update the css file. 
+Using sass will convert the given scss/sass input to the specified output css file. The optional --watch flag will watch for changes and automatically update the css file when the scss/sass file is changed.
 
- - production you would use one css build
+example.scss -> example.css
 
 ---
 
+## SASS vs SCSS
+
+Sass is the css pre-processor as well as a syntax option for Sass stylesheets. The other syntax option being SCSS (Sassy CSS).
+
+- Preprocessor
+ - Sass
+
+- Sass Syntax (File extensions)
+ - .Sass: Older syntax that provides a more concise way of writing css as well as enhanced features.
+ - .SCSS: An extension of css, all CSS is valid SCSS. SCSS is enhanced with Sass features.
+
+---
 # DEMO -> SCSS
 
 <center>![tenor](assets/hack.gif)</center>
