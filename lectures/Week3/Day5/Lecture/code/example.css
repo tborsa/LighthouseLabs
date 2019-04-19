@@ -1,6 +1,6 @@
 body {
   font: 100% Helvetica, sans-serif;
-  color: #333;
+  color: blue;
 }
 
 nav ul {
@@ -21,6 +21,12 @@ nav a {
   -webkit-transform: rotate(30deg);
   -ms-transform: rotate(30deg);
   transform: rotate(30deg);
+}
+
+.box2 {
+  -webkit-transform: rotate(50deg);
+  -ms-transform: rotate(50deg);
+  transform: rotate(50deg);
 }
 
 .container {

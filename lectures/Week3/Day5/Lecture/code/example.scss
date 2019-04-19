@@ -1,5 +1,5 @@
 $font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+$primary-color: blue;
 
 body {
     font: 100% $font-stack;
@@ -28,6 +28,8 @@ nav {
 }
   
 .box { @include transform(rotate(30deg)); }
+
+.box2 { @include transform(rotate(50deg)); }
 
 .container {
     width: 100%;

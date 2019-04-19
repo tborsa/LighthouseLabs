@@ -1,20 +1,22 @@
-$primarycolor: lightcyan;
 $accentcolor: salmon;
+$primarycolor: lightcyan;
 $lightcolor: wheat;
 
-footer, header{
+
+footer, header {
     background-color: $accentcolor;
     height: 80px;
     padding: 20px;
-}
-main{
+  }
+  
+main {
     background-color: $lightcolor;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
     align-content: center;
-    min-height:900px;
+    min-height: 900px;
 
     div {
         background-color: $primarycolor;
@@ -25,35 +27,37 @@ main{
         text-align: center;
         color: $accentcolor;
     }
-
-    .big{
-        width:300px;
-        line-height:300px;
-    }
 }
-%logo-img{
-    background-size:contain;
+  main .big {
+    width: 300px;
+    line-height: 300px;
+  }
+  
+  %mylogo{
+    background-size: contain;
     background-repeat: no-repeat;
     width: 300px;
     height: 100px;
-}
+  }
 
-.logo{
-    @extend %logo-img;
+  .logo {
+    @extend %mylogo;
     background-image: url("../logo.png");
-}
-.footerlogo{
-    @extend %logo-img;
-    background-image: url("../small.png")
-}
 
-@media only screen and (max-width: 600px){
-    %logo-img{
+  }
+  .logosmall {
+    @extend %mylogo;
+    background-image: url("../small.png");
+
+  }
+
+  
+  @media only screen and (max-width: 600px) {
+    %mylogo{
         width:200px;
-        height:80px;
+        height: 80px;
     }
-
-}
-@media only screen and (min-width: 1200px){
-
-}
+  }
+  
+  /*# sourceMappingURL=style.css.map */
+  

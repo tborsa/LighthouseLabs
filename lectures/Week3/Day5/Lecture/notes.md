@@ -9,7 +9,7 @@ slideNumber: true
 ---
 
 # Responsive Design and SASS
-<center> ![internet](assets/internet.gif)</center>
+![internet](assets/css.gif)
 <style type="text/css">
   .reveal p {
     text-align: left;
@@ -48,14 +48,14 @@ Approaches/toolset🔧:
 
 # Responsive Design exploration 🎢
 
-[Unresponsive](https://en.wikipedia.org/wiki/Main_Page)
+[Unresponsive](https://en.wikipedia.org/wiki/Main_Page)  
 [Responsive](https://github.com)
 
--What are some qualities that make ____ responsive?
--What makes a site unresponsive?
+- What are some qualities that make ____ responsive?
+- What makes a site unresponsive?
 
-*some sites use mobile versioning to serve different UI based on what device is used. 
-[Normal](youtube.com)
+*some sites use mobile versioning to serve different UI based on what device is used.  
+[Normal](youtube.com)  
 [Mobile](m.youtube.com)
 
 ---
@@ -83,7 +83,7 @@ A media query is composed of an optional media type and any number of media feat
 
 Media: screen  
 Feature Expression: max-width: 600px
-```
+``` html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 Remember
@@ -119,9 +119,9 @@ DEMO + MEDIA QUERIES
   - align-content (Align the flex- lines, stretch, space-around, flex-start)
 
 The flex items/children have optional properties as well:
-  - order (Position element is ordered in)
-  - flex-grow (How much element grows relative to other items)
-  - flex-shrink (How much element shrinks relative to other items)
+  - order (Position element is ordered in, 1 , 2..)
+  - flex-grow (How much element grows relative to other items, 1, 2..)
+  - flex-shrink (How much element shrinks relative to other items, 1, 2..)
   - flex-basis (Initial Length)
   - flex (Shorthand for grow shrink & basis)
   - align-self (Overides parent align-item property)
@@ -182,11 +182,11 @@ example.scss -> example.css
 Sass is the css pre-processor as well as a syntax option for Sass stylesheets. The other syntax option being SCSS (Sassy CSS).
 
 - Preprocessor
- - Sass
+   - Sass
 
 - Sass Syntax (File extensions)
- - .Sass: Older syntax that provides a more concise way of writing css as well as enhanced features.
- - .SCSS: An extension of css, all CSS is valid SCSS. SCSS is enhanced with Sass features.
+   - .Sass: Older syntax that provides a more concise way of writing css as well as enhanced features.
+  - .SCSS: An extension of css, all CSS is valid SCSS. SCSS is enhanced with Sass features.
 
 ---
 # DEMO -> SCSS

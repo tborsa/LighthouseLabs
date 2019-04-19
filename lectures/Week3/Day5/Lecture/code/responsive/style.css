@@ -22,12 +22,13 @@ main div {
   text-align: center;
   color: salmon;
 }
+
 main .big {
   width: 300px;
   line-height: 300px;
 }
 
-.footerlogo, .logo {
+.logosmall, .logo {
   background-size: contain;
   background-repeat: no-repeat;
   width: 300px;
@@ -38,15 +39,16 @@ main .big {
   background-image: url("../logo.png");
 }
 
-.footerlogo {
+.logosmall {
   background-image: url("../small.png");
 }
 
 @media only screen and (max-width: 600px) {
-  .logo, .footerlogo {
+  .logo, .logosmall {
     width: 200px;
     height: 80px;
   }
 }
+/*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */
