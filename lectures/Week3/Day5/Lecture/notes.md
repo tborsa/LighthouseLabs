@@ -82,11 +82,12 @@ A media query is composed of an optional media type and any number of media feat
 ## @media only screen and (max-width: 600px) {}
 
 Media: screen  
-Feature Expression: max-width: 600px
+Feature Expression: max-width: 600px  
 ``` html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 Remember
+
  - different media types 
  - breakpoints in browser are triggered by a width feature expression. 
  - specific css breakpoint sizes are not standardized but depend on what looks right
@@ -100,7 +101,7 @@ DEMO + MEDIA QUERIES
 
  way to display sets of items or lists of things.
 
- To use flex box you need to create a flex container, that will contain some flexed on items.
+ To use flex box you need to create a flex container, that will contain some flexed on items.  
 ``` css
  .container {
    display: flex;
@@ -111,6 +112,7 @@ DEMO + MEDIA QUERIES
  ```
 
  The flex container has optional additional properties:
+
   - flex-direction (Column or Row)
   - flex-wrap (Overflow behavior wrap/nowrap)
   - flex-flow (Direction & Wrap shorthand)
@@ -119,6 +121,7 @@ DEMO + MEDIA QUERIES
   - align-content (Align the flex- lines, stretch, space-around, flex-start)
 
 The flex items/children have optional properties as well:
+
   - order (Position element is ordered in, 1 , 2..)
   - flex-grow (How much element grows relative to other items, 1, 2..)
   - flex-shrink (How much element shrinks relative to other items, 1, 2..)
@@ -171,6 +174,7 @@ $ npm install sass -g
 $ sass input.scss output.css
 $ sass --watch input.scss output.css
 ```
+
 Using sass will convert the given scss/sass input to the specified output css file. The optional --watch flag will watch for changes and automatically update the css file when the scss/sass file is changed.
 
 example.scss -> example.css
