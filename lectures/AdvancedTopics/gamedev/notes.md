@@ -17,11 +17,15 @@ Process of making a videogame.
 
 ## Game Design
 
+![Design](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/barrensidea.jpg)
+
 Conceptual ideas of the game and game mechanics. Concepts, characters, world building. 
 
-Design document = game biible
+Design document = game bible
 
 ## Game Development
+
+![Game](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/barrens.jpg)
 
 Bringing the game design ideas to life, through programming, modeling, rendering, engineernig, mxing,testing...
 
@@ -31,11 +35,11 @@ Concept ---> element of game
 
 # Game Development is Making...
 
-# Code
+## Code
 
 Dictates the behavior and function of the game. 
 
-# Assets
+## Assets
 
 Game assets are the "things" that go into a game. Some examples of assets are artwork (including textures and 3D models), sound effects, music, text, and dialogue.
 It is anything that is presented to the user.
@@ -59,18 +63,39 @@ Gameplay mechanics
 Video Game
 " a game played by electronically manipulating images produced by a computer program on a television screen or other display screen. "
 
+1972 - Pong 
+
+1980
+
+![Battlezone](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/battlezone.jpg)
+
+1988
+
+![Might & Magic 2](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/mightandmagic.jpg)
+
+1996
+
+![Quake](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/quake.jpg)
+
+![Daggerfall](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/daggerfall.jpg)
+
+
 There many creative ways we can create a game but most require manipulating graphics on a screen. This falls under a field of computer science called Computer Graphics. 
 
 
 Merging of art, math, and physics
 
---
+---
 
 # Modeling
 
 Developing a representation of a surface or object in 3D simulated space, usually with polygons.
 
---
+![modeling](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/modeling.jpg)
+
+![modeling](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/3dmodelling.jpeg)
+
+---
 
 # Rendering
 
@@ -81,12 +106,31 @@ This involves...
         Applying 2d images or "textures" to 3d shapes.
     - Lighting (applying light to the scene)
     - Shading (applying light to the model)
+![Shading](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/shading.jpg)
+
+
+![Shading](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/shading.gif)
+
+![Shading](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/raytracing.gif)
 
 --
 
 # Animation
 
 Adding motion to the model. 
+
+This involves the rigging and the 
+
+![Rigging](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/rigging.gif)
+
+
+But also animation concepts 
+
+![Squash & Stretch](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/squash.gif)
+
+![Anticipation](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/anticipation.gif)
+
+
 
 
 ---
@@ -110,7 +154,12 @@ Adding motion to the model.
 Hybrid
     3d lighting and shading techniques applied to 2d sprites. 
 
-https://twitter.com/LazyBearGames/status/967071011689648130
+[2d in 3d?](https://twitter.com/LazyBearGames/status/967071011689648130)
+
+![2d Lighting](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/lastnight.gif)
+
+![2d Lighting](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/lastnight2.gif)
+
 
 ---
 
@@ -131,6 +180,9 @@ Examples:
     - WebGL
     - Vulkan
 
+[Pasta!](https://alteredqualia.com/three/examples/webgl_pasta.html)
+[Blobs!](https://webglsamples.org/blob/blob.html)
+[Grass](https://webglsamples.org/field/field.html)
 ---
 
 

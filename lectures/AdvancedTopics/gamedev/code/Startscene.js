@@ -74,13 +74,13 @@ class Startscene extends Phaser.Scene{
         if (this.cursors.left.isDown)
         {
             this.player.setVelocityX(-160);
-
+            this.player.setScale(-4,4);
             this.player.anims.play('left', true);
         }
         else if (this.cursors.right.isDown)
         {
             this.player.setVelocityX(160);
-
+            this.player.setScale(4,4);
             this.player.anims.play('right', true);
         }
         else
