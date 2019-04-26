@@ -10,7 +10,17 @@ slideNumber: true
 
 # Game Development
 
-Process of making a videogame. 
+![Design](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/first.png)
+
+[In Acton](https://www.youtube.com/watch?v=WY5jdf7Popk)
+
+Objectives
+
+- Game Design vs Development
+- Computer Graphics
+- Graphics Libraries
+- Game Engines
+- Phaser
 
 
 ---
@@ -19,17 +29,19 @@ Process of making a videogame.
 
 ![Design](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/barrensidea.jpg)
 
-Conceptual ideas of the game and game mechanics. Concepts, characters, world building. 
+Conceptual ideas of the game and game mechanics. 
 
-Design document = game bible
+Concepts, characters, story, and world building. 
+
+Design document = blueprint
 
 ## Game Development
 
 ![Game](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/barrens.jpg)
 
-Bringing the game design ideas to life, through programming, modeling, rendering, engineernig, mxing,testing...
+Bringing the game design ideas to life, through programming, modeling, rendering, engineernig, mxing, testing...
 
-Concept ---> element of game
+Concept  --> element of game
 
 ---
 
@@ -41,7 +53,9 @@ Dictates the behavior and function of the game.
 
 ## Assets
 
-Game assets are the "things" that go into a game. Some examples of assets are artwork (including textures and 3D models), sound effects, music, text, and dialogue.
+![Assets](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/assets.png)
+
+The "things" that go into a game. Some examples of assets are artwork (including textures and 3D models), sound effects, music, text, and dialogue.
 It is anything that is presented to the user.
 
 
@@ -49,19 +63,22 @@ It is anything that is presented to the user.
 
 # Elements of a game
 
-Story
-Audio assets
-Characters
-sprites
-models
-Levels
-Gameplay mechanics
+Assets, Code, or Concepts
+
+- Story
+- Audio assets
+- Characters
+- Sprites
+- Models
+- Levels
+- Gameplay mechanics
 
 ---
 
-# What "tech" required to make a game?
+# What "tech" is required to make a game?
 Video Game
-" a game played by electronically manipulating images produced by a computer program on a television screen or other display screen. "
+
+    "A game played by electronically manipulating images produced by a computer program on a television screen or other display screen."
 
 1972 - Pong 
 
@@ -80,10 +97,10 @@ Video Game
 ![Daggerfall](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/daggerfall.jpg)
 
 
-There many creative ways we can create a game but most require manipulating graphics on a screen. This falls under a field of computer science called Computer Graphics. 
+There are many creative ways to make a game, but most require manipulating graphics on a screen. This falls under a field in computer science called __Computer Graphics__. 
 
 
-Merging of art, math, and physics
+Displaying graphics on a screen is a blend of art, math, and physics.
 
 ---
 
@@ -99,13 +116,17 @@ Developing a representation of a surface or object in 3D simulated space, usuall
 
 # Rendering
 
-Process of generating realistic or desired image from a model.
-This involves...
+Process of generating realistic or desired images from a model.
+This involves:
 
-    - Texture
-        Applying 2d images or "textures" to 3d shapes.
-    - Lighting (applying light to the scene)
-    - Shading (applying light to the model)
+- Texture
+    - Applying 2d images or "textures" to 3d shapes.
+- Lighting
+    - adding light to the scene
+- Shading 
+    - applying light to the model
+
+
 ![Shading](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/shading.jpg)
 
 
@@ -113,18 +134,27 @@ This involves...
 
 ![Shading](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/raytracing.gif)
 
---
+Real Time vs Pre Rendered
+
+[Ray Tracing](https://www.youtube.com/watch?v=J3ue35ago3Y)
+
+---
 
 # Animation
 
 Adding motion to the model. 
 
-This involves the rigging and the 
+For 3D animation this can involve 
+- Rigging
+    - Attatching moveable joints to a static model.
+- Motion Capture
+- Kinematics
+    - Calculating the anlge of joints to arrive at a position or vise versa.
 
 ![Rigging](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/rigging.gif)
 
 
-But also animation concepts 
+But also animation concepts... 
 
 ![Squash & Stretch](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/squash.gif)
 
@@ -139,20 +169,21 @@ But also animation concepts
 # 2d games?
 
 - Sprites
-    2D image
-    -aesprite
-    -graphicsgale
-    -tile extruder
+    - 2D image
+    - aesprite
+    - graphicsgale
+    - tile extruder
 
 - Tiles
     - tiled
 
--animation
-    New sprite image for each fram of the motion results in a sprite sheet. 
+![tiles](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/tiles.png)
+
+- Animation
+    - New sprite image for each fram of the motion results in a sprite sheet. 
     - state machine
 
-Hybrid
-    3d lighting and shading techniques applied to 2d sprites. 
+Hybrid 2D Games: Where 3D lighting and shading techniques are applied to 2D sprites. 
 
 [2d in 3d?](https://twitter.com/LazyBearGames/status/967071011689648130)
 
@@ -170,19 +201,23 @@ Hybrid
 # Graphics Library
 
 Program that aids in redering graphics to the screen. 
-We don't have to write the code to graphis.
+We don't have to write the code to do the graphis!
 
-Makes use of the GPU to run fast.
+Makes use of the GPU to render graphics fast.
 
 Examples:
+
     - DirectX (Direct3D)
     - OpenGL
     - WebGL
     - Vulkan
 
 [Pasta!](https://alteredqualia.com/three/examples/webgl_pasta.html)
+
 [Blobs!](https://webglsamples.org/blob/blob.html)
+
 [Grass](https://webglsamples.org/field/field.html)
+
 ---
 
 
@@ -193,24 +228,24 @@ Development enviornment to help people build videogames.
 
 Helps with
 
-    - physics
-    - input
-    - animation
-    - sprite handling
-    - sound
-    - sychcnronization (things happen at the right time)
-    - update loops
-        - delta time
-    - collision
+- physics
+- user input
+- animation
+- sprite handling
+- sound
+- sychcnronization (things happen at the right time)
+- update loops
+    - delta time
+- collision
 
 Examples
 
-    - Unity
-    - Unreal
-    - GameMaker
-    - Phaser.js
+- Unity
+- Unreal
+- GameMaker
+- Phaser.js
 
-There are also many "In house" game engines that companies develop to make their games.
+There are also many "In house" game engines that companies create to make their games.
 
 ---
 
@@ -218,7 +253,7 @@ There are also many "In house" game engines that companies develop to make their
 
 What does phaser add? 
 
-Choice of physics systems (arcade or full body)
+>" Choice of physics systems (arcade or full body)
 A Game World and a Camera which can pan around it
 Tilemap support
 A particle system
@@ -229,5 +264,6 @@ Scale Manager to handle game / scene resizing + full screen support
 Tween Manager for tweening game objects, hooked into the core clock (so it pauses properly when your game does)
 Asset loader (supporting all kinds of file types) and Cache
 A State Manager to let you swap between game states easily
-Game clock + custom timers + timer events
+Game clock + custom timers + timer events "
 
+[DOCS](https://photonstorm.github.io/phaser3-docs/)
