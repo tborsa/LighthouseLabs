@@ -1,18 +1,10 @@
- ---
-theme : "white"
-transition: "zoom"
-highlightTheme: "darkula"
-logoImg: ""
-center: false
-slideNumber: true
-
----
+[Notes and Code](https://github.com/tborsa/LighthouseLabs/tree/master/lectures/AdvancedTopics/gamedev)
 
 # Game Development
 
 ![Design](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/first.png)
 
-[In Acton](https://www.youtube.com/watch?v=WY5jdf7Popk)
+[In Acton 1958](https://www.youtube.com/watch?v=WY5jdf7Popk)
 
 Objectives
 
@@ -21,6 +13,25 @@ Objectives
 - Graphics Libraries
 - Game Engines
 - Phaser
+
+
+---
+
+# What are the Elements of a game?
+
+
+- Gameplay concepts
+- Display
+- Characters
+- Environment
+- Goal
+- Number of players
+- Rules
+- Story
+- Art
+- Music
+- Code
+- Models
 
 
 ---
@@ -39,7 +50,7 @@ Design document = blueprint
 
 ![Game](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/barrens.jpg)
 
-Bringing the game design ideas to life, through programming, modeling, rendering, engineernig, mxing, testing...
+Bringing the game design ideas to life, through programming, modeling, rendering, engineering, mxing, testing...
 
 Concept  --> element of game
 
@@ -59,26 +70,13 @@ The "things" that go into a game. Some examples of assets are artwork (including
 It is anything that is presented to the user.
 
 
----
-
-# Elements of a game
-
-Assets, Code, or Concepts
-
-- Story
-- Audio assets
-- Characters
-- Sprites
-- Models
-- Levels
-- Gameplay mechanics
 
 ---
 
 # What "tech" is required to make a game?
 Video Game
 
-    "A game played by electronically manipulating images produced by a computer program on a television screen or other display screen."
+    >"A game played by electronically manipulating images produced by a computer program on a television screen or other display screen."
 
 1972 - Pong 
 
@@ -107,6 +105,8 @@ Displaying graphics on a screen is a blend of art, math, and physics.
 # Modeling
 
 Developing a representation of a surface or object in 3D simulated space, usually with polygons.
+
+[Google poly](https://poly.google.com/)
 
 ![modeling](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/modeling.jpg)
 
@@ -145,11 +145,12 @@ Real Time vs Pre Rendered
 Adding motion to the model. 
 
 For 3D animation this can involve 
+
 - Rigging
-    - Attatching moveable joints to a static model.
+    - Attaching immovable joints to a static model.
 - Motion Capture
 - Kinematics
-    - Calculating the anlge of joints to arrive at a position or vise versa.
+    - Calculating the angle of joints to arrive at a position or vise versa.
 
 ![Rigging](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/rigging.gif)
 
@@ -170,17 +171,20 @@ But also animation concepts...
 
 - Sprites
     - 2D image
-    - aesprite
-    - graphicsgale
-    - tile extruder
+    - Tools
+        - aesprite
+        - graphicsgale
+        - tile extruder
 
 - Tiles
-    - tiled
+    - 
+    - Tools
+        - tiled
 
 ![tiles](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/tiles.png)
 
 - Animation
-    - New sprite image for each fram of the motion results in a sprite sheet. 
+    - New sprite image for each frame of the motion results in a sprite sheet. 
     - state machine
 
 Hybrid 2D Games: Where 3D lighting and shading techniques are applied to 2D sprites. 
@@ -200,7 +204,7 @@ Hybrid 2D Games: Where 3D lighting and shading techniques are applied to 2D spri
 
 # Graphics Library
 
-Program that aids in redering graphics to the screen. 
+Program that aids in rendering graphics to the screen. 
 We don't have to write the code to do the graphis!
 
 Makes use of the GPU to render graphics fast.
@@ -223,8 +227,8 @@ Examples:
 
 # Game Engines
 
-Development enviornment to help people build videogames.
-(rendering engine, physics engine, collison detection)
+Development environment to help people build video games.
+(rendering engine, physics engine, collision detection)
 
 Helps with
 
@@ -233,7 +237,7 @@ Helps with
 - animation
 - sprite handling
 - sound
-- sychcnronization (things happen at the right time)
+- synchronization (things happen at the right time)
 - update loops
     - delta time
 - collision
@@ -260,10 +264,13 @@ A particle system
 Sound support (both web audio and legacy audio)
 More advanced input handling (input priority, drag and drop, etc)
 Keyboard and Gamepad inputs
-Scale Manager to handle game / scene resizing + full screen support
+Scale Manager to handle game / scene resizing + fullscreen support
 Tween Manager for tweening game objects, hooked into the core clock (so it pauses properly when your game does)
 Asset loader (supporting all kinds of file types) and Cache
 A State Manager to let you swap between game states easily
 Game clock + custom timers + timer events "
 
 [DOCS](https://photonstorm.github.io/phaser3-docs/)
+
+DEMO
+
