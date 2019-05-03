@@ -14,7 +14,7 @@ class Startscene extends Phaser.Scene{
         this.background = this.add.image(0,0, 'background').setOrigin(0, 0);
         //player;
         this.player = this.physics.add.sprite(50, 350, "dino").setScale(4,4);
-        this.player.body.bounce.y = 0.2;
+        this.player.body.setBounceY = 0.9;
         this.player.body.gravity.y = 1200;
         this.player.body.collideWorldBounds = true;
         this.anims.create({
@@ -60,7 +60,7 @@ class Startscene extends Phaser.Scene{
 
         this.coins.children.iterate(function (child) {
             child.setScale(4,4);
-            child.setBounceY(Phaser.Math.FloatBetween(0.1, 0.7));
+            child.setBounceY(Phaser.Math.FloatBetween(0.8, 1));
             child.anims.play('spin', true);
         });
 
