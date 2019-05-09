@@ -14,32 +14,41 @@ Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectu
 
 Today we will look at:
 
-- Objects 
-- Inheritance
+- Objects   
+    - factories
+    - constructors
+    - secret object properties
+- OOP
+- Prototypes
+- Inheritance  
     - classical
     - prototypal
-- prototypes
 
 
 ---
 
 # Object Review
-    js not fully object oriented oop( Groups related things together as properties and methods of an object)
-    allows for -abstraction - inheritance -polymorphism
-    js has some oop but is based on
-    based on protoypes
-    new
 
-    object literal var literal = {key: value, mehtod: function()}
+In JavaScript objects are datastructures that store information in key value pairs. 
 
-    Creates a single object/ 1 instance of an object
+```javascript
+var literal = {keyName: "value"};
+```
 
-    when an object has one or more methods the object is said to have behavioer
+The above is called an object literal. 
 
-    we can add properties after the fact
-    can remove properties after the fact
-    delete object.property
+Creates a single object/ 1 instance of an object.
 
+We can also add functions as object members, and when an object has one or more methods the object is said to have behavior.
+
+we can add properties after the fact
+can remove properties after the fact with...
+
+```javascript
+delete literal.keyName;
+```
+
+There are also other ways of making objects. 
 
 ---
 
@@ -48,34 +57,27 @@ Today we will look at:
 ![Factory](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day5/lecture/assets/factory.png)
 
 
-    allows us to make multiple objects
+A Factory allows us to make multiple objects. It is essentially a function that returns an object.
 
-    function createCircle(radius, location){
-        return {
-            radius: radius,
-            location: location,
-            draw: function(){
-                console.log("draw");
-            }
+```javascript
+function createCar(model, year){
+    return {
+        model: model,
+        year: year,
+        start: function(){
+            console.log("vroom");
         }
     }
-    function createCircle(radius, location){
-        return {
-            radius,
-            location,
-            draw(){
-                console.log("draw");
-            }
-        }
-    }
+}
+```
 
-    define our object in one place 
+define our object in one place 
 
 ---
 
 ## Constructor function
 
-![Constructor](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day5/lecture/assets/bog.jpg)
+![Constructor](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day5/lecture/assets/bob.jpg)
 
     //pascal notation uppercase first letter
 
@@ -91,21 +93,12 @@ Today we will look at:
     //then sets the context of the function to the empty object
     //then implicitly return "this" from the function
 
-    abstraction: hide properies or functions in constructor without referencing them with this
-
     NO real difference between factories and constructors but one syntax may be more comfortable or similar to other programming backgrounds. 
 
 ---
 
 ## Secret object properties
 
-Constructor Property 
-
-    Property of every object that refrences the constructor that created it.
-    If no specific constructor was used it will be the build in Object() functon. Objectifies the given parameters
-
-    functions have teh default function() constructor
-    array have the default 
 
 Proto Property
 
@@ -123,6 +116,24 @@ Proto Property
     Objects created by the same constructor will have the same prototype
 
     can get a constructors prototype with Car.prototype
+
+Constructor Property 
+
+    Property of every prototype that refrences the constructor that created it.
+    If no specific constructor was used it will be the build in Object() functon. Objectifies the given parameters
+
+    functions have teh default function() constructor
+    array have the default 
+
+---
+
+## OOP aside
+
+JavaScript is not a fully object oriented oop( Groups related things together as properties and methods of an object)
+allows for -abstraction - inheritance -polymorphism
+js has some oop but is based on
+based on protoypes
+new
 
 ---
 
