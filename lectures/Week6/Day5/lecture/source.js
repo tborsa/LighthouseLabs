@@ -72,7 +72,6 @@ function PlanetaryFortress(){
     }
 }
 
-//look at PlanetaryFortress prototype & constructor
 
 
 PlanetaryFortress.prototype = Object.create(CommandCenter.prototype);
@@ -80,6 +79,15 @@ PlanetaryFortress.prototype = Object.create(CommandCenter.prototype);
 
 PlanetaryFortress.prototype.constuctor = CommandCenter; 
 
+//look at PlanetaryFortress prototype & constructor
+// notice that child does not have location set
+
+function PlanetaryFortress(){
+    CommandCenter.call(this, [20,20]);
+    this.cannons = function(){
+        console.log("BOOM!");
+    }
+}
 //====================================================>
 
 // add this.loadSCV = function(){ console.log("loaded")}; to command center

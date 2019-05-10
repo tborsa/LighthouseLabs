@@ -71,7 +71,7 @@ function createCar(model, year){
 }
 ```
 
-define our object in one place 
+This allows us to define our object in one place, and make many copies of it. 
 
 ---
 
@@ -79,61 +79,85 @@ define our object in one place
 
 ![Constructor](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day5/lecture/assets/bob.jpg)
 
-    //pascal notation uppercase first letter
+Another way of making multiple objects. 
 
-    function Circle(radius){
-        this.radius = radius;
-        this.draw = function(){
-            console.log("draw");
-        }
+
+```javascript
+function Car(model, year){
+    this.model = model;
+    this.year = year;
+    this.start = function(){
+        console.log("vroom");
     }
+}
+```
+\* constructors use pascal notation (uppercase first letter)
 
-    const circle = new Circle(1);
-    // creates a new empty object {}
-    //then sets the context of the function to the empty object
-    //then implicitly return "this" from the function
+and to use the constructor
 
-    NO real difference between factories and constructors but one syntax may be more comfortable or similar to other programming backgrounds. 
+```javascript
+const car = new Car("toyota", 2007);
+```
+
+This syntax is less straightforward.
+
+What is NEW?
+
+- creates a new empty object {}
+- sets the context of the function to the empty object
+- implicitly returns "this" from the function
 
 ---
 
-## Secret object properties
+# Secret object properties
 
+All objects have certain inherent properties that are created with the object.
 
-Proto Property
+## Proto Property
 
-    All objects have a parent of prototype which is an object in memory that it inherits from.
-    The top of the prototype tree is the "root" protoype that all objects inherit from Object.prototype
+All objects have a parent or prototype which is 
+an object in memory that it inherits from.
+The top of the prototype tree is the "root" protoype that all objects inherit from Object.prototype.
 
-    Instance members: propertis or mehhods that are stored int the specific instance on an object. Object.keys(obj) or obj.hasOwnProperty("name")
+Instance members: 
+- propertis or mehhods that are stored int the specific instance on an object. 
+- Object.keys(obj)
+- obj.hasOwnProperty("name")
 
-    Prototype members: properties or methods that are stored in the objects prototypes. for(let key in obj){} both
+Prototype members: 
+- properties or methods that are stored in the objects prototypes. 
+- for(let key in obj){} both
 
-    When accessing a property or method js walks up the chain of inheritance to see if the object has it
+When accessing a property or method js walks up the chain of inheritance to see if the object has it
 
-    Can get objects prototype with Object.getPrototypeOf(thing)
+Can access an objects prototype with Object.getPrototypeOf(thing)
 
-    Objects created by the same constructor will have the same prototype
+Objects created by the same constructor will have the same prototype.
 
-    can get a constructors prototype with Car.prototype
+can get a constructors prototype with Car.prototype
 
-Constructor Property 
+---
 
-    Property of every prototype that refrences the constructor that created it.
-    If no specific constructor was used it will be the build in Object() functon. Objectifies the given parameters
+## Constructor Property 
 
-    functions have teh default function() constructor
-    array have the default 
+Property of every prototype that refrences the constructor that created it.
+If no specific constructor was used it will be the built in Object() constructor functon. 
+
+functions have the default function() constructor
+arrays have the default array() constructor.
 
 ---
 
 ## OOP aside
 
-JavaScript is not a fully object oriented oop( Groups related things together as properties and methods of an object)
-allows for -abstraction - inheritance -polymorphism
-js has some oop but is based on
-based on protoypes
-new
+JavaScript is not a traditional object oriented oop( Groups related things together as properties and methods of an object).
+The benefits of OOP are...
+
+- abstraction 
+- inheritance 
+- polymorphism
+
+You can can accomplish these goals in JS using protoypes.
 
 ---
 
@@ -142,40 +166,40 @@ new
 ![Simba](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day5/lecture/assets/simba.jpg)
 
 
-    If all objects inherit from the constructors prototype than we can:
-    1. Create a Constructor
-    2. Define that constructors prototype how we want
-    3. Have all the instances of that constructor inherit the prototype members. 
+If all objects inherit from the constructors prototype than we can:
+1. Create a Constructor
+2. Define that constructors prototype how we want
 
-    ex. Car.prototype.thing = thing;
-
-    can then have another constructor or type of object inherit from the original constructor.
-
+    ```JavaSript
+    Car.prototype.thing = thing;
+    ````
+3. Have all the instances of that constructor inherit the prototype members. 
+    ```JavaScript
     Toyota.prototype = Object.create(Car.ptototype);
-    
-    best to also reset the prototype constructor
+    ```
 
-    Toyota.prototype.constructor = Car;
+*best to also reset the prototype constructor
 
-    Object.create(obj);//creates a new object with obj as teh prototype
-
+```JavaScript
+Object.create(obj);//creates a new object with obj as the prototype
+```
 ---
 
 ## Why is this useful?
 
-    NO repeating code
+- NO repeating code
 
-    Cenral source for changes
+- Cenral source for changes
 
-    Polymorphism
-        many forms of the same method
+- Polymorphism
+    - many forms of the same method
 
-    Object Memory
-        evey instance of an object will store all properties and methods in memory.
-        If you add a method only to the prototype, then it will only be stored in memory once for all instances of that object. 
+- Object Memory
+    - evey instance of an object will store all properties and methods in memory.
+    If you add a method only to the prototype, then it will only be stored in memory once for all instances of that object. 
 
 
-
+---
 
 BONUS
 
