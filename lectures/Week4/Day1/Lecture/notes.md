@@ -146,7 +146,7 @@ It is incredibly difficult to manage a database that stores the same information
 +-----------------------------------------+
 | id | title             | artist_name    |
 +-----------------------------------------+
-| 1  | MDTF              | Kanye West     |
+| 1  | MBDTF             | Kanye West     |
 | 2  | The Blueprint     | Jay-z          |
 | 3  | Aquemini          | Outkast        |
 | 4  | The Doggfather    | Snoop Dogg     |
@@ -167,7 +167,7 @@ In order to normalize this database we would split the data into two related tab
 +-----------------------------------------+  +---------------------+
 | id | title             | artist_id      |  | id | name           |
 +-----------------------------------------+  +---------------------+
-| 1  | MDTF              | 1              |  | 1  | Kanye West     |
+| 1  | MBDTF             | 1              |  | 1  | Kanye West     |
 | 2  | The Blueprint     | 2              |  | 2  | Jay-Z          |
 | 3  | Aquemini          | 3              |  | 3  | Outkast        |
 | 4  | The Doggfather    | 5              |  | 4  | Kendrick Lamar |

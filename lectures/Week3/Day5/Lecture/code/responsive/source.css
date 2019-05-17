@@ -1,0 +1,158 @@
+footer, header {
+    background-color: salmon;
+    height: 80px;
+    padding: 20px;
+}
+main {
+  background-color: wheat;
+}
+main div {
+  background-color: lightcyan;
+  width: 300px;
+  font-size: 200px;
+  line-height: 300px;
+  margin: 20px;
+  text-align: center;
+  color: salmon;
+  display: inline-block;
+}
+
+/* VIEW WIDTHS*/
+/* ================================= */
+
+main div {
+  width: 30vw;
+  font-size: 10vw;
+  line-height:30vw;
+  margin: 1vw;
+}
+
+/* PERCENTAGES */
+/* ================================= */
+main {
+  width: 80%;
+  margin:auto;
+}
+/* ---------------------------------- */
+main div{
+  width: 30%;
+  font-size: 30%;
+  line-height:30%;
+  margin:1%;
+}
+
+main div{
+  font-size: 10vw;
+  line-height: 30vw;
+}
+
+/* EM'S */
+/* ================================= */
+
+main div{
+  /* font-size: 1em; */
+}
+
+main{
+  /* font-size: 50px; */
+}
+
+/* MEDIA QUERIES*/
+/* =================================== */
+
+@media only screen and (max-width: 600px) {
+  main div {
+    background-color: blue;
+  }
+}
+
+/* -------------------------------------- */
+/* add <div class="logo"></div> to header */
+.logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("../logo.png");
+  width: 300px;
+  height: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+  .logo{
+    width: 200px;
+    height: 80px;
+  }
+}
+/* add <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
+
+/* FLEX BOX*/
+/* ==================================== */
+
+main div{
+  /* remove width */
+  font-size: 100px;
+  line-height: 200px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+/* --------------------------------------- */
+
+main div{
+  max-width: 200px;
+}
+main div{
+  width: 200px;
+}
+main{
+  flex-wrap: wrap;  
+}
+
+/* ---------------------------------------- */
+
+main{
+  justify-content: center;
+}
+main{
+  align-content: center;
+  min-height: 900px;
+}
+
+/* ------------------------------------------ */
+/* Add .big class to one of the elements */
+main .big {
+  width: 300px;
+  line-height: 300px;
+}
+main{
+  align-items: flex-start;
+}
+
+/* SASS */
+/* =========================================== */
+
+/* NEST DIV IN MAIN */
+/*  ADD 3 COLORS AS VARIABLES*/
+/* add new  <div class="logosmall"></div> to footer */
+%mylogo{
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 100px;
+}
+/* WITH logo and logo small extending it with */
+
+.logo {
+  @extend %mylogo;
+  background-image: url("../logo.png");
+
+}
+.logosmall {
+  @extend %mylogo;
+  background-image: url("../small.png");
+
+}
+
+/* use logo class in media query */
