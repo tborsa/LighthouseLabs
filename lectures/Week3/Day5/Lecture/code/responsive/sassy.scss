@@ -1,0 +1,60 @@
+$primarycolor: salmon;
+$lightcolor: wheat;
+$secondarycolor: lightcyan;
+
+header, footer {
+    background-color: $primarycolor;
+    height: 80px;
+    padding: 20px;
+}
+main {
+    background-color: $lightcolor;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 80%;
+
+    div{
+        background-color: $secondarycolor;
+        width: 300px;
+        /* width: 25%; */
+        font-size: 100px;
+        line-height: 25vw;
+        margin: 1vw;
+        text-align: center;
+        color: $primarycolor;
+        order: 1;
+    }
+}
+
+.big {
+    width: 500px;
+    line-height:500px;
+
+}
+
+%logostuff {
+    width:300px;
+    height:100px;
+    background-size: contain;
+    background-repeat: no-repeat;   
+}
+
+.logo{
+    @extend %logostuff;
+    background-image: url("../logo.png");
+}
+.logosmall{
+    @extend %logostuff;
+    background-image: url("../small.png")
+}
+
+@media only screen and (max-width: 600px) {
+    %logostuff{
+        width:200px;
+        height:50px;
+    }
+}

@@ -1,15 +1,8 @@
- ---
-theme : "white"
-transition: "zoom"
-highlightTheme: "darkula"
-logoImg: ""
-center: false
-slideNumber: true
 
 ---
 
 # Responsive Design and SASS
-![internet](assets/css.gif)
+![css](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day5/Lecture/assets/css.gif)
 <style type="text/css">
   .reveal p {
     text-align: left;
@@ -21,6 +14,8 @@ slideNumber: true
     display: block;
   }
 </style>
+
+Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectures/Week3/Day5/Lecture)
 
 ---
 

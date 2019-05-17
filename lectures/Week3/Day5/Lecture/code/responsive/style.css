@@ -1,54 +1,45 @@
-footer, header {
-  background-color: salmon;
-  height: 80px;
-  padding: 20px;
-}
-
-main {
-  background-color: wheat;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: center;
-  min-height: 900px;
-}
-main div {
-  background-color: lightcyan;
-  width: 200px;
-  font-size: 100px;
-  line-height: 200px;
-  margin: 20px;
-  text-align: center;
-  color: salmon;
-}
-
-main .big {
-  width: 300px;
-  line-height: 300px;
-}
-
-.logosmall, .logo {
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 100px;
-}
-
-.logo {
-  background-image: url("../logo.png");
-}
-
-.logosmall {
-  background-image: url("../small.png");
-}
-
-@media only screen and (max-width: 600px) {
-  .logo, .logosmall {
-    width: 200px;
+header, footer {
+    background-color: salmon;
     height: 80px;
-  }
+    padding: 20px;
 }
-/*# sourceMappingURL=style.css.map */
+main {
+    background-color: wheat;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    align-content: center;
+    width: 80%;
+}
 
-/*# sourceMappingURL=style.css.map */
+main div{
+    background-color: lightcyan;
+    width: 300px;
+    /* width: 25%; */
+    font-size: 100px;
+    line-height: 25vw;
+    margin: 1vw;
+    text-align: center;
+    color: salmon;
+    order: 1;
+}
+.big {
+    width: 500px;
+    line-height:500px;
+
+}
+.logo{
+    width:300px;
+    height:100px;
+    background-image: url("../logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;   
+}
+@media only screen and (max-width: 600px) {
+    .logo{
+        width:200px;
+    }
+}
