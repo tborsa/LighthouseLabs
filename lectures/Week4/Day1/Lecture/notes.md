@@ -4,15 +4,54 @@
 
 # SQL INTRODUCTION
 
+<style type="text/css">
+  .reveal .slides {
+      height: 100% !important;
+      top: 0% !important;
+      margin-top: 40vw !important;
+      max-width: 800px !important;
+    }
+
+    .reveal .slides>section {
+      min-height: 90% !important;
+    }
+
+    .reveal .slides>section>section {
+      min-height: 100% !important;
+    }
+  h1{
+    font-size:1.8em !important;
+  }
+  .reveal p, li {
+    
+    font-size: 0.8em !important;
+
+  }
+  .reveal ul {
+    display: block;
+  }
+  .reveal ol {
+    display: block;
+  }
+</style>
+
  ![data](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week4/Day1/Lecture/assets/data.png)
 
-Approaches/toolset🔧:
+---
 
-- percentages %🎰
-- em's, vw's
-- media queries 
-- flex box
-- SASS
+Topics 🔧:
+
+- Relationsal Databases
+
+  - schema, indexes, data-types
+  - foreign key, relationships
+  - data normalization
+
+- SQL
+
+  - Tables
+  - Select
+  - Join  
 
 
 SOURCE: [These notes are adapted from Karl Jensen's notes](https://github.com/jensen/sqlintro-notes/).
@@ -24,33 +63,37 @@ SOURCE: [These notes are adapted from Karl Jensen's notes](https://github.com/je
 so far we have stored data with javascript objects as in tinyapp👶.
 but there were a few problems with this approach.
 
-- there was no data persistance 
+- there was no data persistance, 
   when the app was restarted any url or new user we added would not be saved
-- Data could become disorganized, there was nothng ensuring it was stored with the correct format.
+- Data could become disorganized, and there was nothng ensuring it was stored with the correct format.
 
 Then in tweeter 🐦 you used MongoDB to solve some of these problems. 
 with mongo we were able to store our javascript objects in a datbase and achieve persistance!
     
 With mongo objects were stored in _Collections_ as _Documents_
 
+---
 
-Mongo has many advantages it is flexible it allows us to store and retrieve data as JSON a format that is very easy to use with javascirp development.
+Mongo has many advantages it is flexible it allows us to store and retrieve data as JSON a format that is verytop: 30% !important; easy to use with javascirp development.
 
 But...
 
- - it can be hard to search through
- - it can get disorganized 
+ - It can be hard to search through
+ - It can get disorganized 
 
 // Brief JSON EXAMPLE
 
-Go into the dogs collection, return all the dogs' foods... what about Frida??? This is terrible!
+---
+
 
 We want a SPECIFIC STRUCTURE TO OUR DATA.
 
 So....
 
+---
+
  
- # relational database
+ # Relational Database
 
  ![Tables](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week4/Day1/Lecture/assets/table.gif)
 
@@ -59,30 +102,35 @@ So....
  each table can have relationships to other tables.
 
  relations are what allow us to organize our data in intuitive ways.
- 
- 
- >demo
+
+---
+
+
+demo
 
 pick hypothetical data noun
+break down what info you would have
+how the info would realte to each other
 
- break down what info you would have
+---
 
- how the info would realte to each other 
 
- 
-# Relational Databas contd
+# Relational Database contd
 
 From building our example database we encountered a few things...
 
-### schema 
+
+---
+
+## Schema 📑
 
 The skeletal structure representing how data is to be stored in a database. 
 Specifies Constraints on the data.
 
-### indexes 
+## Indexes 👆
 A unique identifier that improves the speed of data fetches. 
 
-### data types
+## Data Types 📚
 
 When defining columns for the tables you will need to specify the data type. `INTEGER, VARCHAR, TEXT, BOOLEAN, DATE` are common examples.
 
@@ -98,14 +146,23 @@ You will use `INTEGER` to represent most [numbers](https://www.postgresql.org/do
 - __BIGINT__ -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (nine quintillion)
 - __SERIAL__ 1 to 2,147,483,647 (auto incrementing)
 
-### naming convention 
+## Naming Convention 🔖
 
 - Use `snake_case` for table and column names.
 - Pluralize tables names, column names should be singular.
 - Call your primary key `id`. Why not?
 - For most foreign keys use `<table>_id`.
 
-### relationships
+## Foreign Key 🔑
+A FOREIGN KEY is a field (or collection of fields) in one table that refers to the PRIMARY KEY in another table.
+
+The table containing the foreign key is called the child table, and the table containing the candidate key is called the referenced or parent table.
+
+The relationship between 2 tables matches the Primary Key in one of the tables with a Foreign Key in the second table.
+
+Foreign keys can be NULL.
+
+## Relationships 👪
 
 With relational databases relationships are made with foreign keys.
 The relationship links one tables entry with other table entries. 
@@ -117,22 +174,14 @@ The Types of relationships are..
 
   __The foreign key is on the many side.__ *The foreign key is on the many side.* `The foreign key is on the many side.`
 
-### Foreign Key 🔑
-A FOREIGN KEY is a field (or collection of fields) in one table that refers to the PRIMARY KEY in another table.
 
-The table containing the foreign key is called the child table, and the table containing the candidate key is called the referenced or parent table.
-
-The relationship between 2 tables matches the Primary Key in one of the tables with a Foreign Key in the second table.
-
-Foreign keys can be NULL.
-
-## erd
+## ERD 📝
 
 Diagram representing the schema of a database. 
 List tables and their columns/ data types. 
 Lines between tables represent relationships, and whether that relations ship is one-to-one or one to many.
 
-## Database Normalization
+## Database Normalization 📤📥
 
 In the following examples we'll look at a database that stores information about Artists and the Albumns that they have released! 💽
 
@@ -188,20 +237,20 @@ If we needed to change the name of an artist for any reason we only need to chan
 
 ---
 
-## relational database management system
+## Relational Database Management System
 
  is the implementation of a relational database 
  that allows you to create databases and manage your
  data examples are mySQL, Oracle, potgresql, ...
 
  
-# sql ( structured query language) 
+# SQL ( structured query language) 
 
  ![SQL](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week4/Day1/Lecture/assets/sql.png)
 
  language that allows us look for (query) and insert data into an sql database 
- almost all relational databases use sql.
- sql is not like other programming languages we have learned so far but is a query language specifically for data
+ almost all relational databases use SQL. 
+ SQL is not like other programming languages we have learned so far but is a query language specifically for data
  You cant write programs in sql 
  
 
@@ -275,51 +324,89 @@ Some examples of things that you may want to do with a database.
 
 ---
 
-> I want the name and year each albumn was released.
+### 💽 I want the name and year each albumn was released.
 
-This will display the name and year rows from the albumns table.
-
+*
+```
+//This will display the name and year rows from the 
+//albumns table. 
+```
 ```sql
 SELECT name, year FROM albumns;
 ```
+*
 
-> I want to see how many tracks there are.
+---
 
-This will display the number of rows, which represents the number of tracks.
-
+### 💽 I want to see how many tracks there are.
+*
+```
+//This will display the number of rows, which represents 
+//the number of tracks.
+```
 ```sql
 SELECT count(id) FROM tracks;
 ```
+*
 
-> I want to see how many tracks there are for a specific artist.
+---
 
-This will display the count for all the rows matching the condition of the artist being id 1. With the `AS` clause we can alias the column name to give us more descriptive results.
-
+### 💽 I want to see how many tracks there are for a specific artist.
+*
+```
+// This will display the count for all the rows matching 
+// the condition of the artist being id 1. 
+// With the AS clause we can alias the column name to 
+// give us more descriptive results.
+```
 ```sql
-SELECT count(id) AS tracks_count FROM tracks WHERE albumn_id = 1;
+SELECT count(id) AS tracks_count 
+FROM tracks 
+WHERE albumn_id = 1;
+```
+*
 
+---
+
+### 💽 I want to see how many tracks there are for each artist.
+*
+```
+// This will display a list of artist ids and the 
+// number of tracks in each.
 ```
 
-> I want to see how many tracks there are for each artist.
-
-This will display a list of artist ids and the number of tracks in each.
-
 ```sql
-SELECT albumn_id, count(id) AS track_count FROM tracks GROUP BY albumn_id;
+SELECT albumn_id, count(id) AS track_count 
+FROM tracks 
+GROUP BY albumn_id;
 ```
+*
 
-> I want to see which albumns have more than 10 tracks.
+---
 
-This will display a filtered result set based on the count value being higher than 20.
-
+### 💽 I want to see which albumns have more than 10 tracks.
+*
+```
+// This will display a filtered result set based 
+// on the count value being higher than 20.
+```
 ```sql
-SELECT albumn_id, count(id) AS track_count FROM tracks GROUP BY albumn_id HAVING count(id) >= 10;
+SELECT albumn_id, count(id) AS track_count 
+FROM tracks 
+GROUP BY albumn_id 
+HAVING count(id) >= 10;
 ```
+*
 
-> I want to order my previous results with the highest counts at the top of the list.
+---
 
-This will display the previous results sorted high to low.
+### 💽 I want to order my previous results with the highest counts at the top of the list.
 
+*
+```
+//This will display the previous results sorted 
+//high to low.
+```
 ```sql
 SELECT
   albumn_id,
@@ -330,12 +417,18 @@ HAVING count(id) >= 10
 ORDER BY count(id) DESC;
 
 ```
+*
 
-> I want the previous result set, but only for albumns that were released in 2018.
+---
+
+### 💽 I want the previous result set, but only for albumns that were released in 2018.
 
 Problem?
 
 The release date information is stored in a seperate albumn table 
+
+---
+
 
 ## JOIN 🤝
 
