@@ -4,82 +4,54 @@
 
 # SQL INTRODUCTION
 
-<style type="text/css">
-  .reveal .slides {
-      height: 100% !important;
-      top: 0% !important;
-      margin-top: 40vw !important;
-      max-width: 800px !important;
-    }
 
-    .reveal .slides>section {
-      min-height: 90% !important;
-    }
+![data](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week4/Day1/Lecture/assets/data.png)
 
-    .reveal .slides>section>section {
-      min-height: 100% !important;
-    }
-  h1{
-    font-size:1.8em !important;
-  }
-  .reveal p, li {
-    
-    font-size: 0.8em !important;
-
-  }
-  .reveal ul {
-    display: block;
-  }
-  .reveal ol {
-    display: block;
-  }
-</style>
-
- ![data](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week4/Day1/Lecture/assets/data.png)
+Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectures/Week4/Day1/Lecture)
 
 ---
 
 Topics 🔧:
 
-- Relationsal Databases
+- Relational Databases
 
-  - schema, indexes, data-types
-  - foreign key, relationships
-  - data normalization
+ - schema, indexes, data-types
+ - foreign key, relationships
+ - data normalization
 
 - SQL
 
-  - Tables
-  - Select
-  - Join  
+ - Tables
+ - Select
+ - Join 
 
 
 SOURCE: [These notes are adapted from Karl Jensen's notes](https://github.com/jensen/sqlintro-notes/).
 
 ---
 
-## Review  📢 
+## Review  📢
 
 so far we have stored data with javascript objects as in tinyapp👶.
 but there were a few problems with this approach.
 
-- there was no data persistance, 
-  when the app was restarted any url or new user we added would not be saved
-- Data could become disorganized, and there was nothng ensuring it was stored with the correct format.
+- there was no data persistence,
+ when the app was restarted any url or new user we added would not be saved
+- Data could become disorganized, and there was nothing ensuring it was stored with the correct format.
 
-Then in tweeter 🐦 you used MongoDB to solve some of these problems. 
-with mongo we were able to store our javascript objects in a datbase and achieve persistance!
-    
+Then in tweeter 🐦 you used MongoDB to solve some of these problems.
+with mongo we were able to store our javascript objects in a database and achieve persistence!
+  
 With mongo objects were stored in _Collections_ as _Documents_
 
 ---
 
-Mongo has many advantages it is flexible it allows us to store and retrieve data as JSON a format that is verytop: 30% !important; easy to use with javascirp development.
+Mongo has many advantages it is flexible it allows us to store and retrieve data as JSON a format that is verytop: 30% !important; easy to use with javascript development.
 
 But...
 
- - It can be hard to search through
- - It can get disorganized 
+- It can be hard to search through
+- It can get disorganized
 
 // Brief JSON EXAMPLE
 
@@ -92,16 +64,15 @@ So....
 
 ---
 
- 
- # Relational Database
+# Relational Database
 
- ![Tables](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week4/Day1/Lecture/assets/table.gif)
+![Tables](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week4/Day1/Lecture/assets/table.gif)
 
- A database that stores information in tables where each
- individual thing or enrty in the db takes up a row of the table
- each table can have relationships to other tables.
+A database that stores information in tables where each
+individual thing or entry in the db takes up a row of the table
+each table can have relationships to other tables.
 
- relations are what allow us to organize our data in intuitive ways.
+relations are what allow us to organize our data in intuitive ways.
 
 ---
 
@@ -121,7 +92,7 @@ From building our example database we encountered a few things...
 
 ## Schema 📑
 
-The skeletal structure representing how data is to be stored in a database. 
+The skeletal structure representing how data is to be stored in a database.
 Specifies Constraints on the data.
 
 ---
@@ -172,33 +143,33 @@ Foreign keys can be NULL.
 ## Relationships 👪
 
 With relational databases relationships are made with foreign keys.
-The relationship links one tables entry with other table entries. 
+The relationship links one tables entry with other table entries.
 The Types of relationships are..
 
-  - one to one
-  - many to one
-  - many to many
+ - one to one
+ - many to one
+ - many to many
 
 
-  __The foreign key is on the many side.__ *The foreign key is on the many side.* `The foreign key is on the many side.`
+ __The foreign key is on the many side.__ *The foreign key is on the many side.* `The foreign key is on the many side.`
 
 ---
 
 ## ERD 📝
 
-Diagram representing the schema of a database. 
-List tables and their columns/ data types. 
-Lines between tables represent relationships, and whether that relations ship is one-to-one or one to many.
+Diagram representing the schema of a database.
+List tables and their columns/ data types.
+Lines between tables represent relationships, and whether that relationship is one-to-one or one to many.
 
 ---
 
 ## Database Normalization 📤📥
 
-In the following examples we'll look at a database that stores information about Artists and the Albumns that they have released! 💽
+In the following examples we'll look at a database that stores information about Artists and the Albums that they have released! 💽
 
 Database normalization allows us to realize one of the major benefits of relational databases. We normalize our database to reduce duplicate data.
 
-It is incredibly difficult to manage a database that stores the same information in several places. Let's imagine that we stored our Albumn data as follows.
+It is incredibly difficult to manage a database that stores the same information in several places. Let's imagine that we stored our Album data as follows.
 
 ```
 +-----------------------------------------+
@@ -218,23 +189,23 @@ It is incredibly difficult to manage a database that stores the same information
 
 ---
 
-We would consider this denormalized because the artist name is repeated for all of that artist's albumns. If Snoop Dogg decides to change his name to Snoop Lion then we have to edit every Snoop albumn to reflect that.
+We would consider this denormalized because the artist name is repeated for all of that artist's albums. If Snoop Dogg decides to change his name to Snoop Lion then we have to edit every Snoop album to reflect that.
 
 
 In order to normalize this database we would split the data into two related tables.
 
 ```
-+-----------------------------------------+  
-| students                                |  
-+-----------------------------------------+  
-| id | title             | artist_id      | 
-+-----------------------------------------+  
-| 1  | MBDTF             | 1              | 
-| 2  | The Blueprint     | 2              |  
-| 3  | Aquemini          | 3              | 
-| 4  | The Doggfather    | 5              | 
-| 5  | DAMN              | 4              | 
-| 6  | College Dropout   | 1              |  
++-----------------------------------------+ 
+| albumns                                 | 
++-----------------------------------------+ 
+| id | title             | artist_id      |
++-----------------------------------------+ 
+| 1  | MBDTF             | 1              |
+| 2  | The Blueprint     | 2              | 
+| 3  | Aquemini          | 3              |
+| 4  | The Doggfather    | 5              |
+| 5  | DAMN              | 4              |
+| 6  | College Dropout   | 1              | 
 | 7  | Doggystyle        | 5              |
 +-----------------------------------------+
 
@@ -259,7 +230,7 @@ In order to normalize this database we would split the data into two related tab
 ---
 
 
-We show that each Albumn belongs to an artist. The details of the artist are stored separately. When we need to gather this information together we use a query to ask the database for it in the structure that we want.
+We show that each Album belongs to an artist. The details of the artist are stored separately. When we need to gather this information together we use a query to ask the database for it in the structure that we want.
 
 If we needed to change the name of an artist for any reason we only need to change the one field in the `artists` table.
 
@@ -270,44 +241,43 @@ If we needed to change the name of an artist for any reason we only need to chan
 
 ---
 
-## Relational Database Management System
+## Relational Database Management Systems
 
- is the implementation of a relational database 
- that allows you to create databases and manage your
- data examples are mySQL, Oracle, potgresql, ...
+is the implementation of a relational database
+that allows you to create databases and manage your
+data examples are mySQL, Oracle, postgresql, ...
 
 ---
 
- 
-# SQL ( structured query language) 
+# SQL ( structured query language)
 
 ![SQL](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week4/Day1/Lecture/assets/sql.png)
 
-- language that allows us look for (query) and insert data into an sql database 
-- almost all relational databases use SQL. 
+- language that allows us look for (query) and insert data into an sql database
+- almost all relational databases use SQL.
 - SQL is not like other programming languages we have learned so far but is query language specifically for data
-You cant write programs in sql 
+You can't write programs in sql
 
 ---
 
 ## PSQL
 
-Database client that allows us to connect and interact with POSTGRESQL database with sql commands. 
+Database client that allows us to connect and interact with POSTGRESQL database with sql commands.
 
 ---
 
 ## Creating a Table
 
- ![Tables](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week4/Day1/Lecture/assets/table.jpeg)
+![Tables](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week4/Day1/Lecture/assets/table.jpeg)
 
-We know what our schema looks like and we can send commands to the database. When creating a table we provide the types and contraints to the named columns.
+We know what our schema looks like and we can send commands to the database. When creating a table we provide the types and constraints to the named columns.
 
 ```sql
 CREATE TABLE albums (
-  id SERIAL PRIMARY KEY NOT NULL,
-  title VARCHAR(50) NOT NULL,
-  year INTEGER NOT NULL,
-  artist_id INTEGER NOT NULL REFERENCES artists(id) ON DELETE CASCADE
+ id SERIAL PRIMARY KEY NOT NULL,
+ title VARCHAR(50) NOT NULL,
+ year INTEGER NOT NULL,
+ artist_id INTEGER NOT NULL REFERENCES artists(id) ON DELETE CASCADE
 );
 ```
 
@@ -318,19 +288,19 @@ CREATE TABLE albums (
 Before we can search for data we need to add it. In order to create records in a table we use the [INSERT](https://www.postgresql.org/docs/current/static/sql-insert.html) command.
 
 ```sql
-INSERT INTO "artists" (id, name) 
+INSERT INTO "artists" (id, name)
 VALUES(1, 'Name');
 
 INSERT INTO "albums" (
-  id, 
-  title, 
-  year, 
-  artist_id
+ id,
+ title,
+ year,
+ artist_id
 ) VALUES(
-  1, 
-  'The Earth is not a Cold Dead Place', 
-  2003, 
-  1
+ 1,
+ 'The Earth is not a Cold Dead Place',
+ 2003,
+ 1
 );
 ```
 
@@ -339,7 +309,7 @@ If you need to insert multiple records at the same time a single query is quicke
 *
 
 ```sql
-INSERT INTO "tracks" (title, number, album_id) VALUES 
+INSERT INTO "tracks" (title, number, album_id) VALUES
 ('First Breath After Coma', 1, 1),
 ('First Breath After Coma', 2, 1),
 ('First Breath After Coma', 3, 1),
@@ -363,15 +333,16 @@ The selection of data is likely to cause the most confusion for you. There are 6
 
 ---
 
-### 💽 I want the name and year each albumn was released.
+### 💽 I want the name and year each album was released.
 
 *
 ```
-//This will display the name and year rows from the 
-//albumns table. 
+//This will display the name and year rows from the
+//albumns table.
 ```
+
 ```sql
-SELECT name, year FROM albumns;
+SELECT name, year FROM albums;
 ```
 *
 
@@ -380,9 +351,10 @@ SELECT name, year FROM albumns;
 ### 💽 I want to see how many tracks there are.
 *
 ```
-//This will display the number of rows, which represents 
+//This will display the number of rows, which represents
 //the number of tracks.
 ```
+
 ```sql
 SELECT count(id) FROM tracks;
 ```
@@ -393,14 +365,15 @@ SELECT count(id) FROM tracks;
 ### 💽 I want to see how many tracks there are for a specific artist.
 *
 ```
-// This will display the count for all the rows matching 
-// the condition of the artist being id 1. 
-// With the AS clause we can alias the column name to 
+// This will display the count for all the rows matching
+// the condition of the artist being id 1.
+// With the AS clause we can alias the column name to
 // give us more descriptive results.
 ```
+
 ```sql
-SELECT count(id) AS tracks_count 
-FROM tracks 
+SELECT count(id) AS tracks_count
+FROM tracks
 WHERE albumn_id = 1;
 ```
 *
@@ -410,29 +383,30 @@ WHERE albumn_id = 1;
 ### 💽 I want to see how many tracks there are for each artist.
 *
 ```
-// This will display a list of artist ids and the 
+// This will display a list of artist ids and the
 // number of tracks in each.
 ```
 
 ```sql
-SELECT albumn_id, count(id) AS track_count 
-FROM tracks 
+SELECT albumn_id, count(id) AS track_count
+FROM tracks
 GROUP BY albumn_id;
 ```
 *
 
 ---
 
-### 💽 I want to see which albumns have more than 10 tracks.
+### 💽 I want to see which albums have more than 10 tracks.
 *
 ```
-// This will display a filtered result set based 
+// This will display a filtered result set based
 // on the count value being higher than 20.
 ```
+
 ```sql
-SELECT albumn_id, count(id) AS track_count 
-FROM tracks 
-GROUP BY albumn_id 
+SELECT albumn_id, count(id) AS track_count
+FROM tracks
+GROUP BY albumn_id
 HAVING count(id) >= 10;
 ```
 *
@@ -443,13 +417,14 @@ HAVING count(id) >= 10;
 
 *
 ```
-//This will display the previous results sorted 
+//This will display the previous results sorted
 //high to low.
 ```
+
 ```sql
 SELECT
-  albumn_id,
-  count(id) AS track_count
+ albumn_id,
+ count(id) AS track_count
 FROM tracks
 GROUP BY albumn_id
 HAVING count(id) >= 10
@@ -460,18 +435,17 @@ ORDER BY count(id) DESC;
 
 ---
 
-### 💽 I want the previous result set, but only for albumns that were released in 2018.
+### 💽 I want the previous result set, but only for albums that were released in 2018.
 
 Problem?
 
-The release date information is stored in a seperate albumn table 
+The release date information is stored in a separate album table
 
 ---
 
-
 ## JOIN 🤝
 
- ![Joins](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week4/Day1/Lecture/assets/joins.jpeg)
+![Joins](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week4/Day1/Lecture/assets/joins.jpeg)
 
 There are 5 kinds of joins.
 
@@ -506,23 +480,23 @@ When we start joining tables we need to be unambiguous. We will target columns b
 
 ### INNER JOIN
 
-With an `INNER JOIN` only rows where the `ON` condition is met are included in the results. 
+With an `INNER JOIN` only rows where the `ON` condition is met are included in the results.
 
 ```sql
-INSERT INTO "artists" (id, name) 
+INSERT INTO "artists" (id, name)
 VALUES(666, 'Neezy Boscareezy');
 ```
 
 
 ```sql
-SELECT artist.id, artist.name AS artist_name, 
-albumn.title AS albumn_title
+SELECT artist.id, artist.name AS artist_name,
+album.title AS albumn_title
 FROM artists
-INNER JOIN albumns
-ON artists.id = albumns.artist_id;
+INNER JOIN albums
+ON artists.id = albums.artist_id;
 ```
 
-Notice that the `artists.id = albumns.artist_id` condition was not satisfied for the up and comming artist "Neezy Boscareezy" because he has not yet dropped his mixtape 💾 🔥🔥🔥 .
+Notice that the `artists.id = albums.artist_id` condition was not satisfied for the up and coming artist "Neezy Boscareezy" because he has not yet dropped his mixtape 💾 🔥🔥🔥 .
 
 ---
 
@@ -532,10 +506,10 @@ Notice that the `artists.id = albumns.artist_id` condition was not satisfied for
 The `OUTER JOIN` requires us to specify whether it is the `LEFT` or `RIGHT` table that is used to provide unmatched rows. For any row where the condition was not met a row is added with null for columns from the second table.
 
 ```sql
-SELECT artist.id, artist.name AS artist_name, albumn.title AS albumn_title
+SELECT artist.id, artist.name AS artist_name, album.title AS albumn_title
 FROM artists
-LEFT OUTER JOIN albumns
-ON artists.id = albumns.artist_id;
+LEFT OUTER JOIN albums
+ON artists.id = albums.artist_id;
 
 ```
 
@@ -548,20 +522,20 @@ __RIGHT OUTER JOIN__
 This is an uncommon join. Since we have to specify the side to join on we have two options. In the above example the albumns table is on the right side of the join. If we turn this into a `RIGHT OUTER JOIN` then we get different results back.
 
 ```sql
-SELECT artists.id, artists.name AS artist_name, albumns.title AS albumn_title
+SELECT artists.id, artists.name AS artist_name, album.title AS albumn_title
 FROM artists
-RIGHT OUTER JOIN albumns
-ON artists.id = albumns.artist_id;
+RIGHT OUTER JOIN albums
+ON artists.id = albums.artist_id;
 
 ```
 
 If we wanted the same results as above with a `RIGHT JOIN` then we would need to alter the query to put the artists table on the right side of the join.
 
 ```sql
-SELECT artists.id, artists.name AS artist_name, albumns.title AS albumn_title
-FROM albumns
+SELECT artists.id, artists.name AS artist_name, album.title AS albumn_title
+FROM albums
 RIGHT OUTER JOIN artists
-ON artists.id = albumns.artist_id;
+ON artists.id = albums.artist_id;
 ```
 
 ---
@@ -573,22 +547,22 @@ Using a `CROSS JOIN` we can get the cartesian product. A row for every student a
 ```sql
 SELECT *
 FROM artists
-CROSS JOIN albumns;
+CROSS JOIN albums;
 ```
 
 Which achieves the same result set as:
 
 ```sql
 SELECT *
-FROM artists, albumns;
+FROM artists, albums;
 ```
 
 Adding a where clause to filter out the duplicate results acts just like an `INNER JOIN`.
 
 ```sql
 SELECT *
-FROM artists, albumns
-WHERE artists.id = albumns.artists_id;
+FROM artists, albums
+WHERE artists.id = albums.artists_id;
 ```
 
 ---
@@ -599,13 +573,13 @@ These queries seem to be a lot simpler than ones that begin with `SELECT`. BUT T
 
 Here is a [story](https://www.reddit.com/r/cscareerquestions/comments/6ez8ag/accidentally_destroyed_production_database_on/) about a situation where a developer deleted the production database on their first day. It wasn't their fault but how many times could you do this before you could no longer get hired?
 
-The key take away is to be extra careful working on production databases. Test all your update and delete operations on a development database.
+The key takeaway is to be extra careful working on production databases. Test all your update and delete operations on a development database.
 
 ---
 
 [UPDATE](https://www.postgresql.org/docs/current/static/sql-update.html)
 
-Let's say that a artist has changed their stage name part way through their career. We could update their name with. 
+Let's say that a artist has changed their stage name part way through their career. We could update their name with.
 
 ```sql
 UPDATE artists
@@ -625,7 +599,9 @@ DELETE FROM artists WHERE id = 3;
 
 Some people prefer to have a `deleted_at` column that stores a DATE. That way you can still filter out deleted results without having to lose the data. Storage is not expensive.
 
-You've seen a reference to `ON DELETE CASCADE` for foreign key references. If we delete an artist then we may want to delete all of the albumns that point to the record. The cascading delete functionality is a [constraint](https://www.postgresql.org/docs/current/static/ddl-constraints.html). It is not necessary to use CASCADE. If you don't you may notice some issues when trying to delete something that has a foreign reference to it.
+You've seen a reference to `ON DELETE CASCADE` for foreign key references. If we delete an artist then we may want to delete all of the albums that point to the record. The cascading delete functionality is a [constraint](https://www.postgresql.org/docs/current/static/ddl-constraints.html). It is not necessary to use CASCADE. If you don't you may notice some issues when trying to delete something that has a foreign reference to it.
+
+
 
 
 

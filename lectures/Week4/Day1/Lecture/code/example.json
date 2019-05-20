@@ -1,0 +1,43 @@
+books: [
+    {
+        name: "The Name of the Wind",
+        author: "Patrick Rothfuss",
+        date: 2012
+    },
+    {
+        name: "The Hobbit",
+        author: "Jrr Tolkein",
+        date: 1960
+    },
+    {
+        name: "Dune",
+        author: "Frank Herbert",
+        date: 832874234938
+    },
+
+],
+
+People: [
+    {
+        name: "Travis",
+        favoriteBooks: [
+            1,
+            2,
+            5
+        ]
+    }
+]
+
+
+
+Herbal Medicine
+latin name
+common  name(s)?
+part of plant
+location
+species status
+way to prepare
+
+pharmaceutical companies
+
+alternative health practitioners

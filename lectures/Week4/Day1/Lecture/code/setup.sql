@@ -121,7 +121,7 @@ INSERT INTO "artists" (id, name) VALUES(3, 'Ratatat');
 
 INSERT INTO "artists_tags" (artist_id, tag_id) VALUES(3,3);
 
-INSERT INTO "albums" (id, title, year, artist_id) VALUES (4, 'Classics', 2006, 3);
+INSERT INTO "albums" (id, title, year, artist_id) VALUES (4, 'Classics', 2005, 3);
 
 INSERT INTO "tracks" (title, number, album_id) VALUES ('Montanita', 1, 4);
 INSERT INTO "tracks" (title, number, album_id) VALUES ('Lex', 2, 4);
