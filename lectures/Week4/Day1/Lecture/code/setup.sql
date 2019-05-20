@@ -58,7 +58,7 @@ INSERT INTO "albums" (id, title, year, artist_id) VALUES(1, 'My Beautiful Dark T
 INSERT INTO "tracks" (title, number, album_id) VALUES ('Dark Fantasy', 1, 1);
 INSERT INTO "tracks" (title, number, album_id) VALUES ('Gorgeous', 2, 1);
 INSERT INTO "tracks" (title, number, album_id) VALUES ('Power', 3, 1);
-INSERT INTO "tracks" (title, number, album_id) VALUES ('All of the Lights (Interlude)', 5, 1);
+INSERT INTO "tracks" (title, number, album_id) VALUES ('All of the Lights', 5, 1);
 INSERT INTO "tracks" (title, number, album_id) VALUES ('All of the Lights', 5, 1);
 INSERT INTO "tracks" (title, number, album_id) VALUES ('Monster', 6, 1);
 INSERT INTO "tracks" (title, number, album_id) VALUES ('So Appalled', 7, 1);

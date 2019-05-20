@@ -15,7 +15,7 @@ HAVING count(id) <15;
 
 SELECT name
 FROM artists
-WHERE name IN ('Outkast', "Kendrick Lamar");
+WHERE name IN ('Outkast', 'Kendrick Lamar');
 
 
 -- all tracks, with album name

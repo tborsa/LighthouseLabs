@@ -1,4 +1,9 @@
 
+
+# SQL CONTIINUED: A Data Story
+
+Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectures/Week4/Day1/Breakout)
+
 ## FOREIGN KEYS 🤖 🔑
 
 - Foreign key columns. Add `_id` to the singular name of the column you are referencing. Students to cohorts would be `cohort_id`. The type would be `INTEGER` but you also should create the foreign key with `REFERENCES cohorts(id) ON DELETE CASCADE`.
