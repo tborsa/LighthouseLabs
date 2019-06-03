@@ -5,7 +5,7 @@ function whosThatPokemon(number, callback){
         if(response.statusCode!== 200){
             callback(new Error("Invalid Response."+ response.statusCode))
         }else{
-            response.setEncoding("utf-8");
+            //response.setEncoding("utf-8");
             var body = "";
             response.on("data", function(chunk){
                 //onsole.log(chunk+"\n");

@@ -14,13 +14,13 @@ Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectu
 
 Today we will look at:
 
-- Modules
- - exports
- - require
+- Modules  
+    - exports
+    - require
 - npm
 - Unit Testing
- - Mocha
- - Chai
+    - Mocha
+    - Chai
 
 ---
 

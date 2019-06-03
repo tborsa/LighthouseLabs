@@ -383,7 +383,7 @@ Typically it is the client software making requests. The most common example of 
 
 Build a node application that can make an http request to pokemon api returning __Whos That Pokemon?__
 
-https://pokeapi.co/api
+https://pokeapi.co/
 
 https://pokeapi.co/api/v2/pokemon/
 

@@ -6,6 +6,7 @@
   height: 100%;
   top: 0;
   margin-top: -2vw;
+    font-size: 0.8em;
 }
 
 p {
@@ -30,14 +31,18 @@ In Tinyapp?
 ---
 
 ## How have we stored passwords/sensitie data?🤫
- hashes  
- best practices for managing passwords
+   
+ Hashing  
+ salting
 
 ---
 
 ## How have we authenticated someone?👌
- cookies,   
- sessions
+ 
+cookies  
+Sessions  
+Dynamic   
+encryption  
 
 ---
 
@@ -57,12 +62,14 @@ In Tinyapp?
 __Encoded:__  transforms data into another format, using a scheme that is somewhat available, so that it can easily be reversed.
 Purpose: to transform data to a usable stae. 
 
+
+
 __Encryption:__ transforms data into another format in such a way that only specific individual(s) can reverse the transformation.
 Purpose: to obscure the data. 
 
 ---
 
-How Encryption?
+How do we Encrypt?
 
 ---
 
@@ -108,10 +115,13 @@ Caesar Cipher
 ---
 
 problems?
-- Can eventually see the pattern, it is predictable over time
+
+<div class="fragment">
+- Can eventually see the pattern, it is predictable over time  
 - Need to communicate how to use rot13 securely.
 if someone intercepts the rot13 explanation then your
 encryption doesent work. 
+</div>
 
 ---
 
@@ -144,9 +154,11 @@ During testing Bob and Alice find out that some of their secret messages have ap
 
 Make it so that if the data is intercepted it can't be easily read. 
 
+<div class="fragment">
 encryption!
 
 but how do we encrypt?
+</div>
 
 ---
 
@@ -214,7 +226,7 @@ By encrypting the messages Bob and Alice were able to ensure that all conversati
 But they were not able to ensure that they knew who the secret conversation was with.
 
 You can have
-- Secret conversation with someone who you don't know who they are
+- Secret conversation with someone who you can't identify.
 
 - Public conversation where you know for sure who they are.
 
@@ -222,25 +234,24 @@ You can have
 
 ---
 
-## Public & Private Keys - Asymetric Encryption
+## Public & Private Keys
 
 
-Alice has a private and public key
+Alice has a private 🗝 and public 🔑 key
 
+Bob has a private 🗝 and public 🔑 key
 
-Bob has a private and public key
-
-Works like a locked mailbox. 
+Works like a locked mailbox 📫.   
 The public "key" is like the location of the mailbox.
 The private "key" is the key to unlock your mailbox.
 Ensures only those who know your address can send you mail,
 and only you recieve the message. 
 
-In this example we assume the mail service is 100% secure. 
+- In this example we assume the mail service is 100% secure. 
 
-RSA is an example of encryption with public/private keys.
+- RSA is an example of encryption with public/private keys.
 
-But this method still doesn't authenticate who sent the message. 
+- But this method still doesn't authenticate who sent the message. 
 
 ---
 
@@ -267,14 +278,18 @@ PublicKey🔑  + RSA + Encryption🔏 => Message📨
 
 If Alice wants to send a secure message so that Bob knows that it was her who sent it she...
 
-1st: Creates a signature "Alice" and encrypts it with her __private__🗝 key
+__1st__: Creates a signature "Alice" and encrypts it with her __private__🗝 key
 
 
 👩🗝 + "Alice"  => 👩🔏(Signature)     
 
-2nd: Writes her note and appends the Signature to the end of the note. Then she encrypts the combined note and signature with Bob's pubic key and finally sends it to Bob.
+__2nd__: Writes her note and appends the Signature to the end of the note. Then she encrypts the combined note and signature with Bob's pubic key and finally sends it to Bob.
 
 👨🔑 + (📨 + 👩🔏(Signature)) => 👨🔐(📨 + 👩🔏(Signature))
+
+---
+
+## 👨🔐(📨 + 👩🔏(Signature))
 
 ---
 
@@ -284,11 +299,13 @@ Then Bob...
 
 👨🔐(📨 + 👩🔏(Signature)) + 👨🗝 => (📨 + 👩🔏(Signature))
 
----
+>We now have the note!
 
 2nd:  Bob uses Alice's public key to decrypt her signature.
 
 👩🔏(Signature) + 👩🔑 => Signature
+
+>Now we hve the signature
 
 If the Signature reads "Alice" then Bob knows that Alice did send the message, beause only Alice could encrypt the signature (with her private key) so that her public key would successfully decrypt it.
 
@@ -315,7 +332,13 @@ what do you think the most common passwords are?
 password            md5 hash
 ----------------------------------------------------
 password            5f4dcc3b5aa765d61d8327deb882cf99
-
+password1           7c6a180b36896a0a8c02787eeafb0e4c
+123                 202cb962ac59075b964b07152d234b70
+12345               827ccb0eea8a706c4c34a16891f84e7b
+abcd                e2fc714c4727ee9395f324cd2e7f331f
+asdf                912ec803b2ce49e4a541068d495ab570
+qwerty              d8578edf8458ce06fbc5bb76a58c5ca4
+december12          f15bf7c7373bb7ac8a4631bc6f6f64c2
 
 ```
 

@@ -1,16 +1,15 @@
 {
-  "name": "code",
+  "name": "pokemoncounters",
   "version": "1.0.0",
-  "description": "Function for returning the counters for a pokemon type.",
-  "main": "pokemoncounters.js",
+  "description": "counter to pokemon types",
+  "main": "whatisthecounterto.js",
   "scripts": {
     "test": "mocha"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^2.4.2",
-    "lodash": "^4.17"
+    "chalk": "^2.4.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",

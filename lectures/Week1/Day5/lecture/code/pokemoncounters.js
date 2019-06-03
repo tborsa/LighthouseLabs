@@ -1,23 +1,21 @@
-//Take in type as a string
-//output the weakness or counters to that type
-// ["water", "grass"]
 
-var pokemonCounters = function(type){
-    var weaknesses = {
+// input string of a pokemon type
+// return the correct array of counters
+
+//module.exports = {}
+function pokemonCounters(type){
+    var counters = {
         fire: ["water", "ground", "rock"],
         water: ["grass", "electric"],
         grass: ["bug", "fire", "flying", "ice", "poison"]
     }
-    //weaknesses.fire ===== weaknesses["fire"]
-    if(weaknesses[type]){
-        return weaknesses[type];
+    if( counters[type]){
+        return counters[type];
     }else{
         return [];
     }
 }
-//Default value of module exports
-// module.exports = {};
-module.exports.pokemonCounters = pokemonCounters;
 
+module.exports.pokemonCounters = pokemonCounters;
 
 

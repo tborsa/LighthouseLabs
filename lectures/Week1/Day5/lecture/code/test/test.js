@@ -1,33 +1,28 @@
-//var mocha = require("mocha");
-var assert = require("chai").assert;
+var chai = require("chai");
+var pokemonCounters = require("../pokemoncounters").pokemonCounters;
+var assert = chai.assert;
+//describe
+//it
 
-var pokemonCountersModule = require("../pokemoncounters");
-var pokemonCounters = pokemonCountersModule.pokemonCounters;
+describe("Test in pokemoncounters module ", function(){
+    describe("pokemoncounters(type) function", function(){
+        it("Fire should return [water, ground, rock ]", function(){
+            var fireReturn = pokemonCounters("fire");   
+            assert.include(fireReturn, "water");
+            assert.include(fireReturn, "ground");
+            assert.include(fireReturn, "rock");
+            assert.include(fireReturn, "dirt");
 
-
-describe("Testing pokemoncounters module", function(){
-    describe("#pokemonCounters(type)", function(){
-        var result = pokemonCounters("fire");
-
-        it('Should return ["water", "ground", "rock"] given type fire', function(){
-            var result = pokemonCounters("fire");
-            assert.include(result, "asdfasdr");
-            assert.include(result, "ground");
-            assert.include(result, "rock");
         })
-        it('Should return ["electric", "grass" ] given type water', function(){
-            var result = pokemonCounters("water");
-            assert.include(result, "electric");
-            assert.include(result, "grass");
-        })
-        it('Should return ["bug", "fire", "flying", "ice", "poison"] given type grass', function(){
-            var result = pokemonCounters("grass");
-            assert.include(result, "bug");
-            assert.include(result, "flying");
-            assert.include(result, "fire");
-            assert.include(result, "ice");
-            assert.include(result, "poison");
+        it("Water should return [grass, electric]", function(){
+            var waterReturn = pokemonCounters("water");   
+            assert.include(waterReturn, "grass");
+            assert.include(waterReturn, "electric");
 
+        })
+        it("Should not return null", function(){
+            var fireReturn = pokemonCounters("fire");
+            assert.equal(fireReturn, null);
         })
     })
 

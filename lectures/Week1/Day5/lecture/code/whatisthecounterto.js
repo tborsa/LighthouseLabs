@@ -1,26 +1,24 @@
 var pokemonCountersModule = require("./pokemoncounters");
+var pokemoncounters = pokemonCountersModule.pokemonCounters;
 var chalk = require("chalk");
 
-var colors = {
-    "fire": "red",
-    "water": "blue",
-    "grass": "green",
-    "electric": "yellow"
-}
-
-var pokemonCounters = pokemonCountersModule.pokemonCounters;
 
 var input = process.argv[2];
 
-var result = pokemonCounters(input);
+var colors = {
+    fire: "red",
+    water: "blue",
+    grass: "green"
+}
 
+var result = pokemoncounters(input);
 if(result.length>0){
-    //input = water;
-    //chalk[colors[input]](input)
-    //chalk["blue"](input)
-    //chalk.blue(input)
-    //chalk.blue("water";)
-    console.log(chalk[colors[input]](input) +" has the counters "+ result);
+    if(colors[input]){
+        var color = colors[input];
+        console.log("The counter to " + chalk[color](input) + " is " + result);
+    }else{
+        console.log("The counter to " + input + " is " + result);
+    }
 }else{
-    console.log("Invalid Type.");
+    console.log(input +" is not a valid type");
 }
