@@ -274,3 +274,5 @@ Game clock + custom timers + timer events "
 
 DEMO
 
+"//cdn.jsdelivr.net/npm/phaser@3.16.2/dist/phaser.js"
+

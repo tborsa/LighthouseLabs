@@ -1,5 +1,8 @@
+// Config in game file
+var game = new Phaser.Game(config);
+
 var config = {
-    type: Phaser.AUTO,
+    type: Phaser.AUTO, //which GL/renderer to use
     width: 800,
     height: 500,
     pixelArt: true,
@@ -12,9 +15,10 @@ var config = {
     scene: [Startscene]
 };
 
+
+
 //======================================
 
-var game = new Phaser.Game(config);
 
 class Startscene extends Phaser.Scene{
     constructor(){
@@ -58,6 +62,9 @@ this.cursors = this.input.keyboard.createCursorKeys()
 if (this.cursors.left.isDown)
 {
     this.player.setVelocityX(-160);
+}else if{
+    
+    
 }else{
     this.player.setVelocityX(0);
 }
@@ -67,12 +74,12 @@ if (this.cursors.up.isDown )
 }
 
 // ADD ANIMATIONS
-// IDLE 0-3 LEFT 4-9 Right 10-15
+// IDLE 0-3 LEFT 10-15 Right 4-9
 this.anims.create({
     key: 'left',
-    frames: this.anims.generateFrameNumbers('dino', { start: 4, end: 10 }),
+    frames: this.anims.generateFrameNumbers('dino', { start: 10, end: 15 }),
     frameRate: 10,
-    repeat: -1
+    repeat: -1 //# of times to reapeat -1 is infinity
 });
 
 this.player.anims.play('left', true);
@@ -87,6 +94,9 @@ this.platforms.create(600, 400, 'tiles',84).setScale(20,2).refreshBody();;
 
 this.physics.add.collider(this.player, this.platforms);
 
+
+// Restrict player jump 
+this.player.body.touching.down
 //ADD COINS
 this.coins = this.physics.add.group({
     key: 'tiles',
@@ -111,7 +121,7 @@ this.anims.create({
     repeat: -1
 });
 
-//COIN pickup
+//COIN pickup              firstobj     secondobj   collisonfunc    testcollision  thiscontext
 this.physics.add.overlap(this.player, this.coins, this.collectStar, null, this);
 
 collectStar(player, coin){

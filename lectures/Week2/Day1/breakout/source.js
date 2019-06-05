@@ -23,6 +23,7 @@ headers: {
 }
 
 //create gitub access token and add to header
+// or token
 headers: {
     Authorization: 'Bearer 6734b32af0b9396374fedb722ad0f0991b554725'
 }

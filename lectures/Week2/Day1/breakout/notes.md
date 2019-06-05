@@ -4,6 +4,12 @@ transition: "zoom"
 highlightTheme: "darkula"
 logoImg: ""
 center: false
+slideN---
+theme : "white"
+transition: "zoom"
+highlightTheme: "darkula"
+logoImg: ""
+center: false
 slideNumber: true
 
 ---
@@ -11,30 +17,33 @@ slideNumber: true
 # Node and APIs
 <center> ![internet](assets/internet.gif)</center>
 <style type="text/css">
-  .reveal p {
-    text-align: left;
-  }
-  .reveal ul {
-    display: block;
-  }
-  .reveal ol {
-    display: block;
-  }
+ .reveal p {
+   text-align: left;
+ }
+ .reveal ul {
+   display: block;
+ }
+ .reveal ol {
+   display: block;
+ }
 </style>
+
+Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectures/Week2/Day1/breakout)
+
 
 ---
 
 
-### Preamble 📢 
+### Preamble 📢
 
-This morning we learned about protocols and HTTP, and looked at how http requests can be made by browsers, the terminal, postman, and by a node application. 
+This morning we learned about protocols and HTTP, and looked at how http requests can be made by browsers, the terminal, postman, and by a node application.
 
 We are going to continue to explore HTTP requests with node applications and work through:
 
 - How to use request ( A node module for HTTP requests)
 - Access tokens
 - Headers
-- Enviornment variables
+- Environment variables
 
 <center>![tenor](assets/hack.gif)</center>
 
@@ -42,12 +51,12 @@ We are going to continue to explore HTTP requests with node applications and wor
 
 ## Request 📬
 
-Request is a node module that makes it easier to do HTTP requests. 
+Request is a node module that makes it easier to do HTTP requests.
 [Request Docs](https://www.npmjs.com/package/request)
 
 Request buffers the response for you (adds all the chunks together) so you don't have to.
 
-Make an application that gets all the issues from a node repository and displays them. Lets start by exploring the githubapi. https://developer.github.com/v3/repos/#get
+Make an application that gets all the issues from a node repository and displays them. Let's start by exploring the githubapi. https://developer.github.com/v3/repos/#get
 
 +create a request to https://api.github.com/repos/jquery/jquery/issues
 
@@ -55,9 +64,9 @@ Make an application that gets all the issues from a node repository and displays
 
 ## Headers 👦
 
-We looked at headers this morning, and now we have a practical example for when we need to use headers. 
+We looked at headers this morning, and now we have a practical example for when we need to use headers.
 
-For our request to be successful we have to set the user-agent header. The user-agent header lets the server know what 'agent' the request is comming from. Browsers automatically set this header for us. 
+For our request to be successful we have to set the user-agent header. The user-agent header lets the server know what 'agent' the request is coming from. Browsers automatically set this header for us.
 
 +Set user-agent header
 
@@ -65,31 +74,31 @@ For our request to be successful we have to set the user-agent header. The user-
 
 ## Access tokens 🎫
 
-Some api's will require access tokens. 
-These are unique identifiers that identify who you are when you use the api. 
-This allows the api/server to 
+Some api's will require access tokens.
+These are unique identifiers that identify who you are when you use the api.
+This allows the api/server to
 - block or restrict anonymous traffic
 - control the number of calls that are made to the api
-- identify usage patters
+- identify usage patterns
 
 Practically using an access token will allow us to access more and make more requests.
 
-+create access token  
++create access token 
 +set header Authorization: Bearer *token*
 
 ---
 
 ## Separating Code and Config
 
-I should be able to share the source code of my application, while keeping it's configuration separate. 
-- Each developer on a team may need to provide a different configuration. 
+I should be able to share the source code of my application, while keeping it's configuration separate.
+- Each developer on a team may need to provide a different configuration.
 - It is also common to change the configuration based on the deployment of the application.
 
 An example of this is using a different database for development vs production.
 
 ---
 
-### Enviornment Variables
+### Environment Variables
 
 Your operating system will run processes within an environment. A user or administrator can set variables within the environment.
 
@@ -103,7 +112,7 @@ Another common technique is to set an environment variable when running a proces
 
 Within your application these variables can be accessed with process.env.*variable*
 
-+set github token as enviornment variable
++set github token as environment variable
 
 ---
 
@@ -111,11 +120,11 @@ Within your application these variables can be accessed with process.env.*variab
 
 [dotenv docs](https://www.npmjs.com/package/dotenv)
 
-Using the dotenv library is a more convinient way of setting enviornmet variables and separating code and config. By creating a file named .env in the root directory of your project.
+Using the dotenv library is a more convenient way of setting environment variables and separating code and config. By creating a file named .env in the root directory of your project.
 
 .env
 
-You are able to list any key value pairs that need to be set as enviornment variables. 
+You are able to list any key value pairs that need to be set as environment variables.
 
 ---
 
@@ -123,7 +132,7 @@ Configuring dotenv at the top of your file will give you access to the enviornme
 
 require('dotenv').config();
 
-+add .env file and configure dotenv 
++add .env file and configure dotenv
 
 ---
 
@@ -146,10 +155,11 @@ This means that everyone who wants to run the application would need their own .
 
 .env.example
 
-GITHUT_TOKEN=  
-DB_USERNAME=  
+GITHUT_TOKEN= 
+DB_USERNAME= 
 DB_PASSWORD=
 
 Now a new developer could copy and fill in the values with their own credentials. The app would load their .env file and use the variables contained for it's configuration.
 
 +add .env.example
+

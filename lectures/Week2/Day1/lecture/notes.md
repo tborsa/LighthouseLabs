@@ -9,7 +9,9 @@ slideNumber: true
 ---
 
 # HTTP and APIs
+<center>
 ![internet](assets/internet.gif)
+</center>
 <style type="text/css">
   .reveal p {
     text-align: left;
