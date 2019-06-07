@@ -76,7 +76,7 @@ if (this.cursors.up.isDown )
 // ADD ANIMATIONS
 // IDLE 0-3 LEFT 10-15 Right 4-9
 this.anims.create({
-    key: 'left',
+    key: 'right',
     frames: this.anims.generateFrameNumbers('dino', { start: 10, end: 15 }),
     frameRate: 10,
     repeat: -1 //# of times to reapeat -1 is infinity

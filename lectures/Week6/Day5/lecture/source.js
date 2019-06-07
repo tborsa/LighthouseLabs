@@ -60,6 +60,13 @@ function ComandCenter(location){
 
 var commandCenter = new CommandCenter([20,20]);
 
+//===========================================>
+
+ComandCenter.prototype.buildScv = function(){
+    console.log("SCV READY!");
+}
+
+
 
 //===========================================>
 
