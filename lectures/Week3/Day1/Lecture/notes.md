@@ -4,11 +4,14 @@
 
 ![css](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Lecture/assets/css.gif)
 
+Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectures/Week3/Day1/Lecture)
+
+
 ---
 
 ### Topics 📢
 
-![Box](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Lecture/assets/box.png)
+![Box](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Lecture/assets/box.png) 
 
 - Writing semantic HTML
 - Cascading Style Sheets
@@ -27,16 +30,16 @@
 
 ⏫ More chance for you to explore and find material!
 
-📚The Course is going to be less direct in its guidence.  
+📚The Course is going to be less direct in its guidance. 
 
-This means that during lecture if/when a new concept comes up that you don't fully understand, consider writing it down and researching it post-lecture. There are too many new things that you'll encounter directly or tangentially in morning lecture for everyone to ask "What's XYZ?". That is a question to explore with Google first.  
+This means that during lecture if/when a new concept comes up that you don't fully understand, consider writing it down and researching it post-lecture. There are too many new things that you'll encounter directly or tangentially in morning lecture for everyone to ask "What's XYZ?". That is a question to explore with Google first.   
 We're happy to discuss XYZ with you once you've spent some time trying to understand it for yourself.
 
 ---
 
 ## Tweeter 🐦
 
-We will work a little more on front end and styling with html and css with this project.
+We will work a little more on the front end and styling with html and css with this project.
 
 DEMO
 
@@ -54,30 +57,30 @@ DEMO
 
 ## what we are not focusing on today? ❌🔬
 
-- we are not looking at css frameworks 
+- we are not looking at css frameworks
 Bootstrap (CSS/UI grid frameworks in general) comes later. It makes more sense to focus on vanilla CSS.
 - SCSS (also known as Sass) is a better way to write CSS, and there are other alternatives to it. You'll be learning SCSS in Week 4 to implement your Midterm (requirement).
-- we are not focusing on html 
-    - do want to look at semantic html 
+- we are not focusing on html
+   - do want to look at semantic html
 
 ---
 
-## Semantic html 
+## Semantic html
 
-The Idea that your html should express what the content it holds is. 
+The Idea that your html should express what the content it holds is.
 Tags whose names describe their purpose.
 
-For example using <strong> tag instead of <b>
+For example using `<strong>` tag instead of `<b>`
 
 ---
 
 ```HTML
 <div>Rocks</div>
 <div>
-    Rocks are cool
-    <div>
-        🗿
-    </div>
+   Rocks are cool
+   <div>
+       🗿
+   </div>
 </div>
 <div></div>
 ```
@@ -86,10 +89,10 @@ For example using <strong> tag instead of <b>
 ```HTML
 <header>Rocks</header>
 <article>
-    Rocks are cool
-    <figure>
-        🗿
-    <figure>
+   Rocks are cool
+   <figure>
+       🗿
+   <figure>
 </article>
 <footer></footer>
 ```
@@ -99,8 +102,8 @@ For example using <strong> tag instead of <b>
 
 # TOOLS 🔧🔨
 
-- Chrome
-    - Developer tools
+- Chrome 
+   - Developer tools 
 DevTools is your biggest friend with front-end development
 
 <!-- cross out vs grey out(div is see through) -->
@@ -114,19 +117,19 @@ DevTools is your biggest friend with front-end development
 Cascading Style Sheets
 
 - Acts like a tiered waterfall
-    styles cascade or flow downwards adding to the styles below them.
+   styles cascade or flow downwards adding to the styles below them.
 
 The cascading algorithm determines how to find the value(style) to apply for each property for each document element.
 
-DEMO 
+DEMO
 
 ---
 
-## Applying Styles 
+## Applying Styles
 
-Embeded
+Embedded
 ``` HTML
-<style>.inner{font-weight: 700;} </style> 
+<style>.inner{font-weight: 700;} </style>
 ```
 
 External StyleSheet*
@@ -136,18 +139,18 @@ External StyleSheet*
 ```
 ```CSS
 .inner{
-    font-weight: 700;
-    color: snow;
+   font-weight: 700;
+   color: snow;
 }
 ```
 
-Inline 
+Inline
 ``` HTML
 <div class="box inner four" style="color: coral"></div>
 
 ```
 
-* Embbeded and External styleseets are applied in the order that they appear on the HTML document. You should think about the order that you want things applied. 
+* Embedded and External style sheets are applied in the order that they appear in the HTML document. You should think about the order that you want things applied.
 
 ---
 
@@ -155,7 +158,7 @@ Inline
 
 ```CSS
 selector list{
-    property: value,
+   property: value,
 }
 ```
 
@@ -166,8 +169,8 @@ selector list{
 ![reset](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Lecture/assets/reset.gif)
 
 Reset  
-A reset is removing any default browser styling, often called the user agent stylesheet. 
-The Goal is to remove any browser inconsistancies. 
+A reset is removing any default browser styling, often called the user agent stylesheet.
+The Goal is to remove any browser inconsistencies.
 
 https://meyerweb.com/eric/tools/css/reset/
 
@@ -193,7 +196,7 @@ DEMO boxes
 
 ```CSS
 *, *:before, *:after {
-    border: 4px solid red;
+   border: 4px solid red;
 }
 ```
 
@@ -203,7 +206,7 @@ http://guyroutledge.github.io/box-model/
 
 # Box Sizing 📦📏
 
-DEMO How big is this box 
+DEMO How big is this box
 
 http://guyroutledge.github.io/box-model/
 
@@ -217,16 +220,16 @@ Content-box
 - Padding & Border additionally add to the size of the box.
 - Cannot set total box size.
 
-Border-box? 
+Border-box?
 - Height/Width = Content Size + Padding + Border.
-- Padding & Border acounted for in size.
-- Width/Height sets total box size. 
+- Padding & Border accounted for in size.
+- Width/Height sets total box size.
 
 It is better to use border-box
 
 ```CSS
 *{
-    Box-sizing: border-box (non-default)
+   Box-sizing: border-box; //(non-default)
 }
 ```
 
@@ -234,15 +237,15 @@ It is better to use border-box
 
 # Block vs Inline
 
-Block Level:
+Block Level: 
 - Starts on a new line
 - Takes as much width as it can by default
 - Structural
 - Default: `<div>,<h1>-<h6>,<p>,<ul>,<nav>`
 
-Inline: 
+Inline:  
 - Does not start on a new line
-- Doesn't effect the elemnts around it
+- Doesn't affect the elements around it
 - Can't set width or height ext..
 - Content related
 - Default: `<span>,<a>,<input>,<button>,<img>`
@@ -255,22 +258,22 @@ Demo
 
 __Don't__ put block elements inside inline elements
 ```HTML
-    <a><div>Block</div></a>
+   <a><div>Block</div></a>
 ```
 * can cause inconsistent render, conflict between properties
 ** is a violation of html standards
 
-__DO__ put inline inside block 
+__DO__ put inline inside block
 
 ```HTML
-   <div> <a>Inline</a></div>
+  <div> <a>Inline</a></div>
 ```
 
-Block and Inline are display properties, and can be changed in CSS
+Block and Inline are display properties, and can be changed in CSS 
 ```CSS
-    p{
-        display: block;
-    }
+   p{
+       display: block;
+   }
 ```
 *another display property is inline-block.
 
@@ -283,25 +286,25 @@ Block and Inline are display properties, and can be changed in CSS
 Magazine layout => web layout
 
 ```CSS
-    div{
-        float: left; //or left or right
-    }
+   div{
+       float: left; //or left or right
+   }
 ```
 
 DEMO
 
-clear floats
+clear floats 
 When we want our elements to start after an element that has been floated we have to *clear* the float.
 
 ```CSS
-    div{
-        clear: both; //or left or right
-    }
+   div{
+       clear: both; //or left or right
+   }
 ```
 
 Inline-Block  
-- Behaves like inline but you can set a width and height.
-- Like Block but does not add a line break after the element. 
+- Behaves like inline but you can set the width and height.
+- Like Block but does not add a line break after the element.
 
 ---
 
@@ -332,6 +335,8 @@ https://caniuse.com/#search=css%20grid
 
 ## Resources
 
-- MDN 
-- CSS-Tricks is also great
+- MDN
+- CSS-Tricks is also great 
 Add MDN to all of your search queries in Google to get MDN-focused results
+
+

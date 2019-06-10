@@ -8,6 +8,10 @@
 div{
     background-image: url("block.png");
     background-size: contain;
-    width: 200px;
-    height: 200px;
+    width: 800px;
+    height: 800px;
+}
+span{
+    width: 100px;
+    height: 100px;
 }
