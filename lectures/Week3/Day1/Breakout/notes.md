@@ -1,35 +1,56 @@
-# CSS is not easy
+# CSS is not Easy
+
+![Hard](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Breakout/assets/hard.jpg)
+
+
 What makes css hard?
 
-## Old and the New
+---
 
+### Topics 📢
 
-#position
+- Position
+- ID's & Classes
+- Selectors
+- Specificity
+- Frameworks
 
-# Selecors
+---
 
-```
-div.primary {
+# Position
+The position property specifies the type of positioning method used for an element 
+- static 
+  - default
+  - cannot set top, right, bottom , or left
+- relative 
+- fixed 
+- absolute
+- sticky
 
+---
+
+## TRBL
+When using shorthand to set the style attribute of a top, right, bottom, left property the order is.
+
+TRBL
+
+```css
+div{
+  margin: 15 10 15 10;
+  padding: 5 10 5 10;
 }
 ```
-```
-div .primary {
+---
 
-}
-```
+## ID's Vs Classes 🔖
 
-https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors
-
-## ID's Vs Classes
-
-hooks to grab elements in order to apply style to them. 
+🎣 Hooks to grab elements in order to apply style to them. 
 
 When to use IDs vs Classes
 
 Classes
-- same class on multiple
-- multiple classes on one element
+- Same class on multiple elements
+- Multiple classes on one element
 
 
 ID's are unique
@@ -43,81 +64,167 @@ There is nothign you can do wth a class in css that you cant do with an ID and v
 
 *** However classes and ID's are different to JS
 
-# S[ecificity
+---
 
-Which slector wins?
+# Selectors
+
+Way we use tags, ID's, Classes to apply CSS to them.
+
+``` CSS
+div, .primary {
+
+}
+```
+``` CSS
+div.primary {
+
+}
+```
+```CSS
+div .primary {
+
+}
+```
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors
+
+---
+
+# Specificity
+
+![Specificity](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Breakout/assets/specificity1.png)
+
+When two competing styles are applied to an element the one with the higher priority specificity gets applied. 
+
+A style with 0,0,2,1 (2classes and 1 elemnt tag) would be applied over a style of 0,0,1,1 (1class and 1 element tag).
+
+What is the 'score' of ...
+```CSS
+div.box.left{
+  color: blue;
+}
+```
 
 
-# selector battle
-
-skldfj vs alkds
-
-lksjdf vs akljsdf
-
-lksjdf vs alkdjsf
+# Selector battle
 
 
+```CSS
+#red{
+  color: red;
+}
+```
+## VS
 
+```CSS
+div.blue.ocean{
+  color: blue;
+}
+```
 
+---
+
+```CSS
+div a.red{
+  color: blue;
+}
+```
+## VS
+
+```CSS
+.blue.ocean{
+  color: blue;
+}
+```
+
+---
+
+```CSS
+div.box.left{
+  color: blue;
+}
+```
+## VS
+
+```CSS
+div.box.left{
+  color: blue;
+}
+```
+
+---
 
 # Too specific
 
-use ID's sparigly
+![Specific](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Breakout/assets/ricknmorty.gif)
 
-!important 
+When are your selectors too specific?
 
-```
-div{
-    color: red !importand;
+```CSS
+div a p > a.link.underline#home{
+  text-decoration: underline;
 }
 ```
-If everything is important than nothing is important
+- use ID's sparingly
+- If you dont need a selector dont use it. 
 
-If two elements are important than you look at specificity. 
+---
 
-
-
-Playing with the source / inline style with DevTools
-Writing good CSS selectors (best practices)
-
-## Too generic
+## Simple is better
 
 In general you want to be light handed with classes and id's.
 
-If you dont need them dont use them . 
 
 if we want our links to look a cerain way
 
-```
+```HTML
 <a href="www.nima.com" class="link"> </link>
 
 ```
 
 instead we know it will be an a tag so 
 
-```
+```HTML
 <a href="wwww.nima.com" ></link>
 
 ```
 
+---
 
-## stylin style
+## !important 
+
+```CSS
+div{
+    color: red !important;
+}
+```
+- Important will move the style to the top of the specifcity heirarchy. 
+
+
+- If everything is important than nothing is important
+
+- If two elements are important than you look at specificity. 
+
+---
+
+
+# Stylin Style 😎
 
 Style of CSS should be:
 
+``` CSS
 selector {
   /* 2 spaces for indentation, as with everything else */
   key1: value;
   key2: value;
 }
+```
 
+---
 
 # Frameworks
 
 
-look at some grid examples
+- Bootstrap 
 
-Make sure to cover 1, 2, 3, and 4 properties on things like margin/padding. It is often helpful to give students the 'Trouble' mnemonic:
-
-TRBL - Top, Right, Bottom, Left
-
+- look at some grid examples

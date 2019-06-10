@@ -1,44 +1,40 @@
 
----
 
-transition: "none"
-highlightTheme: "darkula"
-logoImg: ""
-center: false
-slideNumber: true
+# The CSS Box Model
 
----
-
-# The CSS box model
-
-![Box](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Lecture/assets/box.png)
+![css](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Lecture/assets/css.gif)
 
 ---
 
 ### Topics 📢
 
-![css](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Lecture/assets/css.gif)
+![Box](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Lecture/assets/box.png)
 
-Writing semantic HTML
-block level elements vs inline elements and their nesting
-reset / normalize
-Box sizing: border-box (non-default)
-CSS debugging in DevTools
-Teacher Notes
+- Writing semantic HTML
+- Cascading Style Sheets
+- Reset / Normalize
+- Box Model
+- Block level elements vs inline elements and their nesting
+- Float
+- Modern CSS
 
 
 ---
 
-## Bootcamp
+## Back at it again with the Bootcamp
 
+⏫ More new Concepts!
 
-You'll notice that while this week has more new concepts (every week will), our approach to teaching with you will adjust a bit. Overall as the weeks progress there is lesser emphasis on giving you all the resources, functions, tips that you need to complete an activity, and more expectation of you to poke around until you find an answer.
+⏫ More chance for you to explore and find material!
 
-This means that during lecture if/when a new concept comes up that you don't fully understand, consider writing it down and researching it post-lecture. There are too many new things that you'll encounter directly or tangentially in morning lecture for everyone to ask "What's XYZ?". That is a question for Google before it should become one for us. We're happy to discuss XYZ with you once you've spent some time trying to understand it for yourself.
+📚The Course is going to be less direct in its guidence.  
+
+This means that during lecture if/when a new concept comes up that you don't fully understand, consider writing it down and researching it post-lecture. There are too many new things that you'll encounter directly or tangentially in morning lecture for everyone to ask "What's XYZ?". That is a question to explore with Google first.  
+We're happy to discuss XYZ with you once you've spent some time trying to understand it for yourself.
 
 ---
 
-## Tweeter
+## Tweeter 🐦
 
 We will work a little more on front end and styling with html and css with this project.
 
@@ -46,16 +42,17 @@ DEMO
 
 ---
 
-## What we are focusing?
+## What we are focusing on? 🔬
 
-Looking at css and the box model and to get a history of css.
+- Look at css and the box model and get a history of css.
 
-Writing maintainable CSS is tough, and comes with experience. Not everyone is good at it, even at 
-CSS Box model is the focus for today, and it still has many confusion parts, many hacks. You'll encounter some this week. For this reason, you really need to (especially at first) "poke things until they work".
+- CSS Box model is the focus for today, it still has many confusion parts, and many hacks. You'll encounter some this week. For this reason, you really need to (especially at first) "poke things until they work".
+
+- We have to understand the "older" box model first before we look at the new stuff.
 
 ---
 
-## what we are not focusing on today?
+## what we are not focusing on today? ❌🔬
 
 - we are not looking at css frameworks 
 Bootstrap (CSS/UI grid frameworks in general) comes later. It makes more sense to focus on vanilla CSS.
@@ -100,21 +97,23 @@ For example using <strong> tag instead of <b>
 ---
 
 
-# TOOLS
+# TOOLS 🔧🔨
 
 - Chrome
     - Developer tools
 DevTools is your biggest friend with front-end development
 
-cross out vs grey out(div is see through)
+<!-- cross out vs grey out(div is see through) -->
 
-#CSS
+---
+
+# CSS 📃
 
 ![waterfall](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Lecture/assets/waterfall.gif)
 
 Cascading Style Sheets
 
-- acts like a tiered waterfall
+- Acts like a tiered waterfall
     styles cascade or flow downwards adding to the styles below them.
 
 The cascading algorithm determines how to find the value(style) to apply for each property for each document element.
@@ -123,11 +122,11 @@ DEMO
 
 ---
 
-### 3 ways to apply styles 
+## Applying Styles 
 
 Embeded
 ``` HTML
-<style> </style> 
+<style>.inner{font-weight: 700;} </style> 
 ```
 
 External StyleSheet*
@@ -184,7 +183,7 @@ http://nicolasgallagher.com/about-normalize-css/
 
 ---
 
-# Box Model
+# Box Model 📦
 
 ![Box Model](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Lecture/assets/boxmodel.png)
 
@@ -202,7 +201,7 @@ http://guyroutledge.github.io/box-model/
 
 ---
 
-# Box Sizing
+# Box Sizing 📦📏
 
 DEMO How big is this box 
 
@@ -239,27 +238,29 @@ Block Level:
 - Starts on a new line
 - Takes as much width as it can by default
 - Structural
-- Default: <div>,<h1>-<h6>,<p>,<ul>,<nav>
+- Default: `<div>,<h1>-<h6>,<p>,<ul>,<nav>`
 
 Inline: 
 - Does not start on a new line
 - Doesn't effect the elemnts around it
 - Can't set width or height ext..
 - Content related
-- Default: <span>,<a>,<input>,<button>,<img>
+- Default: `<span>,<a>,<input>,<button>,<img>`
+
+Demo
 
 ---
 
-### nesting
+## Nesting 🐣
 
-__Don't__ put block elements inside inline
+__Don't__ put block elements inside inline elements
 ```HTML
     <a><div>Block</div></a>
 ```
 * can cause inconsistent render, conflict between properties
 ** is a violation of html standards
 
-__DO__ put inliine inside block 
+__DO__ put inline inside block 
 
 ```HTML
    <div> <a>Inline</a></div>
