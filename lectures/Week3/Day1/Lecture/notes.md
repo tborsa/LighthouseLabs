@@ -67,7 +67,7 @@ Bootstrap (CSS/UI grid frameworks in general) comes later. It makes more sense t
 
 ## Semantic html
 
-The Idea that your html should express what the content it holds is.
+The Idea that an html tag should be expressive about what content it holds.
 Tags whose names describe their purpose.
 
 For example using `<strong>` tag instead of `<b>`
@@ -128,6 +128,7 @@ DEMO
 ## Applying Styles
 
 Embedded
+
 ``` HTML
 <style>.inner{font-weight: 700;} </style>
 ```
@@ -137,6 +138,7 @@ External StyleSheet*
 ```HTML
 <link rel="stylesheet" href="waterfall.css">
 ```
+
 ```CSS
 .inner{
    font-weight: 700;
@@ -145,6 +147,7 @@ External StyleSheet*
 ```
 
 Inline
+
 ``` HTML
 <div class="box inner four" style="color: coral"></div>
 

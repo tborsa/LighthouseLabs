@@ -3,6 +3,9 @@
 ![Hard](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Breakout/assets/hard.jpg)
 
 
+Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectures/Week3/Day1/Breakout)
+
+
 What makes css hard?
 
 ---
@@ -17,18 +20,6 @@ What makes css hard?
 
 ---
 
-# Position
-The position property specifies the type of positioning method used for an element 
-- static 
-  - default
-  - cannot set top, right, bottom , or left
-- relative 
-- fixed 
-- absolute
-- sticky
-
----
-
 ## TRBL
 When using shorthand to set the style attribute of a top, right, bottom, left property the order is.
 
@@ -36,15 +27,32 @@ TRBL
 
 ```css
 div{
-  margin: 15 10 15 10;
-  padding: 5 10 5 10;
+ margin: 15 10 15 10;
+ padding: 5 10 5 10;
 }
 ```
 ---
 
-## ID's Vs Classes 🔖
+# Position
+The position property specifies the type of positioning method used for an element
+- static  
+  - default
+  - cannot set top, right, bottom , or left
+- relative
+  - TRBL can be set to change position relative to where it would have been statically positioned.
+- absolute
+  - TRBL can be set to change position relative to the nearest positioned ancestor, or the html body.
+- fixed
+  - TRBL is set relative to the viewport so the element stays in the same position even when content is scrolled.
 
-🎣 Hooks to grab elements in order to apply style to them. 
+- sticky
+
+---
+
+
+## IDs Vs Classes 🔖
+
+🎣 Hooks to grab elements in order to apply style to them.
 
 When to use IDs vs Classes
 
@@ -52,15 +60,24 @@ Classes
 - Same class on multiple elements
 - Multiple classes on one element
 
+```HTML
+<div class="shaman"></div>
+<div class="rogue"></div>
+```
 
-ID's are unique
-- each elemenent can have at most one ID
+IDs are unique
+- each element can have at most one ID
 - You should have only one element with a particular ID
-- secrect browser power url#idname
+- secret browser power url#idname
+
+```HTML
+<div id="introduction"></div>
+```
+
 
 ** Elements can have both classes and ID's
 
-There is nothign you can do wth a class in css that you cant do with an ID and vise versa
+There is nothing you can do with a class in css that you can do with an ID and vise versa
 
 *** However classes and ID's are different to JS
 
@@ -94,31 +111,32 @@ https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinato
 
 ![Specificity](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week3/Day1/Breakout/assets/specificity1.png)
 
-When two competing styles are applied to an element the one with the higher priority specificity gets applied. 
+When two competing styles are applied to an element the one with the higher priority specificity gets applied.
 
-A style with 0,0,2,1 (2classes and 1 elemnt tag) would be applied over a style of 0,0,1,1 (1class and 1 element tag).
+A style with 0,0,2,1 (2 classes and 1 element tag) would be applied over a style of 0,0,1,1 (1 class and 1 element tag).
 
 What is the 'score' of ...
 ```CSS
 div.box.left{
-  color: blue;
+ color: blue;
 }
 ```
 
 
 # Selector battle
 
+<span style="color: red">red</span> vs. <span style="color: blue">blue</span>
 
 ```CSS
 #red{
-  color: red;
+ color: red;
 }
 ```
 ## VS
 
 ```CSS
 div.blue.ocean{
-  color: blue;
+ color: blue;
 }
 ```
 
@@ -126,14 +144,14 @@ div.blue.ocean{
 
 ```CSS
 div a.red{
-  color: blue;
+ color: red;
 }
 ```
 ## VS
 
 ```CSS
 .blue.ocean{
-  color: blue;
+ color: blue;
 }
 ```
 
@@ -141,14 +159,14 @@ div a.red{
 
 ```CSS
 div.box.left{
-  color: blue;
+ color: red;
 }
 ```
 ## VS
 
 ```CSS
 div.box.left{
-  color: blue;
+ color: blue;
 }
 ```
 
@@ -162,11 +180,11 @@ When are your selectors too specific?
 
 ```CSS
 div a p > a.link.underline#home{
-  text-decoration: underline;
+ text-decoration: underline;
 }
 ```
 - use ID's sparingly
-- If you dont need a selector dont use it. 
+- If you don't need a selector don't use it.
 
 ---
 
@@ -175,14 +193,14 @@ div a p > a.link.underline#home{
 In general you want to be light handed with classes and id's.
 
 
-if we want our links to look a cerain way
+if we want our links to look a certain way
 
 ```HTML
 <a href="www.nima.com" class="link"> </link>
 
 ```
 
-instead we know it will be an a tag so 
+instead we know it will be an `<a>` tag so
 
 ```HTML
 <a href="wwww.nima.com" ></link>
@@ -191,19 +209,19 @@ instead we know it will be an a tag so
 
 ---
 
-## !important 
+## !important
 
 ```CSS
 div{
-    color: red !important;
+   color: red !important;
 }
 ```
-- Important will move the style to the top of the specifcity heirarchy. 
+- Important will move the style to the top of the specificity hierarchy.
 
 
 - If everything is important than nothing is important
 
-- If two elements are important than you look at specificity. 
+- If two elements are important than you look at specificity.
 
 ---
 
@@ -214,9 +232,9 @@ Style of CSS should be:
 
 ``` CSS
 selector {
-  /* 2 spaces for indentation, as with everything else */
-  key1: value;
-  key2: value;
+ /* 2 spaces for indentation, as with everything else */
+ key1: value;
+ key2: value;
 }
 ```
 
@@ -225,6 +243,8 @@ selector {
 # Frameworks
 
 
-- Bootstrap 
+- Bootstrap
+- Semantic UI
+- Materialize
 
-- look at some grid examples
+
