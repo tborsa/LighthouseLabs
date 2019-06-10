@@ -3,94 +3,64 @@ function test() {
 }
 
 
+let literal = { key: 4};
+
+literal.newthing = "Hey";
+
+delete literal.newthing;
+
+
+const factory = function( attack, speed){
+    console.log("THOR IS HERE!");
+    return{
+        attack: attack,
+        speed: speed,
+        name: "thor",
+        javelinMissle: function(){
+            console.log('BAM!!');
+        }
+    }
+}
+
+
+const CommandCenter = function(location){
+    this.location = location;
+}
+
+
+CommandCenter.prototype.buildSCV = function(){
+    console.log("SCV READY!");
+};
+CommandCenter.prototype.loadSCV = function(){
+    console.log("LOADED");
+}
+
+
+const OrbitalCommand = function(location){
+    this.location = location;
+}
+
+OrbitalCommand.prototype = Object.create(CommandCenter.prototype);
+OrbitalCommand.prototype.constructor = OrbitalCommand;
 
 
 
+OrbitalCommand.prototype.scannerSweep = function(){
+    console.log("Ping.... ping.. ");
+};
+OrbitalCommand.prototype.muleDrop = function(){
+    console.log("New MULES");
+};
 
+const PlanetaryDefense = function(location){
+    this.location= location;
+}
 
+PlanetaryDefense.prototype = Object.create(CommandCenter.prototype);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function createThor(attack, speed){
-//     console.log("Thor is Here!");
-//     return{
-//         attack: attack, 
-//         speed: speed,
-//         javelinMissle: function(){
-//             console.log("BOOOOM!!");
-//         }
-//     }
-// }
-// function createHellion(attack, speed){
-//     console.log("Im Ready");
-//     return{
-//         attack,
-//         speed,
-//         flameThrower(){
-//             console.log("tssssssss");
-//         }
-
-//     }
-// }
-
-// //constructor 
-// function commandCenter(location){
-//     this.location = location;
-// }
-
-// commandCenter.prototype.buildSCV = function(){
-//     console.log("SCV Here!");
-// };
-
-// //
-// function PlanetaryFortress(location){
-//     commandCenter.call(this, location);
-//     this.cannons= function(){
-//         console.log("BOOM!");
-//     }
-// }
-
-// PlanetaryFortress.prototype = commandCenter.prototype;
-
-
-// function OrbitalCommand(location){
-//     commandCenter.call(this, location);
-//     this.scan= function(){
-//         console.log("ping...ping");
-//     }
-//     this.buildSCV = function(){
-//         commandCenter.prototype.buildSCV.call(this, null);
-//         console.log("New scv");
-//     }
-// }
-
-// OrbitalCommand.prototype = commandCenter.prototype;
-
-
-//PlanetaryFortress.prototype.test = "hello";
-
-
-//PlanetaryFortress.prototype.constructor = commandCenter;
+PlanetaryDefense.prototype.cannons = function(){
+    console.log("BOOM!");
+}
+PlanetaryDefense.prototype.loadSCV = function(){
+   
+}
