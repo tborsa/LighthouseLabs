@@ -1,17 +1,25 @@
+--GROUP BY EXAMPLE
+
 SELECT album_id, count(id) AS track_count 
 FROM tracks 
 GROUP BY album_id;
 
--- with having
+-- HAVING EXAMPLE ALBUMS WITH MORE TRACKS THAN 15
 
 SELECT album_id, count(id) AS track_count 
 FROM tracks 
 GROUP BY album_id
 HAVING count(id) <15;
 
+----BAD-GROUPBY-EXAMPLE---
 
--- with in
+SELECT
+  albums.title as album_title, albums.year as album_year,
+  COUNT(albums.year) as albums_in_year
+FROM albums
+GROUP BY albums.year;
 
+--  IN EXAMPLE ARTISTS WITH THE NAMES 'Outkast' or 'Kendrick Lamar'
 
 SELECT name
 FROM artists
@@ -80,14 +88,6 @@ JOIN albums ON albums.artist_id = artists.id
 GROUP BY artists.id;
 
 
-----BAD--EXAMPLE----
-
-
-SELECT
-  albums.title as album_title, albums.year as album_year,
-  COUNT(albums.year) as albums_in_year
-FROM albums
-GROUP BY albums.year;
 
 -- # of albums per artist
 -- who have more than 2 albums, in descending order

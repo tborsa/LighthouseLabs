@@ -69,6 +69,8 @@ https://www.losant.com/blog/getting-started-with-the-raspberry-pi-zero-w-without
 
 SSH
 
+- Chromium
+
 - Getting node
 https://www.w3schools.com/nodejs/nodejs_raspberrypi.asp?fbclid=IwAR1_GH3-pOdAFU9Rc77tnilNffdw2iRK0tnlRCFRwNwqhL3T_9JpMYCXYuU
 

@@ -333,16 +333,65 @@ The selection of data is likely to cause the most confusion for you. There are 6
 
 ---
 
-### 💽 I want the name and year each album was released.
+### 💽 I want the name and id of all artists.
 
 *
 ```
-//This will display the name and year rows from the
+//This will display the name and id columns from the
+//artists table.
+```
+
+```sql
+SELECT name, id FROM artists;
+```
+*
+---
+
+### 💽 I want to see Daft Punk's albums.
+
+*
+```
+//This will display all columns for albums
+//where artist_id = the given number
+```
+
+```sql
+SELECT * 
+FROM albums
+WHERE artist_id = ?;
+```
+*
+---
+
+### 💽 I want all the songs of Discovery.
+
+*
+```
+//This will display the title and  track nubmer
+// for tracks where album_id = given number
+```
+
+```sql
+SELECT title, number as track_number
+FROM tracks
+WHERE album_id = ?;
+```
+*
+
+---
+
+### 💽 I want the name and year each album was released ordered by year.
+
+*
+```
+//This will display the name and year columns from the
 //albumns table.
 ```
 
 ```sql
-SELECT name, year FROM albums;
+SELECT name, year 
+FROM albums
+ORDER BY year;
 ```
 *
 
@@ -380,66 +429,11 @@ WHERE albumn_id = 1;
 
 ---
 
-### 💽 I want to see how many tracks there are for each artist.
-*
-```
-// This will display a list of artist ids and the
-// number of tracks in each.
-```
-
-```sql
-SELECT albumn_id, count(id) AS track_count
-FROM tracks
-GROUP BY albumn_id;
-```
-*
-
----
-
-### 💽 I want to see which albums have more than 10 tracks.
-*
-```
-// This will display a filtered result set based
-// on the count value being higher than 20.
-```
-
-```sql
-SELECT albumn_id, count(id) AS track_count
-FROM tracks
-GROUP BY albumn_id
-HAVING count(id) >= 10;
-```
-*
-
----
-
-### 💽 I want to order my previous results with the highest counts at the top of the list.
-
-*
-```
-//This will display the previous results sorted
-//high to low.
-```
-
-```sql
-SELECT
- albumn_id,
- count(id) AS track_count
-FROM tracks
-GROUP BY albumn_id
-HAVING count(id) >= 10
-ORDER BY count(id) DESC;
-
-```
-*
-
----
-
-### 💽 I want the previous result set, but only for albums that were released in 2018.
+### 💽 I want the first tracks on all albums released by Kanye West.
 
 Problem?
 
-The release date information is stored in a separate album table
+The artist information is stored in a separate table
 
 ---
 
@@ -569,9 +563,7 @@ WHERE artists.id = albums.artists_id;
 
 ## UPDATE & DELETE
 
-These queries seem to be a lot simpler than ones that begin with `SELECT`. BUT The `UPDATE` and `DELETE` are the most dangerous queries because they change or remove data. This means you need to be very careful when using either of them. Never write an `UPDATE` or `DELETE` query without a `WHERE` clause.
-
-Here is a [story](https://www.reddit.com/r/cscareerquestions/comments/6ez8ag/accidentally_destroyed_production_database_on/) about a situation where a developer deleted the production database on their first day. It wasn't their fault but how many times could you do this before you could no longer get hired?
+These queries seem to be a lot simpler than ones that begin with `SELECT`. BUT The `UPDATE` and `DELETE` are the most dangerous queries because they change or remove data. This means you need to be very careful when using either of them. Never write an `UPDATE` or `DELETE` query without a `WHERE` clause. Why?
 
 The key takeaway is to be extra careful working on production databases. Test all your update and delete operations on a development database.
 
@@ -591,7 +583,7 @@ WHERE id = 666;
 
 [DELETE](https://www.postgresql.org/docs/current/static/sql-delete.html)
 
-I'm not sure why you would ever delete your own data. If you want to delete a specific row you specify a `WHERE` clause.
+If you want to delete a specific row you specify a `WHERE` clause. Deleting data should be avoided if possible. 
 
 ```sql
 DELETE FROM artists WHERE id = 3;

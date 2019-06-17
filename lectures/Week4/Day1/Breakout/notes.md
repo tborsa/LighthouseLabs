@@ -6,7 +6,7 @@ Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectu
 
 ## FOREIGN KEYS 🤖 🔑
 
-- Foreign key columns. Add `_id` to the singular name of the column you are referencing. Students to cohorts would be `cohort_id`. The type would be `INTEGER` but you also should create the foreign key with `REFERENCES cohorts(id) ON DELETE CASCADE`.
+- Foreign key columns. Add `_id` to the singular name of the column you are referencing. Albums to artists would be `artist_id`. The type would be `INTEGER` but you also should create the foreign key with `REFERENCES artists(id) ON DELETE CASCADE`.
 
 Using `ON DELETE CASCADE` for foreign key references. If we delete an artist then we may want to delete all of the albums that point to the record. The cascading delete functionality is a [constraint](https://www.postgresql.org/docs/current/static/ddl-constraints.html). It is not necessary to use CASCADE. If you don't you may notice some issues when trying to delete something that has a foreign reference to it.
 
@@ -76,10 +76,10 @@ id  |                  title                  | number | album_id
  11 | Lost in the World                       |     10 |        1 
  12 | Who Will Survive in America             |     11 |        1 
  13 | Intro (Skit)                            |      1 |        2 
- 14 | We Don't Care                            |      2 |        2 
+ 14 | We Don't Care                           |      2 |        2 
  15 | Graduation Day                          |      3 |        2 
  16 | All Falls Down                          |      5 |        2 
- 17 | I'll Fly Away                            |      5 |        2 
+ 17 | I'll Fly Away                           |      5 |        2 
  18 | Spaceship                               |      6 |        2 
  19 | Jesus Walks                             |      7 |        2 
  20 | Never Let Me Down                       |      8 |        2 
