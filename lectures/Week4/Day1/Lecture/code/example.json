@@ -1,0 +1,65 @@
+{
+    books:[
+        {
+            name: "Name of the Wind", 
+            author: "Patrick Rothfuss",
+            year: 2007
+        },
+        {
+            name: "Dune", 
+            author: "Frank Herbert",
+            year: 1965,
+            characters: [
+                {name:
+                age:
+                relationships:}
+            ]
+        },
+        {
+            name: "Red Rising", 
+            author: "Pierce Brown",
+            year: 2012
+        },
+        {
+            name: "American Gods",
+            author: "Neil Gaiman", 
+            date: "2011/12/12" 
+        }
+    ],
+    users: [
+        {
+            name: "travis", 
+            favorite_books: [
+                "Dune", "Name of the Wind", "The Hobbit"
+            ]
+        }
+    ]
+}
+
+
+
+Egypt
+
+pyramids
+    -location
+    -size
+    -Date completion
+    -
+
+Heiroglyphics 
+    -age
+    -meaning
+    -location
+
+
+Mythology
+    -Stories
+    -Time period
+        -dynasty
+
+    - Gods
+        -name
+        -description
+        -super powers
+
+Cities

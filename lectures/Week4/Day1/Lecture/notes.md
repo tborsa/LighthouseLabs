@@ -46,7 +46,7 @@ With mongo objects were stored in _Collections_ as _Documents_
 
 ---
 
-Mongo has many advantages it is flexible it allows us to store and retrieve data as JSON a format that is verytop: 30% !important; easy to use with javascript development.
+Mongo has many advantages it is flexible it allows us to store and retrieve data as JSON a format that is easy to use with javascript development.
 
 But...
 
@@ -108,7 +108,7 @@ When defining columns for the tables you will need to specify the data type. `IN
 
 - Primary key column. Use the name `id` and then `SERIAL PRIMARY KEY NOT NULL`.
 - Names, emails, usernames and passwords can all be stored as `VARCHAR(255)`.
-- Foreign key columns. Add `_id` to the singular name of the column you are referencing. Students to cohorts would be `cohort_id`. The type would be `INTEGER` but you also should create the foreign key with `REFERENCES cohorts(id) ON DELETE CASCADE`.
+- Foreign key columns. Add `_id` to the singular name of the column you are referencing. Artists to albums would be `album_id`. The type would be `INTEGER` but you also should create the foreign key with `REFERENCES albums(id) ON DELETE CASCADE`.
 - Dates would use the `DATE` type. If you needed [date and time](https://www.postgresql.org/docs/current/static/datatype-datetime.html) you would use `TIMESTAMP`.
 
 You will use `INTEGER` to represent most [numbers](https://www.postgresql.org/docs/current/static/datatype-numeric.html). There are other *sizes* of integers as well.
@@ -331,7 +331,7 @@ The selection of data is likely to cause the most confusion for you. There are 6
 - __ORDER BY__ - Describe the parameters for the results ordering.
 
 
----
+---  
 
 ### 💽 I want the name and id of all artists.
 
@@ -344,13 +344,14 @@ The selection of data is likely to cause the most confusion for you. There are 6
 ```sql
 SELECT name, id FROM artists;
 ```
-*
----
+*  
+
+---    
 
 ### 💽 I want to see Daft Punk's albums.
 
-*
-```
+*  
+```  
 //This will display all columns for albums
 //where artist_id = the given number
 ```
@@ -359,13 +360,14 @@ SELECT name, id FROM artists;
 SELECT * 
 FROM albums
 WHERE artist_id = ?;
-```
-*
----
+```  
+*  
 
-### 💽 I want all the songs of Discovery.
+---  
 
-*
+### 💽 I want all the songs of Discovery.  
+
+*  
 ```
 //This will display the title and  track nubmer
 // for tracks where album_id = given number
@@ -375,14 +377,14 @@ WHERE artist_id = ?;
 SELECT title, number as track_number
 FROM tracks
 WHERE album_id = ?;
-```
-*
+```  
+*  
 
----
+---  
 
 ### 💽 I want the name and year each album was released ordered by year.
 
-*
+*  
 ```
 //This will display the name and year columns from the
 //albumns table.
@@ -393,12 +395,13 @@ SELECT name, year
 FROM albums
 ORDER BY year;
 ```
-*
+*  
 
----
+---  
 
 ### 💽 I want to see how many tracks there are.
-*
+
+*  
 ```
 //This will display the number of rows, which represents
 //the number of tracks.
@@ -406,14 +409,15 @@ ORDER BY year;
 
 ```sql
 SELECT count(id) FROM tracks;
-```
-*
+```  
+*  
 
----
+---  
 
-### 💽 I want to see how many tracks there are for a specific artist.
-*
-```
+### 💽 I want to see how many tracks there are for a specific album
+
+*  
+```  
 // This will display the count for all the rows matching
 // the condition of the artist being id 1.
 // With the AS clause we can alias the column name to
@@ -425,9 +429,9 @@ SELECT count(id) AS tracks_count
 FROM tracks
 WHERE albumn_id = 1;
 ```
-*
+*  
 
----
+---  
 
 ### 💽 I want the first tracks on all albums released by Kanye West.
 
@@ -435,7 +439,7 @@ Problem?
 
 The artist information is stored in a separate table
 
----
+---  
 
 ## JOIN 🤝
 
@@ -449,7 +453,7 @@ There are 5 kinds of joins.
 - `FULL OUTER JOIN` is the same as `OUTER JOIN`
 - `CROSS JOIN`
 
----
+---  
 
 When performing a `JOIN` you define the type of join, the two tables involved in the operation and the condition that is used to join on.
 
@@ -536,7 +540,7 @@ ON artists.id = albums.artist_id;
 
 ### CROSS JOIN
 
-Using a `CROSS JOIN` we can get the cartesian product. A row for every student and a row for every cohort. This isn't very useful and is only provided for completeness.
+Using a `CROSS JOIN` we can get the cartesian product. A row for every artist and a row for every album. This isn't very useful and is only provided for completeness.
 
 ```sql
 SELECT *
