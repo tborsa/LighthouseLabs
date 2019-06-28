@@ -1,15 +1,15 @@
 const config = {
-    type: Phaser.AUTO,
+    type: Phaser.AUTO, 
     width: 800,
     height: 500,
     pixelArt: true,
     physics: {
         default: "arcade",
         arcade: {
-            gravity:{ y: 1500}
+            gravity: {y: 1500}
         }
     },
-    scene:[StartScene]
+    scene: [Startscene]
 }
 
 

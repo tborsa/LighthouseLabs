@@ -8,11 +8,11 @@
 
 Objectives
 
-- Game Design vs Development
-- Computer Graphics
-- Graphics Libraries
-- Game Engines
-- Phaser
+- Game Design vs Development  
+- Computer Graphics  
+- Graphics Libraries  
+- Game Engines  
+- Phaser  
 
 
 ---
@@ -20,19 +20,24 @@ Objectives
 # What are the Elements of a game?
 
 
-- Gameplay concepts
-- Display
-- Characters
-- Environment
-- Goal
-- Number of players
-- Rules
-- Story
-- Art
-- Music
-- Code
-- Models
+- graphics  
+    - animation of user player  
+- Rules  
+- Map/Board  
+- Characters  
+- Story  
+- Dialogue  
+- Sounds  
+    - Music  
+    - Sound Effects  
+- Inputs  
+- Code   
 
+
+
+.  
+.  
+.
 
 ---
 
@@ -118,13 +123,13 @@ Developing a representation of a surface or object in 3D simulated space, usuall
 
 Process of generating realistic or desired images from a model.
 This involves:
-
-- Texture
-    - Applying 2d images or "textures" to 3d shapes.
-- Lighting
-    - adding light to the scene
-- Shading 
-    - applying light to the model
+ 
+- Texture  
+    - Applying 2d images or "textures" to 3d shapes.  
+- Lighting  
+    - adding light to the scene  
+- Shading   
+    - applying light to the model  
 
 
 ![Shading](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/shading.jpg)
@@ -146,11 +151,11 @@ Adding motion to the model.
 
 For 3D animation this can involve 
 
-- Rigging
-    - Attaching immovable joints to a static model.
-- Motion Capture
-- Kinematics
-    - Calculating the angle of joints to arrive at a position or vise versa.
+- Rigging  
+    - Attaching immovable joints to a static model.  
+- Motion Capture  
+- Kinematics  
+    - Calculating the angle of joints to arrive at a position or vise versa.  
 
 ![Rigging](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/rigging.gif)
 
@@ -167,25 +172,25 @@ But also animation concepts...
 ---
 
 
-# 2d games?
+# 2d games?  
 
-- Sprites
-    - 2D image
-    - Tools
-        - aesprite
-        - graphicsgale
-        - tile extruder
+- Sprites  
+    - 2D image  
+    - Tools  
+        - aesprite  
+        - graphicsgale  
+        - tile extruder  
 
-- Tiles
-    - 
-    - Tools
-        - tiled
+- Tiles  
+    -  
+    - Tools  
+        - tiled  
 
 ![tiles](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/AdvancedTopics/gamedev/assets/tiles.png)
 
-- Animation
+- Animation  
     - New sprite image for each frame of the motion results in a sprite sheet. 
-    - state machine
+    - state machine  
 
 Hybrid 2D Games: Where 3D lighting and shading techniques are applied to 2D sprites. 
 
@@ -211,10 +216,10 @@ Makes use of the GPU to render graphics fast.
 
 Examples:
 
-    - DirectX (Direct3D)
-    - OpenGL
-    - WebGL
-    - Vulkan
+    - DirectX (Direct3D)  
+    - OpenGL  
+    - WebGL  
+    - Vulkan  
 
 [Pasta!](https://alteredqualia.com/three/examples/webgl_pasta.html)
 
@@ -230,24 +235,24 @@ Examples:
 Development environment to help people build video games.
 (rendering engine, physics engine, collision detection)
 
-Helps with
+Helps with  
 
-- physics
-- user input
-- animation
-- sprite handling
-- sound
-- synchronization (things happen at the right time)
-- update loops
-    - delta time
-- collision
+- physics  
+- user input  
+- animation  
+- sprite handling  
+- sound  
+- synchronization (things happen at the right time)  
+- update loops  
+    - delta time  
+- collision  
 
 Examples
 
-- Unity
-- Unreal
-- GameMaker
-- Phaser.js
+- Unity  
+- Unreal  
+- GameMaker  
+- Phaser.js  
 
 There are also many "In house" game engines that companies create to make their games.
 

@@ -4,6 +4,8 @@
 
 Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectures/Week4/Day1/Breakout)
 
+Use the above link to see the queries we worked through.
+
 ## FOREIGN KEYS 🤖 🔑
 
 - Foreign key columns. Add `_id` to the singular name of the column you are referencing. Albums to artists would be `artist_id`. The type would be `INTEGER` but you also should create the foreign key with `REFERENCES artists(id) ON DELETE CASCADE`.
