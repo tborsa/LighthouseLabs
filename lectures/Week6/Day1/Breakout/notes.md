@@ -1,62 +1,128 @@
 
+# More React
 
-# Review the video layout that we made
+![morereact](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day1/Breakout/assets/morereact.png)
 
-# Props and state
-# functional components class components
-# if statements
-# loops
 
-# loops
+# Topics 📢
+
+- Props and state
+- functional components class components
+- Declarative Syntax
+  - if statements
+  - loops
+- jsx works behind the scenes (briefly)
+
+# What have we made so Far?
+  - What to add?
+
+DEMO
+
+JSX declarative syntax
+if statements in jsx
+loops in jsx
+how jsx works behind the scenes (briefly)
+
+# State
+
+![state](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day1/Breakout/assets/state.png)
+
+
+ We could use global scope to store application data but that would be bad practice. 
+
+ Instead State!
+
+State is a components own memory
+  - it can think(remember) for itself
+
+
+# Props Vs. State
+
+ __props__-> custom data recieved from a parent
+  -If props changes the component will re render itself.
+
+ __State__ -> memory/data that a component can hold itself
+  - if state changees the component will re render
+
+# SetState
+
+Method to let react know that we have changed the state so that it can rerender the appropriate elements. 
+
+```javascript
+ this.setState({
+        number: this.state.number+1
+    })
+```
+Changing state without setstate will not update the UI.
+  
+# Behavior
+
+We can add functionality to change the state when a user interacts with our components. 
+This will dynamically change our page content. 
+
+Functions that change state have to be properly bound.
+
+```javascript
+this.changePokemon = this.changePokemon.bind(this);
+```
+OR 
+```javascript
+changePokemon = ()=>{};
+```
+Because they are passed around and use this.setState() we need to make sure that 'this' correctly refers to the component with the state that is being modified. 
+
+
+# Data Down Function Up
+
+In component heirarchys 
+- Pass data down to child components by props
+- Call functions upward to modify parents state
+
+ DEMO
+
+# Declarative Syntax
+
+Tell react what to do not how to do it. 
+Render this component
+vs 
+Addd this thing and this thing and then show it. 
+
+# Loops
+
 Rendering arrays on screen 
+
 [1,2,3,4]=> 1234
 ```
 [<h1>title</h1>, <h1>title</h1> <h1>title</h1> <h1>title</h1>] -> TITLE TITLE
 ```
+So we can use map to create an array of components that will be rendered.
+
+Each mapped component requires a unique key prop
+
+# Condtional rendering 
+
+ternerary one or the other
+
+```javascript
+conditoin ? <ComponentOne></ComponentOne> : <ComponentTwo></ComponentTwo>;
+```
+
+Maybe one thing
+
+```javascript
+condition && (<Component></Component>);
+```
+Can also define a jsx block before the return.
+
+# Functional (stateless) Components Vs. Class Components
+
+If a component does not need it's own state you can simplify it by making it a Functional Component.
+
+```javascript
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
 
 
-
-#state
- can use global scop but dont want to use that
- props->custom info recieved from a parent
-  -If props changes the component will re render itself
- State ->memory that a component can hold itself
-  - if state changees the component will re render
-
-State is a components own memory
-  - can think for itself
-
-  - fucntion upward to effect parent state
-    (increase number)
-
-    -bind this???
-    (after error )
-    -bind or arrow function
-    -clicking function that
-    this.state.number++ does not update the dom
-
-    inside function can delcare methods without const or declarations
-
-    Add featured video that changes when you click on a particular video 
-    -have to change state from below
-    -change video source and title 
-
-    addcounter to component and render many of them
-
-# Unique key prop
-
-# SetState
-
-transform [data] -> [components]
-
-map to components 
-
-# condtional rendering 
-with if
-ternerary
-(thng)&& (thing to output)
-
-# stateless functional component
-NOt talking about state can simplify your component 
-
-
+ES6 classes and how to read ES5 (old) React syntax

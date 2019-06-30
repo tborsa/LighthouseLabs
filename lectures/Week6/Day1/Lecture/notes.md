@@ -1,74 +1,134 @@
-welcome back!
+# Intro to React
+
+![React](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day1/Lecture/assets/react.gif)
 
 # comp sci week?
 
+![compsci](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day1/Lecture/assets/compsci.jpg)
+
+
+welcome back!
+
+
+# Topics 📢
+
+
+- react!
+  - makes front end aproachable and structured
+  - move away from the wild west  
+- Frameworks
+- SPA
+- Components
+- Props
+
+
 lecture and breakout connected 
 
-react!
-makes front end aproachable and structured
-move away from the wild west  
+
+# Why does react exist?
+
+Why jquery?:
+- lets you reach around and grab/effect things in the dom 
+
+Why React?:
+- Divide UI into small blocks
+- Components!
+- Provides structure to front end
+- Fast Development!
+- react is a framework! (some dispute this as Library)
+- Easy Single Page Applications
+- Reusability
 
 
-# why does react exist?
+# library vs framework?
+![Library](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day1/Lecture/assets/library.webp)
 
-jquery:
 
-lets you reeach aroind and grab/effect th+ings in the dom 
+__Library__: helps solve a problem with a set of functions 
 
-gimmick for react
-conponents!
+__Framework__: library with strict opinions, enforces structure to your code.
+With a framework you are commited to the framework.
 
-react is framework! (some dispute this as Library)
-library vs framework?
-library helps solve a problem a set of functions 
-framework library with strict opinions, enforces structure to my code
-framework you are commited to the framework 
+A ibrary you really buy into. 
+Anime fan vs. weeb
 
-we wilk use react as a framework for client side applications
-why client sidd app?
-- ejs sucksss
+React is a framework for client side applications
+Why do we need a client side framework? 
+- ejs 🤢
 - have to mix and match jquery patch stuff together
-
-- react has structure 
-- applications that can adapt to chnage 
+- react has structure
+- applications that can adapt to change 
 - want modular design (react modular by default)
 
-# Spa?
-tweeter
+# SPA?
+
+tweeter:
 one page and parts of the page reload (with ajax)
 
-shift in where logic happens-
-buisness logic shiftes to fron end
-handles when we want data and how we dispkay data 
-server that can return/recieve data insteaf of html 
+Front-End:
+- Front end does more.
+- shift in where logic happens.
+- buisness logic shifted to the front end.
+    - Front end decides when we want data and how we display it 
+
+Server:
+- Returns data instead of html
+- Application User interface
+- Generic (Usable by different front ends)
+- Actions on data
 
 
-backend -> api
-application program interface 
+What are some API's we have used?
+
 backend that makes data and actions available
 
-# component
-visual block of ui 
-lego pieces that make our reacy app
-example with YouTube
+Extra Security challenges
+- server-side code has no control over the environment they run in.
+- Extra careful about sensitive data used on the front end
 
-general similar structure with different data/ some  pilymorphism 
+# Component
 
-visual stuff abd behaviors  
+A component is a Visual block of user interface that can be conditionaly rendered where it is needed.  
+- lego pieces that make our react app
+- Similar structure with different data/some  polymorphism 
+- Visual block and it's behaviors
+
+Similar to EJS partials but more flexible, and with behavior. 
+
+Site Example!
+
+Component Heirarchy
+
+rectangles around an existing site to show component breakdown 
+rectangles = componrnts?
+
+# W6 Project
+
+lets look at finished Chatty
 
 
 # Demo
-scrimba 
 
-look at mosy basic component 
+Show us React already...
 
-classes?
 
-render 
-return 
-jsx? javascript + xml
+# Component stuff
+
+-classes?
+-render 
+  - return
+
+# JSX 
+javascript + xml (html)
+
+multiple lines use ()
 
 making elements with jquery vs jsx
+
+{} In JSX runs pure js
+
+
+# Visual Planning
 
 return one object/ from return 
  draw out application on board/draw
@@ -77,20 +137,14 @@ return one object/ from return
 start from a visual place! 
 nice designs to break down into conpinents 
 
-rectangles around an existing site to show component breakdown 
-rectangles = componrnts?
 
-code one component (yeezy head)
-use in parent component as a html tag 
+# Pokedex
 
-hard coded component then later dynamic component 
+What components do we need.
 
-videolist component
-video tile as many jsx elements vs as component 
 
-class vs classname 
+Demo Cont..
 
-want each video to be different 
 
 # props!
 
@@ -100,25 +154,21 @@ props = parameters
 
 input anything in the form of attributes 
 
-this.props is an object!
+```javascript
+<Component attributeOne="thing" attributeTwo="thingtwo" > </Component>
+
+```
+
+Inside the component this.props is an object!
 
 forgot a prop? no big deal
 
-i
 add non string props {}
-run any js in jsx with {}
 
-# review on what has been done
+```javascript
+<Component attributeOne={1} attributeTwo={[1,2,3]} > </Component>
 
-# tour of the boilerplate
-
-run boilerplate
-
-Dont worry about the config files
-not important for making the app and components
-dont have to touch index.jsx only have to use app.
-
-copy paste scrimba example to boilerplate
+```
 
 jsx inject number {} 
 
@@ -126,15 +176,30 @@ can pass anythng as props!
 
 pass a function as props on click,
 
-
-later
-# Declarative vs imparative
-# Data down actions up
-# Looping
-# state
-
-
 # Tools
 
 - React dev tools
   - lets you see the react project tree, props 
+
+# Review
+
+
+# Boilerplate
+
+Chatty app will have a boilerplate set up to get react set up fast
+
+run boilerplate
+
+Dont worry about the config files
+not important for making the app and components.
+dont have to touch index.jsx only have to use app.
+Babel: 
+webpack:
+
+
+# Breakout
+
+- State
+- Declarative vs imparative
+- Data down actions up
+- Looping
