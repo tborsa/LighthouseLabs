@@ -38,7 +38,7 @@ State is a components own memory
 
 # Props Vs. State
 
- __props__-> custom data recieved from a parent
+ __props__-> custom data recieved from a parent  
   -If props changes the component will re render itself.
 
  __State__ -> memory/data that a component can hold itself
