@@ -13,28 +13,28 @@ welcome back!
 # Topics 📢
 
 
-- react!
-  - makes front end aproachable and structured
-  - move away from the wild west  
+- react!  
+  - makes front end approachable and structured
+  - move away from the wild west 
 - Frameworks
 - SPA
 - Components
 - Props
 
 
-lecture and breakout connected 
+lecture and breakout connected
 
 
 # Why does react exist?
 
 Why jquery?:
-- lets you reach around and grab/effect things in the dom 
+- lets you reach around and grab/effect things in the dom
 
 Why React?:
-- Divide UI into small blocks
+- Divide UI into small blocks 🀄
 - Components!
 - Provides structure to front end
-- Fast Development!
+- Fast Development!🚴
 - react is a framework! (some dispute this as Library)
 - Easy Single Page Applications
 - Reusability
@@ -44,34 +44,35 @@ Why React?:
 ![Library](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day1/Lecture/assets/library.webp)
 
 
-__Library__: helps solve a problem with a set of functions 
+__Library__: helps solve a problem with a set of functions
 
 __Framework__: library with strict opinions, enforces structure to your code.
-With a framework you are commited to the framework.
+With a framework you are committed to the framework.
 
-A ibrary you really buy into. 
+A library you really buy into.
 Anime fan vs. weeb
 
-React is a framework for client side applications
-Why do we need a client side framework? 
+React is a framework for client side applications.  
+
+Why do we need a client side framework?
 - ejs 🤢
 - have to mix and match jquery patch stuff together
 - react has structure
-- applications that can adapt to change 
+- applications that can adapt to change
 - want modular design (react modular by default)
 
 # SPA?
 
-tweeter:
+__tweeter:__  
 one page and parts of the page reload (with ajax)
 
-Front-End:
+__Front-End:__
 - Front end does more.
-- shift in where logic happens.
-- buisness logic shifted to the front end.
-    - Front end decides when we want data and how we display it 
+- Shift in where logic happens.
+- Business logic shifted to the front end.
+   - Front end decides when we want data and how we display it
 
-Server:
+__Server:__
 - Returns data instead of html
 - Application User interface
 - Generic (Usable by different front ends)
@@ -87,39 +88,41 @@ Extra Security challenges
 - Extra careful about sensitive data used on the front end
 
 # Component
+![Lego](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day1/Lecture/assets/lego.png)
 
-A component is a Visual block of user interface that can be conditionaly rendered where it is needed.  
+A component is a Visual block of user interface that can be conditionally rendered where it is needed. 
 - lego pieces that make our react app
-- Similar structure with different data/some  polymorphism 
+- Similar structure with different data/some  polymorphism
 - Visual block and it's behaviors
 
-Similar to EJS partials but more flexible, and with behavior. 
+Similar to EJS partials but more flexible, and with behavior.
 
 Site Example!
 
-Component Heirarchy
+Component Hierarchy
 
-rectangles around an existing site to show component breakdown 
-rectangles = componrnts?
+rectangles around an existing site to show component breakdown
+rectangles = components?
 
 # W6 Project
 
-lets look at finished Chatty
+let's look at finished Chatty
 
 
 # Demo
 
 Show us React already...
 
+---
 
 # Component stuff
 
--classes?
--render 
+- classes? 
+- render
   - return
 
-# JSX 
-javascript + xml (html)
+# JSX
+JavaScript + xml (html)
 
 multiple lines use ()
 
@@ -129,13 +132,9 @@ making elements with jquery vs jsx
 
 
 # Visual Planning
-
-return one object/ from return 
- draw out application on board/draw
- break it into components 
- 
-start from a visual place! 
-nice designs to break down into conpinents 
+start from a visual place!
+React is visual so it is easiest to plan know
+nice designs to break down into components
 
 
 # Pokedex
@@ -146,13 +145,13 @@ What components do we need.
 Demo Cont..
 
 
-# props!
+# props! 👊
 
-components are functions that rerurn visual stuff
+Components are functions that return visual stuff
 
 props = parameters
 
-input anything in the form of attributes 
+With props you can input anything in the form of attributes.
 
 ```javascript
 <Component attributeOne="thing" attributeTwo="thingtwo" > </Component>
@@ -163,43 +162,47 @@ Inside the component this.props is an object!
 
 forgot a prop? no big deal
 
-add non string props {}
+add non string props using {}
 
 ```javascript
 <Component attributeOne={1} attributeTwo={[1,2,3]} > </Component>
 
 ```
 
-jsx inject number {} 
+With jsx you can inject any javascript with {}
 
-can pass anythng as props!
+can pass anything as props!
 
-pass a function as props on click,
+pass a function as props on click.
 
-# Tools
+# Tools 🔧
 
 - React dev tools
-  - lets you see the react project tree, props 
+  - lets you see the react project tree, props
 
 # Review
 
 
-# Boilerplate
+# Boilerplate 🔥
 
 Chatty app will have a boilerplate set up to get react set up fast
 
 run boilerplate
 
-Dont worry about the config files
+Don't worry about the config files
 not important for making the app and components.
-dont have to touch index.jsx only have to use app.
-Babel: 
-webpack:
+don't have to touch index.jsx only have to use app.  
+
+__Babel:__ A Javascript compiler used to make ES6 and beyond backwards compatible with older browsers.  
+
+__webpack:__ Javascript(and other) module bundler, 
 
 
 # Breakout
 
 - State
-- Declarative vs imparative
+- Declarative vs imperative
 - Data down actions up
 - Looping
+
+
