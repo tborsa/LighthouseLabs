@@ -21,6 +21,7 @@ Pokedex React App we built [here](https://github.com/tborsa/pokedex)
  - What to add?  
 
 DEMO
+
 # State
 
 ![state](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day1/Breakout/assets/state.png)
