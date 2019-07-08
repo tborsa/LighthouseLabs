@@ -105,9 +105,9 @@ You can set default read and write methods for instanc variables with accesor an
 
 ```Ruby
 class Car
-  attr_accessor @color
-  attr_reader @year
-  attr_writer @model
+  attr_accessor :color
+  attr_reader :year
+  attr_writer :model
   def initialize (color, year, model)
     @color = color
     @year = year

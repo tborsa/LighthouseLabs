@@ -2,7 +2,7 @@
 
 # Intro to ruby and OOP
 
-![React](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week6/Day1/Lecture/assets/react.gif)
+![Ruby](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Lecture/assets/ruby.jpg)
 
 Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectures/Week6/Day1/Lecture)
 
@@ -10,8 +10,11 @@ lecture going through weekend stuff
 breakout deep dive oop
 
 
-# why this week?
-ruby week  > job sym week
+# Why this week?
+
+![Job](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Lecture/assets/vincent.gif)
+
+ruby week  => job sym week  
 in most jobs you inherit a large code base 
 add new features 
 
@@ -20,7 +23,7 @@ how do you become okay at ruby to finish the contract
 
 languages are largely transferable, if you know one you know many 
 
-you will feel over whelmed with new code base and language
+you will feel overwhelmed with new code base and language
 
 
 # Ruby basics 💎
@@ -29,7 +32,9 @@ ruby files .rb
 
 run ruby files with
 
-ruby file.rb
+```
+$ ruby file.rb
+```
 
 __idiomatic ruby__ = using ruby the way its meant to be used, agreeded upon best practices 
 
@@ -37,14 +42,14 @@ When doing something feels harder then it should, look for a more idiomatic way
 shorter code and usually more human readable 
 research what the best practices are.  
 
-# Interactive Ruby
+## Interactive Ruby
 
 Typing __irb__ into your terminal will start the interactive ruby command line tool. 
 This allows you to write ruby code in your terminal. 
 
 irb always shows the result/return of the expressions we run.
 
-__variables__ 
+## variables 
 
 ```ruby
 dog = "matt"
@@ -52,7 +57,7 @@ dog = "matt"
 You can reassign variables in ruby.
 Unlike javascript you do not have to declare a variable with any special keyword (let,const, var ext.)
 
-__Constants__
+## Constants
 
 ```ruby
 Dog = "matt"
@@ -69,7 +74,7 @@ Ruby trys to be immediately legible.
 Cons? Harder to change a variable back an forth from constant to variable.
 
 
-__Types__
+## Types
 
 Like javascipt ruby has different data types for variales.
 All data in ruby is represented as objects.
@@ -95,7 +100,7 @@ Ruby everyhing == object.
 
 Each variable is dynamically typed. We dont have to specify what type it should be. 
 
-__methods__ 
+## methods 
 
 
 ```ruby
@@ -112,7 +117,7 @@ ruby methods
 implicit return statement: 
 The last line of a method is returned unless you use the return keyword to explicitly set what will be returned. 
 
-__nil__ 🚫
+## nil 🚫
 
 Similar to JavaScripts null
 
@@ -127,7 +132,7 @@ a = nil
 a.nil?
 ```
 
-__program flow__ 🌊
+## program flow 🌊
 
 Control flow is the same as JavaScript with some additional syntax options
 
@@ -145,7 +150,6 @@ also
 
 ```ruby
 puts "I push Miracle Whips" if benzColor == "mayonnaise"
-
 ```
 ```ruby
 puts "I push Miracle Whips" unless benzColor != "mayonnaise"
@@ -155,14 +159,15 @@ puts "I push Miracle Whips" unless benzColor != "mayonnaise"
 in ruby === is not strict equals! (it is often case subsumption)
 use == in ruby for comparison 
 
-__for__
+## for
+
 ```ruby 
 for num in 1...10
   puts num
 end
 ```
 
-__while__
+## while
 
 ```ruby
 num = 1
@@ -174,7 +179,8 @@ end
 ```
 
 reverse of while
-__until__
+
+## until
 
 ```ruby
 until conditional [do]
@@ -182,21 +188,20 @@ until conditional [do]
 end
 ```
 
-__each__
+## each
 ```ruby
 [1, 2, 3, 4, 5].each do |num|
   puts num
 end
 ```
 
-__times__ ⌚
+## times ⌚
 
 ```ruby
 10.times { puts "hello" }
 ```
 
-
-__Big picture differences__ 🗻
+# Big picture differences 🗻
 
 Ruby is not asynchronous
 JavaSript needs lots of things to be happening at once on the browser so it needed to be asynchronous.
@@ -220,16 +225,18 @@ ruby doesent want you to make mistakes
 >"Often people, especially computer engineers, focus on the machines. They think, "By doing this, the machine will run fast. By doing this, the machine will run more effectively. By doing this, the machine will something something something." They are focusing on machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines. We are the masters. They are the slaves." - Matz
 
 # minimalist
+![minimal](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Lecture/assets/minimalism.jpg)
 
-Ruby is a mininalist language you can remove extra syntax/noise in a lot of cases.
+Ruby is a minimalist language you can remove extra syntax/noise in a lot of cases.
 
-don't need 
+you don't need 
   - semicolon
   - brackets 
   - return
 
 # Ecosystem
 
+![Ecosystem](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Lecture/assets/ecosystem.jpg)
 __gems__
 rubygems.org
 RubyGems is a package manager for ruby libraries and programs called gems. Similar to node packages and NPM. 
@@ -237,14 +244,14 @@ RubyGems is a package manager for ruby libraries and programs called gems. Simil
 ```
 $ gem install gem_name
 ```
-gemspec: file defines the gem
+__gemspec:__ file defines the gem
 Gemfile: a list of dependencies.
 ```
 $ bundle install
 ```
 will install all of a projects dependencies 
 
-Rakefile: specifies rake scripts that you can run with the rake command. Usually for testing and building operations. 
+__Rakefile:__ specifies rake scripts that you can run with the rake command. Usually for testing and building operations. 
 
 ```
 $ rake test
@@ -272,9 +279,13 @@ Ruby is also used for web development
 
 # New Stuff ? 
 
+![new](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Lecture/assets/new.png)
+
 What does ruby have that JavaScript doesn't?
 
-__symbols!__ 🔰
+---
+
+## symbols! 🔰
 
 Symbols are essentially a string that you cannot change. 
 
@@ -283,19 +294,23 @@ Sometimes you just want a label.
 Symbols have the same object id for all similar symbols.
 They are more efficient than strings. 
 
-So a symbol that has the same chatacters as another symbol is the same symbol.
+A symbol that has the same chatacters as another symbol is the same symbol.
 
 Symbols are used for hashes, and to label things. 
 
-__hashes__
-Hashes are rubys version of objects...sorta 
-You use square brackets for accesing.
+---
+
+## Hashes
+
+Hashes are rubys version of objects...sorta  
+You use square brackets for accesing values.
 
 hash rocket =>
 mounts a value to another value 
 
-```ruby
+```Ruby
 topFive = { "one" => "dylan", "two" => "dylan", "three" => "dylan", "four" => "dylan", "five" => "dylan" }
+
 puts dictionary["one"]
 ```
 have to access the value using the exact key and type you used.
@@ -308,7 +323,9 @@ topFive = { :one => "dylan", :two => "dylan", :three => "dylan", :four => "dylan
 topFive = { one: "dylan", two: "dylan", three: "dylan", four: "dylan", five: "dylan" }
 ```
 
-__Blocks__
+---
+
+## Blocks
 
 ```ruby
 dogs.each  do |x| 
@@ -321,8 +338,11 @@ Maybe a distant cousin..
 
 In ruby you use blocks for control flow to define a chunk of code that should be executed. 
 
+---
 
-__Lambda__
+## Lambda
+
+![Lambda](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Lecture/assets/lamba.gif)
 
 A Lambda is a block that can be defined for later use. 
 
@@ -340,17 +360,13 @@ What is scoping like in javascript?
 
 __ruby__
 
-Class variable: @@variableName available from the class definition and any sub classes.
-
-Instance variable: @variableName available in a specific object or instance of a class. 
-
 Global variable: $variableName available everywhere in your script. 
 
 Local variable: variableName 
 
 __scope gate__
 
-When you define a class, method of module you enter a new walled garden with it's own unique scope.
+When you define a class, method, or module you enter a new walled garden with it's own unique scope.
 Any local variables created before are no longer accesable and new variables will only exist in this new scope. 
 
 Blocks (do, end) are not scope gates
@@ -384,15 +400,15 @@ __Synchronous__
 
 __process__
 
-duplicates the process (server) so that it is running multiple instances of it.
+An active program.
+
+You can duplicate the process (server) so that it is running multiple instances of it.
 The multiple instances can handle multiple requests. 
 
 __threads__
 
 threadsafe code
 
-
-
 Ruby not capable of true concurrency?
 use GIL global interpreter lock  threads cant modify data at the same time
-protects you from thread problems
+protects you from thread problems.
