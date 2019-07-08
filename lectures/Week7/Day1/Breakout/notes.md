@@ -32,50 +32,6 @@ pick a noun?
 blueprint for noun
 
 
-my ___
-vs your ___
-
-choose a noun ie house 
-what things does a house have 
-
-house with windows doors 
-ext
-
-soecific house has 
-2 doors 
-6 windows 
-color red 
-
-
-context of a game 
-good platform for understanding oop
-
-what makes up a game? 
-
-
-building a game 
-character can do things
-character can have inventory
-
-similar character
-same actions
-maybr different inventory
-
-items are things 
-
-not talking about code but breaking down thibgs ir nouns 
-
-naturally lends itself to oop
-
-
-pokemon 
-name 
-type
-breed
-health
-canAttack
-exp
-blueprint
 
 # Syntax
 

@@ -1,13 +1,16 @@
+module Namespace
+  thing = 2
+  Dog = "lilly"
+  module Public
+    cat = "apple"
+    Cat = "tiger"
+  end
 
-i = 0
-while i < 5
-   puts i
-   i += 1
-   break if i == 2
-end
+  def MyMethod (name) 
+    puts "hey " + name
+  end
+  Thing = 5
+  
+end 
 
-num = 0
-while num < 2
-  num ++
-  puts num
-end
+puts Namespace::MyMethod "travis"
