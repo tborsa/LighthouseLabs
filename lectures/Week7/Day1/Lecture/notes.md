@@ -110,12 +110,14 @@ end
 ```
 ruby methods
 - cannot be not passed by reference 
-- implicitly return the last executed thing
+- implicitly return the last executed thing*
 - are strict about the number of argumetns passed
-- are not first class
+- are not first class**
 
-implicit return statement: 
+__*implicit return statement:__ 
 The last line of a method is returned unless you use the return keyword to explicitly set what will be returned. 
+
+__**First Class:__ A first calss function is one that can be passed as an argument to other functions, returned as a value from other functions, and assigned to variables or stored in data structures.
 
 ## nil 🚫
 
@@ -162,7 +164,7 @@ use == in ruby for comparison
 ## for
 
 ```ruby 
-for num in 1...10
+for num in 1...10 do
   puts num
 end
 ```
@@ -172,7 +174,7 @@ end
 ```ruby
 num = 1
 
-while num <= 10
+while num <= 10 do
   puts num
   num += 1
 end
@@ -183,10 +185,11 @@ reverse of while
 ## until
 
 ```ruby
-until conditional [do]
+until conditional do
    code
 end
 ```
+*do is optional for the above loops
 
 ## each
 ```ruby
@@ -202,6 +205,8 @@ end
 ```
 
 # Big picture differences 🗻
+![picture](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Lecture/assets/bigpicture.jpg)
+
 
 Ruby is not asynchronous
 JavaSript needs lots of things to be happening at once on the browser so it needed to be asynchronous.
@@ -351,10 +356,12 @@ doThing = lambda { |num| puts num}
 ```ruby
 say_something = -> { puts "This is a lambda" }
 ```
-
+*run a lambda using lambda_name.call()  
 You can pass lambdas around 
 
 # Scoping 
+
+![scope](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Breakout/assets/scope.jpg)
 
 What is scoping like in javascript?
 
@@ -391,7 +398,12 @@ Namespace::Thing # => 5
 ```
 
 # Concurrency?
+
+![Concurrency](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Lecture/assets/concurrency.png)
+
 "concurrency is the ability of different parts or units of a program, algorithm, or problem to be executed out-of-order or in partial order, without affecting the final outcome. This allows for parallel execution of the concurrent units, which can significantly improve overall speed of the execution"
+
+An application is making progress on more than one task at the same time. 
 
 
 __Async__

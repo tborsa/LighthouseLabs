@@ -10,7 +10,17 @@ end
 a = nil
 a.nil?
 
+# show how ruby is more flexible in syntax and how you can reverse
+# flow with loops and conditionals
+
 puts "I push Miracle Whips" if benzColor == "mayonnaise"
+
+
+x = 0
+begin
+  x += 1
+end until x <10
+p  x  # prints 1
 
 # symbols
 
@@ -30,7 +40,12 @@ topFive = { one: "dylan", two: "dylan", three: "dylan", four: "dylan", five: "dy
 say_something = -> { puts "This is a lambda" }
 dogs.each  do &say_something
 
-
+# multi-line
+l = lambda do |a, b|
+  tmp = a * 3
+  tmp * b / 2
+end
+l.call(1, 2)
 
 
 # scope

@@ -1,5 +1,6 @@
 
 # object oriented program 
+![Job](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Lecture/assets/vincent.gif)
 
 You have used some oop (react)
 but we havent looked at it directly
@@ -14,6 +15,7 @@ OOP is the idea of grouping related data and functionality in structures known a
 
 
 # Class
+![blueprint](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Breakout/assets/blueprint.jpg)
 
 A Class is a blueprint for what an object should look like. 
 
@@ -24,7 +26,7 @@ In ruby all things are objects ( Instances of a class )
 
 
 # Example
-
+![clases](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Breakout/assets/classes.png)
 pick a noun? 
 
 blueprint for noun
@@ -143,10 +145,13 @@ end
 
 # Scoping 
 
-__Class variable__ @@variableName 
+![scope](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Breakout/assets/scope.jpg)
+
+__Class variable__ @@variableName  
 Available from the class definition and any sub classes. All class instances share the same class variable. 
 
-__Instance variable__ @variableName Available in a specific object or instance of a class. 
+__Instance variable__ @variableName  
+Available in a specific object or instance of a class. 
 
 # Class Vs. Instance Methods
 
@@ -179,6 +184,7 @@ instead of this.thing in ruby
 @thing to save the variable global to the objevt 
 
 # Encapsulation
+![encapsulatoin](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Breakout/assets/encapsulation.jpg)
 
 Encapsulation is the grouping of data and functionality while hidding/protecting some data and functionality from the outside.  
 
@@ -200,6 +206,7 @@ I can create a Document and set it's name, but I cannot change the name property
 
 
 # Polymorphism
+![poly](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day1/Breakout/assets/polymorphism.gif)
 
 Can make different versions from a single idea. Many things. 
 
