@@ -25,12 +25,12 @@ Those are some of the questions we are going to try to approach today.
 
 
 # ruby on rails
-"Rails is a web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern.
+>"Rails is a web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern.
 Understanding the MVC pattern is key to understanding Rails. MVC divides your application into three layers: Model, View, and Controller, each with a specific responsibility." Rails readme
 
-has existed for awhile 
-current version is 6.00
-jungle version 2.3.0
+has existed for awhile  
+current version is 6.00  
+jungle version 2.3.0  
 common with existing projects to be locked into a version
 
 Rails grew out of a piece of software called basecamp
@@ -45,38 +45,38 @@ The company eventualky released it to the Public
 MVC is an architectural/design pattern that breaks an application into three logical parts: The Model, View,
 and Controller.
 
-__Model__
+__Model__  
 The model is in charge of all of the data logic. It provides and interface to the database. A model of the data.
 
-__View__
+__View__  
 The view is in charge of the UI logic. The view thinks about how to show information to the user. 
 
-__Controller__
+__Controller__  
 The Controller is in charge of communication between the Model and View. It controlls data flow, getting data from the model and passing it to the view, and manipulates data using the model when needed.  
 
 # Collection of Libraries
 
 Rails is a framework that is made up of a collection of libraries. 
 
-__active record__
-Active record is an orm(object relational mapping). In Rails the model classes are derived from AcriveRecord::Base. Active record allows you to query and modify the application data(usually database) in a more intuitive way. 
+__Active Record__  
+Active record is an orm(object relational mapping). Active record allows you to query and modify the application data(usually database) in a more intuitive way. 
 
- Rails will pluralize your model class names to find the respective database table. So, for a class Book, you should have a database table called books.
-__Object Relational Mapping__
+Rails will pluralize your model class names to find the respective database table. So, for a class Book, you should have a database table called books.
 
-__active view__
+
+__active view__  
 Active view is a view library that handles template lookup and rendering. Provides helpers for building forms and othe UI stuff. 
 
-__active controller__
+__active controller__  
 Active controller is a controller libraty. It allows you to make controllers that make sense of the request and decide what should be outputted. 
 
-__Action dispatch__
+__Action dispatch__  
 Action dispatch is the rails router. It handles incomming requests and forwards them to the correct controller.
 
 __active support__
 Active support is a collection of helper methods for ruby.
 
-__action mailer/ action cable__
+__action mailer/ action cable__  
 Action mailer allows you to send emails. Action cable allows you to integrate websockets. 
 
 All of these are individual libraries.
@@ -95,12 +95,12 @@ Usage?
 - airbnb
 - large active community 
 
-rails is a resource based framework
+rails is a resource based framework a
 restful framework 
 
-resources oriented 
+You will work with
 relationship of nouns to models to controllers 
-When we define a user resource a user has a:
+When we define a user resource it has a:
 - Model
 - Controller
 - Views
@@ -111,7 +111,7 @@ When we define a user resource a user has a:
 
 Rails is big   
 100+ files  
-You dont beed to know what all of the rails files do.
+You dont beed to know what all of the rails files do.  
 You don't need to get bogged down by rails configuration.
 
 Focus on MVC and the execution flow for a normal request/response cycle. 
@@ -135,9 +135,10 @@ follow the path of execution.
 - look at a specific route in jungle rails to understand what it does 
 - look at routes
 - look at the controller and what method was called
-- before actoin
+- before actions
+- Application Controller
 - look at the model 
-- go into db consol select all from products
+- go into db console select all from products
 
 done troubleshooting for data
 
@@ -145,13 +146,15 @@ done troubleshooting for data
 - last app view layouts application.erb
   for layout and style and linking files 
 
-optional 
-__helpers__
+optional   
+__helpers__  
 helpers/products_helper
-- helper methods scopped for all mvc
+- helper methods scopped for all mvc  
+
 models/concerns/products_helper
-- helper methods for models 
-controllers/concerns/products_helper
+- helper methods for models
+
+controllers/concerns/  products_helper
 - helper methods for controller
 
 
@@ -162,45 +165,54 @@ if you want a method that all controllers can use put it here.
  
 
 
-# Rails command line
+# Rails Command Line
 
 rails has a suite of commands that will help you with development.
 
+```
 $ rails --help
+```
+
   List of possible rails commands
 
 # New Rails App 
 Lets look at some helpful rails commands in the context of making a new app. 
 
-$ rails new
-  Initiates a new rails project giving you options on how to configure the project. 
-  gives you options for your project
-  puma hosts rails
-  sprocket builds all your css js and image files
-  being replaced by webpack
-  production pipeline 
-  can skip active record in favor of other orm 
+```
+$ rails new  
+```
+
+Initiates a new rails project.  
+
 
 # Rails Directory
 
 ## /app
-Application specific code
-__/app/assets__
-The static files that the front-end requires.
-__/app/controllers__
-The controllers
-/app/helpers
-Where helper functions reside
-/app/channels
-Socket stuff
-/app/jobs
-Jobs (scheduled tasks)
-/app/mailer
-Mailer stuff
-__/app/models__
-models
-__/app/views__
-views
+Application specific code 
+
+__/app/assets__  
+The static files that the front-end requires.  
+
+__/app/controllers__  
+The controllers  
+
+/app/helpers  
+Where helper functions reside  
+
+/app/channels   
+Socket stuff  
+
+/app/jobs  
+Jobs (scheduled tasks)  
+
+/app/mailer  
+Mailer stuff  
+
+__/app/models__  
+models  
+
+__/app/views__  
+views  
 
 ## /bin
 Code for executable gems. ex. bundle, rails, rake, setup... 
@@ -208,30 +220,29 @@ Code for executable gems. ex. bundle, rails, rake, setup...
 ## /config
 Application configuration files
 
-config/application.rb
+config/application.rb  
 basic application config
-config/database.yml
-config/eniornment.rb
-initializes application
+
+config/database.yml 
+
+config/eniornment.rb  
+initializes application  
+
 config/routes.rb
 
 ## /db
 Database files
 
-/db/seeds.rb
+/db/seeds.rb  
 seed information
-/db/schema.rb
+
+/db/schema.rb  
 Specifies what your db looks like
 
-__/db/migrate__
+__/db/migrate__  
 A list of your database migrations.
 Files that udate the schema. 
  
-$ rake --tasks
-  Gives a list of rake tasks available
-  ruby make, uses a rakefile.
-  Used for common administration tasks
-  Used for seeding and building schema of the db
  
 ## /lib
 applications specific libraries/gems
@@ -239,24 +250,29 @@ applications specific libraries/gems
 ## /test
 test files
 
-rails new example
-look at the files it creates 
+
 dont need to know everyfile
 try to understand the pattern 
  
- rails -- help tells you new stuff
- 
-run new generated app
+$ rails --help
+
+tells you new stuff
 
 ## start the app
-$ bin/rails s 
+
+```
+$ bin/rails s
+``` 
 runs the app with the versuon of rails associated with the app
 
-# rails generate
+# Rails Generate
 A suite of rails commands that let you quickly build out parts of your application. 
 
-__controller__ 
+__controller__   
+```
 $ rails g controller [name(plural)] [actions/methods]
+```
+
 Will generate a 
 - controller 
 - corresponding view for each method
@@ -264,17 +280,23 @@ Will generate a
 
 controllers automatically look for view associated with a controller method 
 
-__model__
+__model__  
+```
 $ rails g model [name(singular)] [field: type, ... ]
-Will generate a model file.
+```
+Will generate a model file.  
 Will generate a migration.
 
-But does it exist in our db?
-rake db:setup //creates the rails db
-rake db:migrate //runs the migration for the model we created
+But does it exist in our db?  
+```
+$ rake db:setup //creates the rails db
+$ rake db:migrate //runs the migration for the model we created
+```
 
-__scaffold__
+__scaffold__  
+```
 $ rails g scaffold [name(singular)] [field: type, ... ]
+```
 Will generate a...
 - model
 - migration
@@ -282,34 +304,52 @@ Will generate a...
 - set of views
 - route in route file
 - more..
- 
+
+## Rake
+```
+$ rake --tasks
+```
+Gives a list of rake tasks available.
+
+ruby make, uses a rakefile.  
+
+Used for common administration tasks  
+
+Used for seeding and building schema of the db  
+
 ## Rails Console
 
-Gives us a ruby terminal with REPL, with the context of our application. 
+Gives us a ruby terminal, with the context of our application. 
 
+```
 $ rails c
+```
 
 use to interact with Active Record and test models and creation
  
+```
 $ rails db 
- opens command line db access.
- If you are using postgres opens up psql in with the correct table. 
+```
+opens command line db access.
+If you are using postgres opens up psql in with the correct table. 
  
-rails if you update view it will live get changes
-by default you have to reset for models and controllers
 
 # Migrations
 
 ![Migration](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day3/Lecture/assets/migration.gif)
 
-Migrations are generated when a model is generated. 
-*DO NOT change schema file yourself, schema will be automatically updated with the migrations that you run. 
+Migrations are generated when a model is generated.  
+>*DO NOT change schema file yourself, schema will be automatically updated with the migrations that you run. 
 
-run to create a database for the project
+```
 $ rake db:setup
+```
+run to create a database for the project
 
-run to run migrations that have not been executed.
+```
 $ rake db:migrate
+```
+runs migrations that have not been executed.
 
 No need for up and down Active Record can intuit what the opposite or down is
 
@@ -321,7 +361,9 @@ fat models skinny controller data logic in model
 Routes are are created in config/routes.rb
 
 You can specify individual routes
-  get 'monsters/show'
+```
+get 'monsters/show'
+```
 
 Or you can specify a group of resource routes
 
@@ -331,9 +373,11 @@ Or you can specify a group of resource routes
 
 Creates a set of routes for CRUD actions around the resource
 
+```
 $ rake routes 
+```
 
-shows all the routes of your application
+Shows all the routes of your application
 
 shows all params and which controller and action will be used
 
@@ -347,27 +391,27 @@ Request is routed to the Rails application (comes in on the port)
 
 __ActionDispatch (Router)__
 
-Build the request object
-params is populated
-cookies are handled
-sessions are handled
-creates a new instance of the appropriate controller
-Passes params, request, session to the controller in the constructor
-The appropriate action(method) is run on the instance of the controller
+- Build the request object
+- params is populated
+- cookies are handled
+- sessions are handled
+- creates a new instance of the appropriate controller
+- Passes params, request, session to the controller in the constructor
+- The appropriate action(method) is run on the instance of the controller
 
 __ActionController__
 
-When created, finds the associated views for the resource (ResourceController -> /app/views/resources), and creates a method for the view(ActionView)
-A method is also created for the associated layout
-The appropriate action method is run as an instance method on the controller
-Most likely, this method is going to activate ActiveRecord and pull data from the database
-After the action method is run (accessing the relevant model data for the resource), then the layout method is run behind the scenes, passing the view method as a block
-View method results get yielded into the layout
-Return value (rendered resource) of the layout method is passed back to the router
+- When created, finds the associated views for the resource (ResourceController -> /app/views/resources), and creates a method for the view(ActionView)
+- A method is also created for the associated layout
+- The appropriate action method is run as an instance method on the controller
+- Most likely, this method is going to activate ActiveRecord and pull data from the database
+- After the action method is run (accessing the relevant model data for the resource), then the layout method is run behind the scenes, passing the view method as a block
+- View method results get yielded into the layout
+- Return value (rendered resource) of the layout method is passed back to the router
 
 __ActionDispatch__
 
-Takes result of action method and builds an HTTP response around it, and sends the response back to the client
+- Takes result of action method and builds an HTTP response around it, and sends the response back to the client
 
 
 # Moving forward
