@@ -1,4 +1,7 @@
 
+# Rails and MVC Introduction
+
+![Rails](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day3/Lecture/assets/rails.png)
 
 ruby and adding rails
 
@@ -9,203 +12,340 @@ mimics a real life job
 what is the process of learning a code base?
 learning a new framework?
 
-ruby on rails
+Those are some of the questions we are going to try to approach today.
+
+
+# Topics
+
+- Rails
+- Jungle
+- MVC
+- HTTP Request Life cycle
+- Debugging / exploration tips
+
+
+# ruby on rails
+"Rails is a web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern.
+Understanding the MVC pattern is key to understanding Rails. MVC divides your application into three layers: Model, View, and Controller, each with a specific responsibility." Rails readme
+
 has existed for awhile 
-current version is ---
-jungle version ---
+current version is 6.00
+jungle version 2.3.0
 common with existing projects to be locked into a version
 
-rails had a forked history merb
-created by dh
+Rails grew out of a piece of software called basecamp
+The basecamp team created Rails to structure their product and make development easier. 
+The company eventualky released it to the Public
 
-came out of a piece of software called basecamp
-needed structure to make this project 
-compaby eventualky released to oublic
 
-acyivr record 
-orm
+# MVC
 
-active dispatch
-router
+![MVC](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day3/Lecture/assets/mvc-rails.png)
 
-active controller
-controller libraty
+MVC is an architectural/design pattern that breaks an application into three logical parts: The Model, View,
+and Controller.
 
-active view
-view library
+__Model__
+The model is in charge of all of the data logic. It provides and interface to the database. A model of the data.
 
-active support
-helper methods for ruby 
+__View__
+The view is in charge of the UI logic. The view thinks about how to show information to the user. 
 
-action mail/ action cable
-mail and sockers 
+__Controller__
+The Controller is in charge of communication between the Model and View. It controlls data flow, getting data from the model and passing it to the view, and manipulates data using the model when needed.  
 
-all of these are individual libraries 
-rails is the bundle of them used together yo form a framework 
-rails is the king of crud 
-quick to build out and scaffold
-shopiffy airbnb 
+# Collection of Libraries
 
-rails is big 
-137files
-you dont beed to know all of that
+Rails is a framework that is made up of a collection of libraries. 
+
+__active record__
+Active record is an orm(object relational mapping). In Rails the model classes are derived from AcriveRecord::Base. Active record allows you to query and modify the application data(usually database) in a more intuitive way. 
+
+ Rails will pluralize your model class names to find the respective database table. So, for a class Book, you should have a database table called books.
+__Object Relational Mapping__
+
+__active view__
+Active view is a view library that handles template lookup and rendering. Provides helpers for building forms and othe UI stuff. 
+
+__active controller__
+Active controller is a controller libraty. It allows you to make controllers that make sense of the request and decide what should be outputted. 
+
+__Action dispatch__
+Action dispatch is the rails router. It handles incomming requests and forwards them to the correct controller.
+
+__active support__
+Active support is a collection of helper methods for ruby.
+
+__action mailer/ action cable__
+Action mailer allows you to send emails. Action cable allows you to integrate websockets. 
+
+All of these are individual libraries.
+rails is the bundle of them used together to form a framework 
+
+
+# Why Rails?
+
+Pros?
+- rails is the king of crud 
+- quick to build out and scaffold
+- good for handling large relational databases
+
+Usage?
+- shopiffy 
+- airbnb
+- large active community 
 
 rails is a resource based framework
-restful frework 
-
-user has
-user model
-user controller
-user views
-
-pluralization and singularization
-
-MVC
-model view controller 
-model for building applications  softwate1975
-provides seperation of concerns for these three pieces 
-
-model
-representation of the data stored in memory
-
-controllers 
-request oriented 
-decides how to fufill a request 
-decides what data is needed 
-takes data from model into view 
-
-view
-presentation 
-has no or minimal logic just shows 
+restful framework 
 
 resources oriented 
 relationship of nouns to models to controllers 
-
-order in which it is executed
-cmv
-that is the order that you debug 
-
-but even before that you have the router
-the router decides what controller gets called
-
-rcmv
-
-folliw each route path to understand how a codebase is working 
-follow the path of execution
-rvmv
-
-filter is this a rails thing or something someone wrote
+When we define a user resource a user has a:
+- Model
+- Controller
+- Views
 
 
-look at a specific route in jungle rails to understand what it does 
-look at routes
-look at the controller and show method called
-look at the model 
-go into db consel select all from products where 
-done troubleshooting for data 
-then look at the view 
-last app view layouts application.erb
-for layout and style and linking files 
+# Welcome to the Jungle
+![jungle](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day3/Lecture/assets/jungle.jpg)
+
+Rails is big   
+100+ files  
+You dont beed to know what all of the rails files do.
+You don't need to get bogged down by rails configuration.
+
+Focus on MVC and the execution flow for a normal request/response cycle. 
+
+# Execution flow
+![flow](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day3/Lecture/assets/flow.gif)
+
+In rails the controllers are request oriented, a controller will only be called if the correct route is called.
+
+The control flow in rails is RCMV
+
+Router -> Controller -> Model -> View
+
+This should be the order in which you debug a Rails app. 
+
+follow each route path to understand how a codebase is working 
+follow the path of execution.
+
+## Goal
+
+- look at a specific route in jungle rails to understand what it does 
+- look at routes
+- look at the controller and what method was called
+- before actoin
+- look at the model 
+- go into db consol select all from products
+
+done troubleshooting for data
+
+- then look at the view 
+- last app view layouts application.erb
+  for layout and style and linking files 
 
 optional 
-helpers
+__helpers__
 helpers/products_helper
-helper methods scopped for all mvc
+- helper methods scopped for all mvc
 models/concerns/products_helper
-helper methods for models 
+- helper methods for models 
 controllers/concerns/products_helper
-helper methods for controller
+- helper methods for controller
 
 
-application controller
-master controller that all controllers inherit from
-if you want a method that all controllers can use put it here
+
+# Application controller
+The Application Controller is a master controller that all controllers inherit from.
+if you want a method that all controllers can use put it here.
  
- rails has a command line suite
- rails --help
- rails new
- gives you options for your project
- puma hosts rails
- sprocket builds all your css js and image files
- being replaced by webpack
- production pipeline 
- can skip active record in favor of other orm 
+
+
+# Rails command line
+
+rails has a suite of commands that will help you with development.
+
+$ rails --help
+  List of possible rails commands
+
+# New Rails App 
+Lets look at some helpful rails commands in the context of making a new app. 
+
+$ rails new
+  Initiates a new rails project giving you options on how to configure the project. 
+  gives you options for your project
+  puma hosts rails
+  sprocket builds all your css js and image files
+  being replaced by webpack
+  production pipeline 
+  can skip active record in favor of other orm 
+
+# Rails Directory
+
+## /app
+Application specific code
+__/app/assets__
+The static files that the front-end requires.
+__/app/controllers__
+The controllers
+/app/helpers
+Where helper functions reside
+/app/channels
+Socket stuff
+/app/jobs
+Jobs (scheduled tasks)
+/app/mailer
+Mailer stuff
+__/app/models__
+models
+__/app/views__
+views
+
+## /bin
+Code for executable gems. ex. bundle, rails, rake, setup... 
+
+## /config
+Application configuration files
+
+config/application.rb
+basic application config
+config/database.yml
+config/eniornment.rb
+initializes application
+config/routes.rb
+
+## /db
+Database files
+
+/db/seeds.rb
+seed information
+/db/schema.rb
+Specifies what your db looks like
+
+__/db/migrate__
+A list of your database migrations.
+Files that udate the schema. 
  
- turtle links
- uses js to only load in the part of the page that changes , faster load times
- has some problems with jquery does not trigger document event
+$ rake --tasks
+  Gives a list of rake tasks available
+  ruby make, uses a rakefile.
+  Used for common administration tasks
+  Used for seeding and building schema of the db
  
- rake 
- for seeding and building svhema of db
- 
- rails new example
- look at the files it creates 
- dont need to know everyfile
- try to understand the pattern 
+## /lib
+applications specific libraries/gems
+
+## /test
+test files
+
+rails new example
+look at the files it creates 
+dont need to know everyfile
+try to understand the pattern 
  
  rails -- help tells you new stuff
  
- rails generate example
- rails g 
- scaffold
-    look at what it creates 
- controller 
-    look at what it creates 
- model
-     look at what
- view
-     look
- 
- rails c
- repl 
- sandbox test
- 
- rails s
- start server
- 
- rails test
- 
- rails db 
- opens command line db access 
- 
-bin/rake rails runs the app with the versuon of rails associated with the app
-
 run new generated app
 
+## start the app
+$ bin/rails s 
+runs the app with the versuon of rails associated with the app
+
+# rails generate
+A suite of rails commands that let you quickly build out parts of your application. 
+
+__controller__ 
+$ rails g controller [name(plural)] [actions/methods]
+Will generate a 
+- controller 
+- corresponding view for each method
+- a route for each method
+
+controllers automatically look for view associated with a controller method 
+
+__model__
+$ rails g model [name(singular)] [field: type, ... ]
+Will generate a model file.
+Will generate a migration.
+
+But does it exist in our db?
+rake db:setup //creates the rails db
+rake db:migrate //runs the migration for the model we created
+
+__scaffold__
+$ rails g scaffold [name(singular)] [field: type, ... ]
+Will generate a...
+- model
+- migration
+- controller
+- set of views
+- route in route file
+- more..
+ 
+## Rails Console
+
+Gives us a ruby terminal with REPL, with the context of our application. 
+
+$ rails c
+
+use to interact with Active Record and test models and creation
+ 
+$ rails db 
+ opens command line db access.
+ If you are using postgres opens up psql in with the correct table. 
+ 
 rails if you update view it will live get changes
 by default you have to reset for models and controllers
 
-active record migration
-no need for up and down ar can intuit what the opposite or down is
+# Migrations
+
+![Migration](https://raw.githubusercontent.com/tborsa/LighthouseLabs/master/lectures/Week7/Day3/Lecture/assets/migration.gif)
+
+Migrations are generated when a model is generated. 
+*DO NOT change schema file yourself, schema will be automatically updated with the migrations that you run. 
+
+run to create a database for the project
+$ rake db:setup
+
+run to run migrations that have not been executed.
+$ rake db:migrate
+
+No need for up and down Active Record can intuit what the opposite or down is
 
 fat models skinny controller data logic in model
 
-controllers automatically look for view associated with controller method 
-in a folder 
 
-scaffold 
-look ar different controller methods
-migrate table to db 
+# Routes
 
-demo app working with nee scaffold
+Routes are are created in config/routes.rb
 
-rake routes 
-shows all the route's
+You can specify individual routes
+  get 'monsters/show'
 
-shows all params shows which controller and action
+Or you can specify a group of resource routes
 
-before actoin
+```ruby
+  resources :cars
+```
 
-link_to
+Creates a set of routes for CRUD actions around the resource
+
+$ rake routes 
+
+shows all the routes of your application
+
+shows all params and which controller and action will be used
+
+
+# Review
 
 Lifecycle of a request in rails
--Don's notes
-
-Lifecycle of a request in Rails
+-From Don's notes!
 
 Request is routed to the Rails application (comes in on the port)
 
-ActionDispatch (Router)
+__ActionDispatch (Router)__
 
 Build the request object
 params is populated
@@ -214,7 +354,8 @@ sessions are handled
 creates a new instance of the appropriate controller
 Passes params, request, session to the controller in the constructor
 The appropriate action(method) is run on the instance of the controller
-ActionController
+
+__ActionController__
 
 When created, finds the associated views for the resource (ResourceController -> /app/views/resources), and creates a method for the view(ActionView)
 A method is also created for the associated layout
@@ -224,17 +365,10 @@ After the action method is run (accessing the relevant model data for the resour
 View method results get yielded into the layout
 Return value (rendered resource) of the layout method is passed back to the router
 
-ActionDispatch
+__ActionDispatch__
 
 Takes result of action method and builds an HTTP response around it, and sends the response back to the client
 
-demo jungle
 
-get prebuild app running 
-run rake:routes
-for each task you are set to build
-use the approach of following the flow of execution and understanding the flow that you need to . 
-
-If it seems that you are doing somethng the hard way, in Rails it is very likely that you are doing things the wrong way. 
-
-Future we will cover route helpers and more details about rails 
+# Moving forward
+In the Future we will cover route helpers, link_to,  and more details about rails.
