@@ -146,17 +146,20 @@ done troubleshooting for data
 - last app view layouts application.erb
   for layout and style and linking files 
 
-optional   
+optional 
+
 __helpers__  
 helpers/products_helper
 - helper methods scopped for all mvc  
+- used in views
 
 models/concerns/products_helper
 - helper methods for models
+- modules
 
 controllers/concerns/  products_helper
 - helper methods for controller
-
+- modules
 
 
 # Application controller
