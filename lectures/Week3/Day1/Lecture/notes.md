@@ -153,7 +153,7 @@ Inline
 
 ```
 
-* Embedded and External style sheets are applied in the order that they appear in the HTML document. You should think about the order that you want things applied.
+* Embedded and External style sheets are applied in the order that they appear in the HTML document. You should think about the order that you want things applied. Sort of
 
 ---
 

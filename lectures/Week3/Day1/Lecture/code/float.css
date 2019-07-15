@@ -5,31 +5,10 @@
     font-weight: 700;
     color: slateblue;
 }
-h1{
-}
-div .ocean{
+.ocean{
     background-color: aqua;
 }
 
-.boat{
-    width: 200px;
-    height: 200px;
-
-    background-image: url("boat.png");
-    background-size: contain;
-}
-.left{
-    float: left;
-}
-.right{
-    float:right;
-}
-.block{
-    display: inline-block;
-}
 .ship{
     background-color: lightblue;
-}
-.clear{
-    clear: left;
 }

@@ -1,17 +1,6 @@
 *{
     font-family: 'Roboto', Helvetica, sans-serif;
     font-size: 80px;
-    margin:20px;
     font-weight: 700;
     color: slateblue;
-}
-div{
-    background-image: url("block.png");
-    background-size: contain;
-    width: 800px;
-    height: 800px;
-}
-span{
-    width: 100px;
-    height: 100px;
 }

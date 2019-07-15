@@ -14,13 +14,15 @@ $ rake db:setup
 #   - List of Topics conversations
 #generate a controller
 
+resources :topics
+
 $ rails g controller topics
 
 # RUN
 # No Index Method
 
 def index 
-
+  
 end
 
 # RUN
@@ -49,6 +51,7 @@ end
 
 # RUN
 # Error cant find topic
+
 
 $ rails g model topic name:string description:string image:string
 
@@ -186,19 +189,23 @@ delete topics
 create topics
 delete posts
 
-# in admin/topics show page
-button_to "name",  admin_topc_url(topic), :method => :delete
+#
+namespace :admin do 
 
-# destroy method in admin topics controller
-@topic = Topic.find(params[:id])
-@topic.destroy
-redirect_to topics_path
+end
+
 
 #create topic
 # could make html form by hand or use form helpers
-form_for :conversations, url: topic_conversations_path(@topic) do |f|
-f.label :subject
-f.text_field :title
+# <%= form_for :topic, url: admin_topics_url do |f| %>
+#   <%= f.label :name %>
+#   <%= f.text_field :name %>
+#   <%= f.label :description %>
+#   <%= f.text_field :description %>
+#   <%= f.label :image %>
+#   <%= f.text_field :image %>
+#   <%= f.submit "Create" %>
+# <% end %>
 
 #many form for helper methods, use this one. 
 #error no create method
@@ -209,11 +216,28 @@ def create
   puts params
   @topic = Topic.find(params[:topic_id])
   c = @topic.conversations.create!(allowed_params)
-
+  
   redirect_to topic_conversations_path(@topic)
 end
 
 private
-  def allowed_params
-    params.require(:conversation).permit(:subject, :description)
-  end  
+def allowed_params
+  params.require(:topic).permit(:name, :description, :image)
+end 
+
+# DELETE
+# in admin/topics show page
+button_to "name",  admin_topc_url(topic), :method => :delete
+
+# destroy method in admin topics controller
+@topic = Topic.find(params[:id])
+@topic.destroy
+redirect_to topics_path
+
+#Creating nested resources
+# <%= form_for :post, url: topic_posts_url(@topic) do |f| %>
+def create
+  @topic = Topic.find(params[:topic_id])
+  @topic.posts.create(allowed_params)
+  redirect_to topic_path(@topic)    
+end
