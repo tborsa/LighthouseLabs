@@ -92,7 +92,7 @@ For example using `<strong>` tag instead of `<b>`
    Rocks are cool
    <figure>
        🗿
-   <figure>
+   </figure>
 </article>
 <footer></footer>
 ```

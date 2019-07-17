@@ -1,4 +1,14 @@
-.box {
+.div {
+    min-height: 200px;
+    min-width: 200px;
+    padding: 100px;
+    font-size: 40px;
+    line-height: 38px;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    background-color: lightblue;
+    color: slateblue;
+}
+.div {
     min-height: 200px;
     min-width: 200px;
     padding: 100px;

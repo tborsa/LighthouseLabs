@@ -1,12 +1,10 @@
-Slides from today: https://github.com/NimaBoscarino/sermon-slides
+Ding...
+Congratz everyone!  
+You made it through all the content of the bootcamp!  
+[Here](https://hopeful-goodall-ba63af.netlify.com/) is a link to Nima's  patented project resources  
+or the github [page](https://github.com/NimaBoscarino/project-resources)  
 
-### Boilerplates
-
-Rails + React: https://github.com/NimaBoscarino/react-rails-boilerplate
-
-React + Redux ( + optionally React Router): https://github.com/NimaBoscarino/react-redux-boilerplate
-
-React + Express: https://github.com/garrettgsb/react-express-boilerplate
+notes below.
 
 ### Final Projects
 

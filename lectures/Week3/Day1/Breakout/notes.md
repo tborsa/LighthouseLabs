@@ -6,6 +6,15 @@
 Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectures/Week3/Day1/Breakout)
 
 
+div.btn.primary{
+  color:black;
+}
+
+.btn{
+  color: red;
+}
+
+
 What makes css hard?
 
 ---
@@ -196,14 +205,14 @@ In general you want to be light handed with classes and id's.
 if we want our links to look a certain way
 
 ```HTML
-<a href="www.nima.com" class="link"> </link>
+<a href="www.nima.com" class="link"> </a>
 
 ```
 
 instead we know it will be an `<a>` tag so
 
 ```HTML
-<a href="wwww.nima.com" ></link>
+<a href="wwww.nima.com" ></a>
 
 ```
 
