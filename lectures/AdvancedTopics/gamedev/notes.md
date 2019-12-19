@@ -17,23 +17,7 @@ Objectives
 
 ---
 
-# What are the Elements of a game?
-
-
-- graphics  
-    - animation of user player  
-- Rules  
-- Map/Board  
-- Characters  
-- Story  
-- Dialogue  
-- Sounds  
-    - Music  
-    - Sound Effects  
-- Inputs  
-- Code   
-
-
+# What are the Elements of a Video game?
 
 .  
 .  
