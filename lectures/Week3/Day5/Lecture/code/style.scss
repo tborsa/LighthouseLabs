@@ -1,25 +1,35 @@
+
+$primary: lightsalmon;
+$secondary: wheat;
+$accent: goldenrod;
+//colors font sizes, font-types 
+
 * {
   box-sizing: border-box;
-  font-size: 100px; }
+  font-size: 100px;
+}
 
-body {
-  margin: 0px; }
+body{
+  margin: 0px;
+}
 
 footer, header {
-  background-color: lightsalmon;
+  background-color: $primary;
   width: 100%;
   height: 120px;
-  padding: 20px; }
+  padding: 20px;
+}
 
 main {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: wheat;
+  background-color: $secondary;
   padding: 5px;
   width: 80%;
   margin: auto;
-  font-size: 50px; }
+  font-size: 50px;
+}
 
 main div {
   margin: 5px;
@@ -27,44 +37,60 @@ main div {
   flex-shrink: 2;
   width: 150px;
   height: 150px;
-  font-size: 10vw;
+  font-size: 10vw; 
   line-height: 30vh;
   text-align: center;
-  background-color: goldenrod;
-  color: lightsalmon; }
+  background-color: $accent;
+  color: $primary;
+}
 
-div.big {
+div.big{
   flex-grow: 0;
   flex-shrink: 1;
   height: 200px;
-  width: 200px; }
+  width: 200px;
+}
 
-.logo, .logosmall {
+%logo {
   width: 150px;
   height: 30px;
   background-repeat: no-repeat;
-  background-image: url("logo.png");
-  background-size: contain; }
+  background-image: url('logo.png');
+  background-size: contain;
+}
+
+.logo {
+  @extend %logo;
+}
 
 .logosmall {
-  background-image: url("small.png"); }
+  @extend %logo;
+  background-image: url('small.png');
+}
 
 @media only screen and (min-width: 700px) {
   .logo {
     width: 300px;
-    height: 60px; } }
+    height: 60px;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   main {
-    width: 100%; }
-
+    width: 100%;
+  }
   main div {
-    background-color: darksalmon; } }
+    background-color: darksalmon;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   main {
-    flex-direction: column; }
+    flex-direction: column;
+  }
 
   main div {
     margin: 5%;
-    width: 100%; } }
-
-/*# sourceMappingURL=style.css.map */
+    width: 100%;
+  }
+}

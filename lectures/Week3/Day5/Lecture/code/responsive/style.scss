@@ -1,0 +1,66 @@
+$primary-color: salmon;
+$secondary-color: wheat;
+$accent-color: lightcyan;
+* {
+  box-sizing: border-box;
+}
+header,footer {
+  height: 80px;
+  width: 100%;
+  padding: 20px;
+  background-color: $primary-color;
+}
+
+html {
+  font-size: 12px;
+  padding: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  min-height: 800px;
+  display: flex;
+  width: 90vw;
+  margin: auto;
+  background-color: $secondary-color;
+  font-size: 80px;
+  div {
+    flex-grow: 1;
+    flex-basis: 250px;
+    line-height: 300px;
+    background-color: $accent-color;
+    color: $primary-color;
+    margin: 2%;
+    font-size: 1em;
+    text-align: center;
+  }
+}
+
+
+.big {
+  height: 400px;
+  width: 400px;
+  align-self: center;
+}
+
+@media only screen and (max-width: 600px) {
+  main div {
+    flex-basis:100%;  
+  }
+  main {
+    flex-direction: column;
+    background-color: lightgrey;
+  }
+
+}
+
+@media only screen and (min-width: 800px) {
+  
+  main {
+    background-color: lightgreen;
+  }
+
+}
